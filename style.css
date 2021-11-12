@@ -1,0 +1,141 @@
+/*
+Theme Name:        Nautilus
+Theme URI:         https://github.com/wordpress/twentytwentytwo/
+Author:            Nick Diego
+Author URI:        https://www.nickdiego.com
+Description:       A block-based WordPress theme from 20,000 leagues under the sea.
+Requires at least: 5.8
+Tested up to:      5.8
+Requires PHP:      5.6
+Version:           0.1.0
+License:           GNU General Public License v2 or later
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       nautilus
+Tags:              one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
+*/
+
+/* Defaults
+----------------------------------------------------------------------------- */
+
+body {
+	overflow-x: hidden;
+}
+
+html {
+	box-sizing: border-box;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/* Code
+--------------------------------------------- */
+
+*:not(.wp-block-code) > code {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    font-size: var(--wp--preset--font-size--small);
+    padding: 6px 8px;
+    position: relative;
+    top: -2px;
+}
+
+.wp-block-code {
+	border: none;
+	padding: 0;
+}
+
+.wp-block-code > code {
+	overflow-wrap: normal;
+	overflow-x: scroll;
+	white-space: pre;
+}
+
+/* Image
+--------------------------------------------- */
+
+@media (min-width: 800px) {
+    .wp-block-post-content > .wp-block-image {
+        margin-top: calc(2 * var(--wp--style--block-gap));
+        margin-bottom: calc(2 * var(--wp--style--block-gap));
+    }
+}
+
+.wp-block-image > figcaption {
+    color: var(--wp--preset--color--secondary);
+    font-size: var(--wp--preset--font-size--tiny);
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+/* Gallery
+--------------------------------------------- */
+
+.wp-block-gallery .blocks-gallery-item:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 800px) {
+    .wp-block-post-content > .wp-block-gallery {
+        margin-top: calc(2 * var(--wp--style--block-gap));
+        margin-bottom: calc(2 * var(--wp--style--block-gap));
+    }
+}
+
+.wp-block-gallery > figcaption {
+    color: var(--wp--preset--color--secondary);
+    font-size: var(--wp--preset--font-size--tiny);
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+/* Block styles
+----------------------------------------------------------------------------- */
+
+/* Caption right/left (Image, Gallery)
+--------------------------------------------- */
+@media (min-width: 1350px) {
+    .is-style-caption-left,
+    .is-style-caption-right {
+        position: relative;
+    }
+
+    .is-style-caption-left > figcaption,
+    .is-style-caption-right > figcaption {
+        bottom: var(--wp--style--block-gap);
+        max-width: 14rem;
+        position: absolute;
+        width: 100%;
+    }
+
+    .is-style-caption-right > figcaption {
+        right: calc(-14rem - var(--wp--style--block-gap));
+        text-align: left;
+    }
+
+    .is-style-caption-left > figcaption {
+        left: calc(-14rem - var(--wp--style--block-gap));
+        text-align: right;
+    }
+
+    [data-align="full"] > .is-style-caption-right > figcaption,
+    .alignfull.is-style-caption-right > figcaption,
+    [data-align="full"] > .is-style-caption-left > figcaption,
+    .alignfull.is-style-caption-left > figcaption {
+        max-width: unset;
+        padding-left: var(--wp--style--block-gap);
+        padding-right: var(--wp--style--block-gap);
+        position: unset;
+        text-align: left;
+    }
+
+    [data-align="full"] > .is-style-caption-right > figcaption,
+    .alignfull.is-style-caption-right > figcaption {
+        text-align: right;
+    }
+}
