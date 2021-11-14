@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="254px" height="10px" viewBox="0 0 254 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Group" transform="translate(1.000000, 1.000000)" stroke="#172536">
+            <path d="M0,4 C1.46970456,2.04205848 3.06183929,0 6,0 C12,0 12,8 18,8 C24,8 24,0 30,0 C36,0 36,8 42,8 C48,8 48,0 54,0 C60,0 60,8 66,8 C72,8 72,0 78,0 C84,0 84,8 90,8 C96,8 96,0 102,0 C108,0 108,8 114,8 C120,8 120,0 126,0" id="Path" transform="translate(63.000000, 4.000000) scale(1, -1) translate(-63.000000, -4.000000) "></path>
+            <path d="M126,0 C132,0 132,8 138,8 C144,8 144,0 150,0 C156,0 156,8 162,8 C168,8 168,0 174,0 C180,0 180,8 186,8 C192,8 192,0 198,0 C204,0 204,8 210,8 C216,8 216,0 222,0 C228,0 228,8 234,8 C240,8 240,0 246,0 C248.975862,0 250.511973,2.01622035 252,4" id="Path" transform="translate(189.000000, 4.000000) scale(1, -1) translate(-189.000000, -4.000000) "></path>
+        </g>
+    </g>
+</svg>

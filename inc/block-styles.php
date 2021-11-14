@@ -42,11 +42,19 @@ if ( ! function_exists( 'nautilus_register_block_patterns' ) ) :
         );
 
         register_block_style(
-        	'core/button',
+        	'core/post-terms',
         	array(
-        		'name'  => 'outline-white',
-        		'label' => __( 'Outline White', 'frost' ),
+        		'name'  => 'outline',
+        		'label' => __( 'Outline', 'nautilus' ),
         	)
+        );
+
+        register_block_style(
+            'core/separator',
+            array(
+                'name'  => 'waves',
+                'label' => __( 'Waves', 'nautilus' ),
+            )
         );
     }
 endif;
