@@ -107,7 +107,7 @@
     				},
     				{
     					"slug": "primary",
-    					"color": "#0C1C31",
+    					"color": "#111732",
     					"name": "Primary"
     				},
     				{
@@ -219,14 +219,15 @@
 		"blocks": {
 			"core/button": {
 				"border": {
-					"radius": "0"
+					"radius": "4px",
+                    "width": "1px"
 				},
 				"color": {
 					"background": "var(--wp--preset--color--primary)",
 					"text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--normal)"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
             "core/code": {
@@ -273,12 +274,24 @@
                 }
             },
             "core/post-author": {
+                "color": {
+                    "text": "var(--wp--preset--color--secondary)"
+                },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--source-sans)",
                     "fontSize": "var(--wp--preset--font-size--small)"
                 }
             },
+			"core/post-comments": {
+				"spacing": {
+					"padding": {
+						"top": "var(--wp--custom--spacing--small)"
+					}
+				}
+			},
             "core/post-date": {
+                "color": {
+                    "text": "var(--wp--preset--color--secondary)"
+                },
                 "typography": {
                     "fontSize": "var(--wp--preset--font-size--small)"
                 }
@@ -295,20 +308,13 @@
                     "fontSize": "var(--wp--preset--font-size--tiny)"
                 }
             },
-			"core/post-title": {
-				"typography": {
-					"fontWeight": "600",
-					"lineHeight": "var(--wp--custom--typography--line-height--tiny)",
-					"fontSize": "var(--wp--custom--typography--font-size--gigantic)"
-				}
-			},
-			"core/post-comments": {
-				"spacing": {
-					"padding": {
-						"top": "var(--wp--custom--spacing--small)"
-					}
-				}
-			},
+            "core/post-title": {
+                "typography": {
+                    "fontWeight": "600",
+                    "lineHeight": "var(--wp--custom--typography--line-height--tiny)",
+                    "fontSize": "var(--wp--custom--typography--font-size--gigantic)"
+                }
+            },
             "core/pullquote": {
 				"border": {
 					"color": "var(--wp--preset--color--primary)",

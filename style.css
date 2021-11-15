@@ -110,11 +110,42 @@ figcaption {
 }
 
 .wp-block-post-author .wp-block-post-author__avatar img {
+    background: var(--wp--preset--color--background);
     border-radius: 100%;
+    box-shadow: 0px 0px 0px 3px var(--wp--preset--color--background), 0px 0px 0px 4px var(--wp--preset--color--primary);
+    width: 42px;
+    height: 42px;
 }
 
 .wp-block-post-author .wp-block-post-author__name {
     font-family: var(--wp--preset--font-family--source-sans);
+}
+
+/* Post Comments
+--------------------------------------------- */
+.wp-block-post-comments input:not([type=submit]),
+.wp-block-post-comments textarea {
+	border-color: var(--wp--preset--color--primary);
+}
+
+.wp-block-post-comments .commentlist {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.wp-block-post-comments .form-submit {
+	margin-bottom: 0;
+}
+
+.wp-block-post-comments .comment-form-cookies-consent {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments .comment-author .avatar {
+    background: var(--wp--preset--color--background);
+    box-shadow: 0px 0px 0px 3px var(--wp--preset--color--background), 0px 0px 0px 4px var(--wp--preset--color--primary);
+    width: 42px;
+    height: 42px;
 }
 
 /* Post Terms
@@ -197,6 +228,13 @@ figcaption {
     text-decoration: none;
 }
 
+/* Wide (Separator)
+--------------------------------------------- */
+
+.wp-block-separator.is-style-wide {
+    width: 100%;
+}
+
 /* Dots (Separator)
 --------------------------------------------- */
 
@@ -207,7 +245,7 @@ figcaption {
 .wp-block-separator.is-style-dots:before {
     font-size: 2rem;
     letter-spacing: 1rem;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
 /* Waves (Separator)
@@ -231,6 +269,8 @@ figcaption {
     mask-position: center;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+}
 
-
+.no-flex-shrink {
+    flex-shrink: 0;
 }
