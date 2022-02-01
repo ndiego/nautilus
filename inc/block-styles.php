@@ -5,57 +5,43 @@
  * @since 0.1.0
  */
 
-if ( ! function_exists( 'nautilus_register_block_patterns' ) ) :
- 	/**
- 	 * Registers block patterns and categories.
- 	 *
- 	 * @since Twenty Twenty-Two 1.0
- 	 */
-    function nautilus_register_block_patterns() {
-        register_block_style(
-        	'core/image',
-        	array(
-        		'name'  => 'caption-left',
-        		'label' => __( 'Caption Left', 'nautilus' ),
-        	)
-        );
-        register_block_style(
-            'core/image',
-            array(
-                'name'  => 'caption-right',
-                'label' => __( 'Caption Right', 'nautilus' ),
-            )
-        );
-        register_block_style(
-        	'core/gallery',
-        	array(
-        		'name'  => 'caption-left',
-        		'label' => __( 'Caption Left', 'nautilus' ),
-        	)
-        );
-        register_block_style(
-            'core/gallery',
-            array(
-                'name'  => 'caption-right',
-                'label' => __( 'Caption Right', 'nautilus' ),
-            )
-        );
+/**
+ * Register block styles.
+ *
+ * @since 0.1.0
+ */
+function nautilus_register_block_styles() {
 
-        register_block_style(
-        	'core/post-terms',
-        	array(
-        		'name'  => 'outline',
-        		'label' => __( 'Outline', 'nautilus' ),
-        	)
-        );
+    $block_styles = array(
+        'core/image'      => array(
+            'caption-left'  => __( 'Caption Left', 'nautilus' ),
+            'caption-right' => __( 'Caption Right', 'nautilus' ),
+        ),
+        'core/gallery'    => array(
+            'caption-left'  => __( 'Caption Left', 'nautilus' ),
+            'caption-right' => __( 'Caption Right', 'nautilus' ),
+        ),
+        'core/post-terms' => array(
+            'outline' => __( 'Outline', 'nautilus' ),
+        ),
+        'core/separator'  => array(
+            'waves' => __( 'Waves', 'nautilus' ),
+        ),
+    );
 
-        register_block_style(
-            'core/separator',
-            array(
-                'name'  => 'waves',
-                'label' => __( 'Waves', 'nautilus' ),
-            )
-        );
+    foreach( $block_styles as $block => $styles ) {
+        foreach ( $styles as $style_name => $style_label ) {
+            register_block_style(
+                $block,
+                array(
+                    'name'  => $style_name,
+                    'label' => $style_label,
+                )
+            );
+        }
     }
-endif;
-add_action( 'init', 'nautilus_register_block_patterns', 9 );
+}
+add_action( 'init', 'nautilus_register_block_styles' );
+
+
+

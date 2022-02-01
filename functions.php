@@ -4,143 +4,139 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage Twenty_Twenty_Two
+ * @package Nautilus
  * @since 0.1.0
  */
 
-// Include block styles.
-//require get_template_directory() . '/inc/block-styles.php';
+/**
+ * Add support for core block visual styles.
+ * Styles load in both the editor and the front end.
+ *
+ * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#default-block-styles
+ *
+ * @return void
+ */
+function nautilus_support() {
 
-// Include block patterns.
-//require get_template_directory() . '/inc/block-patterns.php';
+    // Add support for block styles.
+	add_theme_support( 'wp-block-styles' );
 
-if ( ! function_exists( 'nautilus_support' ) ) :
+    // Enqueue editor styles.
+    add_editor_style( get_template_directory_uri() . '/style.css' );
+}
+add_action( 'after_setup_theme', 'nautilus_support' );
 
-	/**
-	 * Add support for core block visual styles.
-	 * Styles load in both the editor and the front end.
-	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#default-block-styles
-	 *
-	 * @return void
-	 */
-	function nautilus_support() {
+/**
+ * Enqueue styles.
+ *
+ * @return void
+ */
+function nautilus_styles() {
 
-        // Add support for block styles.
-		add_theme_support( 'wp-block-styles' );
+	// Register theme stylesheet.
+	wp_register_style(
+		'nautilus-styles',
+		get_template_directory_uri() . '/style.css',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+	);
 
-        // Enqueue editor styles.
-        add_editor_style( get_template_directory_uri() . '/style.css' );
+	// Add styles inline.
+	wp_add_inline_style( 'nautilus-styles', nautilus_get_font_face_styles() );
 
+	// Enqueue theme stylesheet.
+	wp_enqueue_style( 'nautilus-styles' );
+
+}
+add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
+
+/**
+ * Enqueue editor styles.
+ *
+ * @return void
+ */
+function nautilus_editor_styles() {
+
+	// Add styles inline.
+	wp_add_inline_style( 'wp-block-library', nautilus_get_font_face_styles() );
+}
+add_action( 'admin_init', 'nautilus_editor_styles' );
+
+/**
+ * Get font face styles.
+ * Called by functions nautilus_styles() and nautilus_editor_styles() above.
+ *
+ * @return string
+ */
+function nautilus_get_font_face_styles() {
+
+	return "
+	@font-face{
+		font-family: 'Source Serif';
+		font-weight: 200 900;
+		font-style: normal;
+		font-stretch: normal;
+		src: url('" . get_theme_file_uri( 'assets/fonts/source-serif/SourceSerif4Variable-Roman.ttf.woff2' ) . "') format('woff2');
 	}
-	add_action( 'after_setup_theme', 'nautilus_support' );
 
-endif;
+	@font-face{
+		font-family: 'Source Serif';
+		font-weight: 200 900;
+		font-style: italic;
+		font-stretch: normal;
+		src: url('" . get_theme_file_uri( 'assets/fonts/source-serif/SourceSerif4Variable-Italic.ttf.woff2' ) . "') format('woff2');
+	}
 
+    @font-face{
+        font-family: 'Source Sans';
+        font-weight: 200 900;
+        font-style: normal;
+        font-stretch: normal;
+        src: url('" . get_theme_file_uri( 'assets/fonts/source-sans/SourceSans3VF-Roman.ttf.woff2' ) . "') format('woff2');
+    }
 
-if ( ! function_exists( 'nautilus_styles' ) ) :
+    @font-face{
+        font-family: 'Source Sans';
+        font-weight: 200 900;
+        font-style: italic;
+        font-stretch: normal;
+        src: url('" . get_theme_file_uri( 'assets/fonts/source-sans/SourceSans3VF-Italic.ttf.woff2' ) . "') format('woff2');
+    }
+	";
+}
 
-	/**
-	 * Enqueue styles.
-	 *
-	 * @return void
-	 */
-	function nautilus_styles() {
+/**
+ *
+ * Reference: https://make.wordpress.org/core/2021/12/15/using-multiple-stylesheets-per-block/
+ */
+function nautilus_enqueue_core_block_styles() {
 
-		// Register theme stylesheet.
-		wp_register_style(
-			'nautilus-style',
-			get_template_directory_uri() . '/style.css',
-			array(),
-			wp_get_theme()->get( 'Version' ),
+	$blocks = array(
+		'code',
+		'gallery',
+		'image',
+		'navigation',
+		'post-author',
+		'post-comments',
+		'post-featured-image',
+		'post-terms',
+		'separator',
+		'site-title',
+	);
+
+	foreach ( $blocks as $block ) {
+		// Enqueue asset per block.
+		wp_enqueue_block_style(
+			'core/' . $block,
+			array(
+				'handle' => 'nautilus-core-' . $block . '-styles',
+				'src'    => get_theme_file_uri( 'assets/blocks/' . $block . '.css' ),
+				'path'   => get_theme_file_path( 'assets/blocks/' . $block . '.css' ), // Add "path" to allow inlining asset.
+			),
 		);
-
-		// Add styles inline.
-		wp_add_inline_style( 'nautilus-style', nautilus_get_font_face_styles() );
-
-		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'nautilus-style' );
-
 	}
-	add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
-
-endif;
-
-
-if ( ! function_exists( 'nautilus_editor_styles' ) ) :
-
-	/**
-	 * Enqueue editor styles.
-	 *
-	 * @return void
-	 */
-	function nautilus_editor_styles() {
-
-		// Add styles inline.
-		wp_add_inline_style( 'wp-block-library', nautilus_get_font_face_styles() );
-
-	}
-	add_action( 'admin_init', 'nautilus_editor_styles' );
-
-endif;
-
-
-if ( ! function_exists( 'nautilus_get_font_face_styles' ) ) :
-
-	/**
-	 * Get font face styles.
-	 * Called by functions nautilus_styles() and nautilus_editor_styles() above.
-	 *
-	 * @return string
-	 */
-	function nautilus_get_font_face_styles() {
-
-		return "
-		@font-face{
-			font-family: 'Source Serif';
-			font-weight: 200 900;
-			font-style: normal;
-			font-stretch: normal;
-			src: url('" . get_theme_file_uri( 'assets/fonts/source-serif/SourceSerif4Variable-Roman.ttf.woff2' ) . "') format('woff2');
-		}
-
-		@font-face{
-			font-family: 'Source Serif';
-			font-weight: 200 900;
-			font-style: italic;
-			font-stretch: normal;
-			src: url('" . get_theme_file_uri( 'assets/fonts/source-serif/SourceSerif4Variable-Italic.ttf.woff2' ) . "') format('woff2');
-		}
-
-        @font-face{
-            font-family: 'Source Sans';
-            font-weight: 200 900;
-            font-style: normal;
-            font-stretch: normal;
-            src: url('" . get_theme_file_uri( 'assets/fonts/source-sans/SourceSans3VF-Roman.ttf.woff2' ) . "') format('woff2');
-        }
-
-        @font-face{
-            font-family: 'Source Sans';
-            font-weight: 200 900;
-            font-style: italic;
-            font-stretch: normal;
-            src: url('" . get_theme_file_uri( 'assets/fonts/source-sans/SourceSans3VF-Italic.ttf.woff2' ) . "') format('woff2');
-        }
-
-        @font-face{
-            font-family: 'Outfit';
-            font-weight: 100 900;
-            font-style: normal;
-            font-stretch: normal;
-            src: url('" . get_theme_file_uri( 'assets/fonts/outfit/Outfit[wght].ttf' ) . "') format('truetype');
-        }
-		";
-
-	}
-
-endif;
+}
+add_action( 'after_setup_theme', 'nautilus_enqueue_core_block_styles' );
 
 // Add block styles.
 require get_template_directory() . '/inc/block-styles.php';

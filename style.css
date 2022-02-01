@@ -4,8 +4,8 @@ Theme URI:         https://github.com/wordpress/twentytwentytwo/
 Author:            Nick Diego
 Author URI:        https://www.nickdiego.com
 Description:       A block-based WordPress theme from 20,000 leagues under the sea.
-Requires at least: 5.8
-Tested up to:      5.8
+Requires at least: 5.9
+Tested up to:      5.9
 Requires PHP:      5.6
 Version:           0.1.0
 License:           GNU General Public License v2 or later
@@ -33,6 +33,43 @@ html {
 	box-sizing: inherit;
 }
 
+/*
+ * Text and navigation link styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.5ch;
+}
+
+a:hover,
+a:focus {
+	color: currentColor;
+}
+
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+	opacity: 0.80;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus {
+    transition: all 0.2s ease-in-out;
+}
+
+
 figcaption {
     line-height: var(--wp--custom--typography--line-height--medium);
 }
@@ -49,228 +86,66 @@ figcaption {
     top: -2px;
 }
 
-.wp-block-code {
-	border: none;
-	padding: 0;
+/*
+ * Alignment styles.
+ * These rules are temporary, and should not be relied on or
+ * modified too heavily by themes or plugins that build on
+ * Twenty Twenty-Two. These are meant to be a precursor to
+ * a global solution provided by the Block Editor.
+ *
+ * Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align="full"] > .wp-block-group,
+.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
+	padding-left: var(--wp--custom--spacing--outer);
+	padding-right: var(--wp--custom--spacing--outer);
 }
 
-.wp-block-code > code {
-	overflow-wrap: normal;
-	overflow-x: scroll;
-	white-space: pre;
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	width: unset;
 }
 
-/* Image
---------------------------------------------- */
-
-@media (min-width: 800px) {
-    .wp-block-post-content > .wp-block-image {
-        margin-top: calc(2 * var(--wp--style--block-gap));
-        margin-bottom: calc(2 * var(--wp--style--block-gap));
-    }
+/* Blocks inside columns don't have negative margins. */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* We also want to avoid stacking negative margins. */
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
 }
 
-.wp-block-image > figcaption {
-    color: var(--wp--preset--color--secondary);
-    font-size: var(--wp--preset--font-size--small);
-    margin-top: 1rem;
-    margin-bottom: 0;
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--spacing--outer);
+	padding-bottom: var(--wp--custom--spacing--large);
+	padding-right: var(--wp--custom--spacing--outer);
+	padding-left: var(--wp--custom--spacing--outer);
 }
 
-/* Gallery
---------------------------------------------- */
 
-.wp-block-gallery .blocks-gallery-item:last-child {
-    margin-bottom: 0;
-}
-
-@media (min-width: 800px) {
-    .wp-block-post-content > .wp-block-gallery {
-        margin-top: calc(2 * var(--wp--style--block-gap));
-        margin-bottom: calc(2 * var(--wp--style--block-gap));
-    }
-}
-
-.wp-block-gallery > figcaption {
-    color: var(--wp--preset--color--secondary);
-    font-size: var(--wp--preset--font-size--small);
-    margin-top: 1rem;
-    margin-bottom: 0;
-}
-
-/* Post Author
---------------------------------------------- */
-
-.wp-block-post-author {
-    align-items: center;
-}
-
-.wp-block-post-author .wp-block-post-author__avatar {
-    line-height: 1;
-}
-
-.wp-block-post-author .wp-block-post-author__avatar img {
-    background: var(--wp--preset--color--background);
-    border-radius: 100%;
-    box-shadow: 0px 0px 0px 3px var(--wp--preset--color--background), 0px 0px 0px 4px var(--wp--preset--color--primary);
-    width: 42px;
-    height: 42px;
-}
-
-.wp-block-post-author .wp-block-post-author__name {
-    font-family: var(--wp--preset--font-family--source-sans);
-}
-
-/* Post Comments
---------------------------------------------- */
-.wp-block-post-comments input:not([type=submit]),
-.wp-block-post-comments textarea {
-	border-color: var(--wp--preset--color--primary);
-}
-
-.wp-block-post-comments .commentlist {
-	margin-bottom: 40px;
-	margin-top: 40px;
-}
-
-.wp-block-post-comments .form-submit {
-	margin-bottom: 0;
-}
-
-.wp-block-post-comments .comment-form-cookies-consent {
-	font-size: var(--wp--preset--font-size--small);
-}
-
-.wp-block-post-comments .comment-author .avatar {
-    background: var(--wp--preset--color--background);
-    box-shadow: 0px 0px 0px 3px var(--wp--preset--color--background), 0px 0px 0px 4px var(--wp--preset--color--primary);
-    width: 42px;
-    height: 42px;
-}
-
-/* Post Terms
---------------------------------------------- */
-
-.wp-block-post-terms a {
-    margin-right: calc(.5 * var(--wp--style--block-gap));
-    text-decoration: none;
-}
-
-.wp-block-post-terms a:last-child {
-    margin-right: 0;
-}
-
-.wp-block-post-terms .wp-block-post-terms__separator {
-    display: none;
-}
-
-/* Separator
---------------------------------------------- */
-
-.wp-block-separator {
-    opacity: 1;
-}
-
-/* Block styles
------------------------------------------------------------------------------ */
-
-/* Caption right/left (Image, Gallery)
---------------------------------------------- */
-@media (min-width: 1350px) {
-    .is-style-caption-left,
-    .is-style-caption-right {
-        position: relative;
-    }
-
-    .is-style-caption-left > figcaption,
-    .is-style-caption-right > figcaption {
-        bottom: var(--wp--style--block-gap);
-        max-width: 14rem;
-        position: absolute;
-        width: 100%;
-    }
-
-    .is-style-caption-right > figcaption {
-        right: calc(-14rem - var(--wp--style--block-gap));
-        text-align: left;
-    }
-
-    .is-style-caption-left > figcaption {
-        left: calc(-14rem - var(--wp--style--block-gap));
-        text-align: right;
-    }
-
-    [data-align="full"] > .is-style-caption-right > figcaption,
-    .alignfull.is-style-caption-right > figcaption,
-    [data-align="full"] > .is-style-caption-left > figcaption,
-    .alignfull.is-style-caption-left > figcaption {
-        max-width: unset;
-        padding-left: var(--wp--style--block-gap);
-        padding-right: var(--wp--style--block-gap);
-        position: unset;
-        text-align: left;
-    }
-
-    [data-align="full"] > .is-style-caption-right > figcaption,
-    .alignfull.is-style-caption-right > figcaption {
-        text-align: right;
-    }
-}
-
-/* Outline (Post Terms)
---------------------------------------------- */
-
-.wp-block-post-terms.is-style-outline a {
-    border: 1px solid #e6e6e6;
-    border-radius: var(--wp--custom--border-radius--normal);
-    margin-right: calc(.5 * var(--wp--style--block-gap));
-    padding: 6px 12px;
-    text-decoration: none;
-}
-
-/* Wide (Separator)
---------------------------------------------- */
-
-.wp-block-separator.is-style-wide {
-    width: 100%;
-}
-
-/* Dots (Separator)
---------------------------------------------- */
-
-.wp-block-separator.is-style-dots {
-    line-height: .25;
-}
-
-.wp-block-separator.is-style-dots:before {
-    font-size: 2rem;
-    letter-spacing: 1rem;
-    padding-left: 1rem;
-}
-
-/* Waves (Separator)
---------------------------------------------- */
-
-.wp-block-separator.is-style-waves {
-    border: 0;
-    height: 10px;
-    width: 100% !important;
-}
-
-.wp-block-separator.is-style-waves:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--wp--preset--color--primary);
-    mask-image: url( 'assets/images/waves.svg' );
-    -webkit-mask-image: url( 'assets/images/waves.svg' );
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-}
-
-.no-flex-shrink {
-    flex-shrink: 0;
-}

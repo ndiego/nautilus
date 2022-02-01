@@ -1,0 +1,16 @@
+/* Code
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+.wp-block-code {
+	border: none;
+	padding: 0;
+}
+
+.wp-block-code > code {
+	overflow-wrap: normal;
+	overflow-x: scroll;
+	white-space: pre;
+}

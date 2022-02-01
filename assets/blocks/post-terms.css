@@ -1,0 +1,34 @@
+/* Post Terms
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+.wp-block-post-terms a {
+    text-decoration: none;
+}
+
+.wp-block-post-terms a:hover {
+    text-decoration: underline;
+}
+
+.wp-block-post-terms .wp-block-post-terms__separator {
+    color: var(--wp--preset--color--borders);
+    margin-left: .4rem;
+    margin-right: .4rem;
+}
+
+
+/* Block Style: Outline
+--------------------------------------------- */
+
+.wp-block-post-terms.is-style-outline a {
+    border: 1px solid var(--wp--preset--color--borders);
+    border-radius: var(--wp--custom--border-radius--normal);
+    padding: .4rem .8rem .3rem;
+    text-decoration: none;
+}
+
+.wp-block-post-terms.is-style-outline:hover {
+    opacity: 0.8;
+}

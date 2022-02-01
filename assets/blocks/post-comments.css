@@ -1,0 +1,30 @@
+/* Post Comments
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+.wp-block-post-comments input:not([type=submit]),
+.wp-block-post-comments textarea {
+	border-color: var(--wp--preset--color--primary);
+}
+
+.wp-block-post-comments .commentlist {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.wp-block-post-comments .form-submit {
+	margin-bottom: 0;
+}
+
+.wp-block-post-comments .comment-form-cookies-consent {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments .comment-author .avatar {
+    background: var(--wp--preset--color--background);
+    box-shadow: 0px 0px 0px 3px var(--wp--preset--color--background), 0px 0px 0px 4px var(--wp--preset--color--primary);
+    width: 42px;
+    height: 42px;
+}
