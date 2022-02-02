@@ -1,0 +1,11 @@
+/* Post Featured Image
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+.wp-block-post-comments-form input:not([type=submit]),
+.wp-block-post-comments-form textarea {
+    border: 1px solid var(--wp--preset--color--borders);
+    border-radius: 4px;
+}

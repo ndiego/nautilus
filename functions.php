@@ -117,7 +117,7 @@ function nautilus_enqueue_core_block_styles() {
 		'image',
 		'navigation',
 		'post-author',
-		'post-comments',
+		'post-comments-form',
 		'post-featured-image',
 		'post-terms',
 		'separator',

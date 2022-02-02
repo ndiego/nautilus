@@ -4,8 +4,8 @@
 <main class="wp-block-group" style="padding-top:3rem;padding-right:var(--wp--custom--spacing--small, 1.25rem);padding-left:var(--wp--custom--spacing--small, 1.25rem)"><!-- wp:group {"style":{"spacing":{"blockGap":"0.75rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:post-author-name {"style":{"typography":{"fontStyle":"normal","fontWeight":"500","letterSpacing":"1px","textTransform":"uppercase","lineHeight":"1"}},"textColor":"tertiary","fontSize":"tiny"} /-->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"},"color":{"text":"#c1c1c1"}},"fontSize":"tiny"} -->
-<p class="has-text-color has-tiny-font-size" style="color:#c1c1c1;line-height:1.7">|</p>
+<!-- wp:paragraph {"textColor":"borders","fontSize":"tiny","fontFamily":"source-sans"} -->
+<p class="has-borders-color has-tiny-font-size has-source-sans-font-family">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-date {"format":"F j, Y","style":{"typography":{"letterSpacing":"1px","textTransform":"uppercase","fontStyle":"normal","fontWeight":"500","lineHeight":"1"}},"textColor":"tertiary","className":"no-flex-shrink","fontSize":"tiny"} /--></div>
@@ -31,32 +31,41 @@
 <div style="height:3rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:post-comments /--></main>
-
+<!-- wp:heading {"level":3} -->
+<h3 id="post-comments">Comments</h3>
+<!-- /wp:heading -->
 
 <!-- wp:comment-template -->
-<!-- wp:group {"layout":{"type":"flex","allowOrientation":false}} -->
-<div class="wp-block-group">
-<!-- wp:comment-author-avatar {"width":60,"height":60} /-->
-<!-- wp:group -->
-<div class="wp-block-group">
-<!-- wp:comment-author-name /-->
-<!-- wp:group {"layout":{"type":"flex","allowOrientation":false}} -->
-<div class="wp-block-group">
-<!-- wp:comment-date {"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"500","letterSpacing":"1px","textTransform":"uppercase","lineHeight":"1"}},"textColor":"tertiary","fontSize":"tiny"} /-->
-<!-- wp:comment-edit-link /-->
+<!-- wp:group {"style":{"border":{"style":"solid","width":"1px","radius":"4px"},"spacing":{"blockGap":"1rem","padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}},"borderColor":"borders"} -->
+<div class="wp-block-group has-border-color has-borders-border-color" style="border-radius:4px;border-style:solid;border-width:1px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem">
+    <!-- wp:group {"layout":{"type":"flex","allowOrientation":false},"style":{"spacing":{"blockGap":"1rem"}}} -->
+    <div class="wp-block-group">
+        <!-- wp:comment-author-avatar {"width":50,"height":50,"style":{"border":{"radius":"100px","style":"solid","width":"1px"}},"borderColor":"borders"} /-->
+        <!-- wp:group {"style":{"spacing":{"blockGap":"0px","padding":{"bottom":"1rem"}}}} -->
+        <div class="wp-block-group" style="padding-bottom:1rem">
+            <!-- wp:comment-author-name {"style":{"typography":{"fontWeight":"500"}}} /-->
+            <!-- wp:group {"layout":{"type":"flex","allowOrientation":false},"style":{"spacing":{"blockGap":"0.5rem"}}} -->
+            <div class="wp-block-group">
+                <!-- wp:comment-date {"style":{"typography":{"fontWeight":"500","letterSpacing":"1px","textTransform":"uppercase","lineHeight":"1"}},"textColor":"tertiary","fontSize":"tiny"} /-->
+                <!-- wp:comment-edit-link {"style":{"typography":{"lineHeight":"1"}},"fontSize":"tiny"} /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+    <!-- wp:comment-content {"fontFamily":"source-serif"} /-->
+    <!-- wp:comment-reply-link /-->
 </div>
 <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-<!-- wp:comment-content /-->
 
-<!-- wp:comment-reply-link /-->
+<!-- wp:spacer {"height":"2rem"} -->
+<div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
 <!-- /wp:comment-template -->
-
+<!-- wp:post-comments-form /-->
+</main>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":32} -->

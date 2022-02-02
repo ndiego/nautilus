@@ -69,14 +69,13 @@ textarea:focus {
     transition: all 0.2s ease-in-out;
 }
 
-
 figcaption {
     line-height: var(--wp--custom--typography--line-height--medium);
 }
 
-/* Code
---------------------------------------------- */
-
+/*
+ * Inline code styling, need to explicitly exclude the code block.
+ */
 *:not(.wp-block-code) > code {
     background-color: #f1f1f1;
     border-radius: 4px;
@@ -84,6 +83,13 @@ figcaption {
     padding: 6px 8px;
     position: relative;
     top: -2px;
+}
+
+/*
+ * Custom color for * indicator in forms.
+ */
+span.required {
+	color: var(--wp--preset--color--secondary);
 }
 
 /*
@@ -147,5 +153,3 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	padding-right: var(--wp--custom--spacing--outer);
 	padding-left: var(--wp--custom--spacing--outer);
 }
-
-
