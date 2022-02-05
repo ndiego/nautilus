@@ -4,8 +4,33 @@
 /* General Styles
 --------------------------------------------- */
 
+.wp-block-post-comments-form .comment-reply-title {
+    font-size: var(--wp--preset--font-size--x-large);
+}
+
+.wp-block-post-comments-form .comment-reply-title small {
+    display: block;
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 400;
+    margin-top: 0.4rem;
+}
+
 .wp-block-post-comments-form input:not([type=submit]),
 .wp-block-post-comments-form textarea {
     border: 1px solid var(--wp--preset--color--borders);
     border-radius: 4px;
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments-form .comment-form-cookies-consent {
+    align-items: center;
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments-form .comment-form-cookies-consent #wp-comment-cookies-consent {
+    margin: 0 0.5rem 0 0;
+}
+
+.wp-block-post-comments-form .form-submit.wp-block-button {
+    margin-top: 2rem;
 }

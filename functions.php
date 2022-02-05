@@ -112,6 +112,8 @@ function nautilus_get_font_face_styles() {
 function nautilus_enqueue_core_block_styles() {
 
 	$blocks = array(
+		'archives',
+		'categories',
 		'code',
 		'gallery',
 		'image',
@@ -120,8 +122,10 @@ function nautilus_enqueue_core_block_styles() {
 		'post-comments-form',
 		'post-featured-image',
 		'post-terms',
+		'quote',
 		'separator',
 		'site-title',
+		'tag-cloud',
 	);
 
 	foreach ( $blocks as $block ) {
@@ -140,3 +144,28 @@ add_action( 'after_setup_theme', 'nautilus_enqueue_core_block_styles' );
 
 // Add block styles.
 require get_template_directory() . '/inc/block-styles.php';
+
+register_block_pattern(
+	'block-level-locking/test-pattern',
+	array(
+		'title'       => __( 'Block Level Locking', 'gutenberg-block-level-locking' ),
+		'description' => _x( 'A full locked block pattern', 'Block pattern description', 'gutenberg-block-level-locking' ),
+		'categories'  => array( 'text' ),
+		'content'     => '<!-- wp:paragraph { "dropCap": true, "lock":{"remove": true, "move":true}} -->
+		<p>This is a paragraph block that will contain cool text.</p>
+		<!-- /wp:paragraph -->
+		<!-- wp:image {"id":309,"sizeSlug":"full","linkDestination":"none","lock":{"remove": true, "move":true}} -->
+		<figure class="wp-block-image size-full"><img src="https://s.w.org/images/core/5.8/architecture-04.jpg" alt="" class="wp-image-309"/><figcaption>This is fine!</figcaption></figure>
+		<!-- /wp:image -->
+		<!-- wp:paragraph {"lock":{"remove": true, "move":true}} -->
+		<p>This paragraph will also contain some great stuff</p>
+		<!-- /wp:paragraph -->',
+	)
+);
+// Register a block pattern.
+add_action(
+	'init',
+	function() {
+
+	}
+);

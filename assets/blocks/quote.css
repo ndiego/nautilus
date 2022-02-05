@@ -1,0 +1,26 @@
+
+@media (min-width: 800px) {
+    .wp-block-post-content > .wp-block-quote {
+        margin-top: calc(1.5 * var(--wp--style--block-gap));
+        margin-bottom: calc(1.5 * var(--wp--style--block-gap));
+    }
+}
+
+.wp-block-quote {
+    border-left: 1px solid var(--wp--preset--color--borders);
+}
+
+.wp-block-quote p {
+    margin: 0;
+}
+
+.wp-block-quote cite {
+	color: var(--wp--preset--color--tertiary);
+    display: inline-block;
+    font-weight: 500;
+	font-size: var(--wp--preset--font-size--tiny);
+	letter-spacing: 1px;
+    line-height: 1;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+}

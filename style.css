@@ -33,6 +33,9 @@ html {
 	box-sizing: inherit;
 }
 
+/* General Styles (Styles not supported in theme.json and not block specific)
+----------------------------------------------------------------------------- */
+
 /*
  * Text and navigation link styles.
  * Necessary until the following issue is resolved in Gutenberg:
@@ -59,7 +62,10 @@ a:focus {
 	opacity: 0.80;
 }
 
-a,
+/*
+ * Add subtle transition effects to links, buttons and input fields.
+ */
+/* a,
 button,
 input:focus,
 input[type="button"],
@@ -67,29 +73,80 @@ input[type="reset"],
 input[type="submit"],
 textarea:focus {
     transition: all 0.2s ease-in-out;
+} */
+
+/*
+ * Custom styles for form inputs, textareas and labels.
+ */
+input,
+textarea {
+	font-size: var(--wp--preset--font-size--small);
 }
 
+label {
+	font-family: var(--wp--preset--font-family--source-sans);
+	font-weight: 500;
+}
+
+select {
+	border: 1px solid var(--wp--preset--color--borders);
+	border-radius: 4px;
+	color: var(--wp--preset--color--tertiary);
+	min-height: 30px;
+	padding: 0 1.5rem 0 0.5rem;
+}
+
+/*
+ * Set the line-height for image and gallery captions.
+ */
 figcaption {
     line-height: var(--wp--custom--typography--line-height--medium);
 }
 
 /*
- * Inline code styling, need to explicitly exclude the code block.
+ * List styles need extra specificity so they do not clash with blocks.
  */
-*:not(.wp-block-code) > code {
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    font-size: var(--wp--preset--font-size--small);
-    padding: 6px 8px;
-    position: relative;
-    top: -2px;
+li:where(:not([class*='wp-block'])) {
+	margin-bottom: 0.4rem;
+}
+
+li:where(:not([class*='wp-block'])) ol,
+li:where(:not([class*='wp-block'])) ul {
+	margin-top: 0.8rem;
+	margin-bottom: 0.8rem;
 }
 
 /*
- * Custom color for * indicator in forms.
+ * Code and keyboard input styles.
+ * Inline code styling, need to explicitly exclude the code block.
+ */
+*:not(.wp-block-code) > code,
+kbd {
+    background-color: var(--wp--preset--color--primary);
+    border-radius: 4px;
+	color: var(--wp--preset--color--background);
+	font-family: var(--wp--preset--font-family--monospace);
+    font-size: var(--wp--preset--font-size--small);
+    padding: 0.3rem 0.5rem;
+    position: relative;
+}
+
+/*
+ * When inline code is selected, the Editor applies contextual styling. Since
+ * our code color is near white, we need to reset to the default text color.
+ */
+.rich-text:focus > code[data-rich-text-format-boundary],
+.rich-text:focus > kbd[data-rich-text-format-boundary] {
+	color: currentColor;
+	border-radius: 4px;
+}
+
+/*
+ * Custom color for the * indicator in forms.
  */
 span.required {
 	color: var(--wp--preset--color--secondary);
+	font-weight: 600;
 }
 
 /*
@@ -102,7 +159,7 @@ span.required {
  * Relevant issues:
  * https://github.com/WordPress/gutenberg/issues/35607
  * https://github.com/WordPress/gutenberg/issues/35884
- */
+ ---------------------------------------------------------------------------- */
 .wp-site-blocks,
 body > .is-root-container,
 .edit-post-visual-editor__post-title-wrapper,
@@ -130,10 +187,15 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	width: unset;
 }
 
-/* Blocks inside columns don't have negative margins. */
+/*
+ * Blocks inside columns don't have negative margins.
+ */
 .wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
 .is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
-/* We also want to avoid stacking negative margins. */
+
+/*
+ * We also want to avoid stacking negative margins.
+ */
 .wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
 .is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
 	margin-left: auto !important;

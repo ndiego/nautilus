@@ -13,6 +13,12 @@
 function nautilus_register_block_styles() {
 
     $block_styles = array(
+        'core/archives' => array(
+            'horizontal' => __( 'Horizontal', 'nautilus' ),
+        ),
+        'core/categories' => array(
+            'horizontal' => __( 'Horizontal', 'nautilus' ),
+        ),
         'core/image'      => array(
             'caption-left'  => __( 'Caption Left', 'nautilus' ),
             'caption-right' => __( 'Caption Right', 'nautilus' ),

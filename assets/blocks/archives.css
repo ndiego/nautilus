@@ -1,0 +1,30 @@
+/* Archives
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+ul.wp-block-archives { /* We need added specificity here to counter WP core styles. */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0.7rem;
+    padding: 0;
+}
+
+.wp-block-archives li {
+    list-style: none;
+    margin: 0 !important; /* We need added specificity here to counter our main theme list styles. */
+}
+
+.wp-block-archives a {
+    text-decoration: none;
+}
+
+.wp-block-archives a:hover {
+    text-decoration: underline;
+}
+
+/* Block Style: Horizontal
+--------------------------------------------- */
+.wp-block-archives.is-style-horizontal {
+    flex-direction: row;
+}

@@ -1,0 +1,34 @@
+/* Categories
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+.wp-block-categories.wp-block-categories-list,
+.wp-block-categories .wp-block-categories__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0.7rem;
+    padding: 0;
+}
+
+.wp-block-categories.wp-block-categories-list li,
+.wp-block-categories .wp-block-categories__list li {
+    font-family: var(--wp--preset--font-family--source-sans); /* We have to manually set due to List block styling cascading into this block */
+    list-style: none;
+    margin: 0;
+}
+
+.wp-block-categories a {
+    text-decoration: none;
+}
+
+.wp-block-categories a:hover {
+    text-decoration: underline;
+}
+
+/* Block Style: Horizontal
+--------------------------------------------- */
+.wp-block-categories.is-style-horizontal.wp-block-categories-list,
+.wp-block-categories.is-style-horizontal .wp-block-categories__list {
+    flex-direction: row;
+}
