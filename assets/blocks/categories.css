@@ -4,7 +4,9 @@
 /* General Styles
 --------------------------------------------- */
 .wp-block-categories.wp-block-categories-list,
-.wp-block-categories .wp-block-categories__list {
+.wp-block-categories .wp-block-categories__list,
+.wp-block-categories.wp-block-categories-list li ul,
+.wp-block-categories .wp-block-categories__list li ul {
     display: flex;
     flex-direction: column;
     gap: 0.5rem 0.7rem;
@@ -16,6 +18,12 @@
     font-family: var(--wp--preset--font-family--source-sans); /* We have to manually set due to List block styling cascading into this block */
     list-style: none;
     margin: 0;
+}
+
+.wp-block-categories.wp-block-categories-list li ul,
+.wp-block-categories .wp-block-categories__list li ul {
+    padding-left: 1rem;
+    margin: 0.5rem 0 0;
 }
 
 .wp-block-categories a {
@@ -31,4 +39,10 @@
 .wp-block-categories.is-style-horizontal.wp-block-categories-list,
 .wp-block-categories.is-style-horizontal .wp-block-categories__list {
     flex-direction: row;
+}
+
+/* The "Show hierarchy" option is not supported with the Horizontal style. */
+.wp-block-categories.is-style-horizontal.wp-block-categories-list li ul,
+.wp-block-categories.is-style-horizontal .wp-block-categories__list li ul {
+    display: none;
 }

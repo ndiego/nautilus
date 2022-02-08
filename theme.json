@@ -89,37 +89,37 @@
 				}
 			],
             "palette":  [
-					{
-						"slug": "foreground",
-						"color": "#0C1C31",
-						"name": "Foreground"
-					},
-    				{
-    					"slug": "background",
-    					"color": "#f9f9f9",
-    					"name": "Background"
-    				},
-    				{
-    					"slug": "primary",
-    					"color": "#0A9499",
-    					"name": "Primary"
-    				},
-    				{
-    					"slug": "secondary",
-    					"color": "#FF7700",
-    					"name": "Secondary"
-    				},
-    				{
-    					"slug": "tertiary",
-    					"color": "#6E6E7F",
-    					"name": "Tertiary"
-    				},
-					{
-						"slug": "borders",
-						"color": "#CACACA",
-						"name": "Borders"
-					}
-    			]
+				{
+					"slug": "foreground",
+					"color": "#0C1C31",
+					"name": "Foreground"
+				},
+				{
+					"slug": "background",
+					"color": "#f9f9f9",
+					"name": "Background"
+				},
+				{
+					"slug": "primary",
+					"color": "#0A9499",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#FF7700",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#6E6E7F",
+					"name": "Tertiary"
+				},
+				{
+					"slug": "borders",
+					"color": "#CACACA",
+					"name": "Borders"
+				}
+			]
 		},
 		"custom": {
 			"spacing": {
