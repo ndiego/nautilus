@@ -4,13 +4,6 @@
 /* General Styles
 --------------------------------------------- */
 
-@media (min-width: 800px) {
-    .wp-block-post-content > .wp-block-image {
-        margin-top: calc(2 * var(--wp--style--block-gap));
-        margin-bottom: calc(2 * var(--wp--style--block-gap));
-    }
-}
-
 .wp-block-image > figcaption {
     color: var(--wp--preset--color--tertiary);
     font-size: var(--wp--preset--font-size--small);

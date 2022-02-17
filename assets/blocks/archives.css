@@ -3,7 +3,9 @@
 
 /* General Styles
 --------------------------------------------- */
-ul.wp-block-archives { /* We need added specificity here to counter WP core styles. */
+
+/* We need added specificity here to counter WP core styles. */
+ul.wp-block-archives {
     display: flex;
     flex-direction: column;
     gap: 0.5rem 0.7rem;
@@ -11,8 +13,11 @@ ul.wp-block-archives { /* We need added specificity here to counter WP core styl
 }
 
 .wp-block-archives li {
+    /* Due to the fact that we cannot style the post count separately */
+    color: var(--wp--preset--color--tertiary);
     list-style: none;
-    margin: 0 !important; /* We need added specificity here to counter our main theme list styles. */
+    /* We need added specificity here to counter our main theme list styles. */
+    margin: 0 !important;
 }
 
 .wp-block-archives a {
@@ -20,6 +25,8 @@ ul.wp-block-archives { /* We need added specificity here to counter WP core styl
 }
 
 .wp-block-archives a:hover {
+    /* Due to the fact that we cannot style the post count separately */
+    color: var(--wp--preset--color--foreground);
     text-decoration: underline;
 }
 

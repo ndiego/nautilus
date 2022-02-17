@@ -93,9 +93,14 @@
 		"typography": {
 			"fontFamilies": [
 				{
-					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-					"name": "System Font",
+					"fontFamily": "\"Source Serif\",serif",
+					"name": "Source Serif",
 					"slug": "primary"
+				},
+				{
+					"fontFamily": "\"Source Sans\",sans-serif",
+					"name": "Source Sans",
+					"slug": "secondary"
 				},
 				{
 					"fontFamily": "Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",

@@ -15,7 +15,10 @@
 
 .wp-block-categories.wp-block-categories-list li,
 .wp-block-categories .wp-block-categories__list li {
-    font-family: var(--wp--preset--font-family--source-sans); /* We have to manually set due to List block styling cascading into this block */
+    /* Due to the fact that we cannot style the post count separately */
+    color: var(--wp--preset--color--tertiary);
+    /* We have to manually set due to List block styling cascading into this block */
+    font-family: var(--wp--preset--font-family--primary);
     list-style: none;
     margin: 0;
 }
@@ -31,6 +34,8 @@
 }
 
 .wp-block-categories a:hover {
+    /* Due to the fact that we cannot style the post count separately */
+    color: var(--wp--preset--color--foreground);
     text-decoration: underline;
 }
 

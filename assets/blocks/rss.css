@@ -16,7 +16,7 @@
     color: var(--wp--preset--color--tertiary);
     display: inline-block;
     font-weight: 500;
-    font-family: var(--wp--preset--font-family--source-sans);
+    font-family: var(--wp--preset--font-family--primary);
     font-size: var(--wp--preset--font-size--tiny);
     letter-spacing: 1px;
     margin-top: 0.5rem;
