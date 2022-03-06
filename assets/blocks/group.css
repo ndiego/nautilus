@@ -1,0 +1,8 @@
+/*
+ * Remove the auto-padding added to group blocks
+ * with background colors applied.
+ */
+
+.wp-block-group:where(.has-background) {
+        padding: 0;
+}

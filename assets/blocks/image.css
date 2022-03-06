@@ -13,7 +13,7 @@
 
 /* Block Style: Caption right/left
 --------------------------------------------- */
-@media (min-width: 1440px) {
+@media (min-width: 1350px) {
     .wp-block-image.is-style-caption-left,
     .wp-block-image.is-style-caption-right {
         position: relative;
@@ -23,17 +23,18 @@
     .wp-block-image.is-style-caption-right > figcaption {
         bottom: var(--wp--style--block-gap);
         max-width: 13rem;
+        max-width: clamp(10rem, 10vw, 14rem);
         position: absolute;
         width: 100%;
     }
 
     .wp-block-image.is-style-caption-right > figcaption {
-        right: calc(-13rem - var(--wp--style--block-gap));
+        right: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
         text-align: left;
     }
 
     .wp-block-image.is-style-caption-left > figcaption {
-        left: calc(-13rem - var(--wp--style--block-gap));
+        left: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
         text-align: right;
     }
 

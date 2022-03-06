@@ -125,6 +125,7 @@ function nautilus_enqueue_core_block_styles() {
 		'categories',
 		'code',
 		'gallery',
+		'group',
 		'image',
 		'latest-posts',
 		'latest-comments',
@@ -153,6 +154,9 @@ function nautilus_enqueue_core_block_styles() {
 	}
 }
 add_action( 'after_setup_theme', 'nautilus_enqueue_core_block_styles' );
+
+// Add block patterns.
+require get_template_directory() . '/inc/block-patterns.php';
 
 // Add block styles.
 require get_template_directory() . '/inc/block-styles.php';

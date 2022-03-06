@@ -23,7 +23,7 @@
 }
 
 /* Block Style: Caption right/left
---------------------------------------------- */
+---------------------------------------------
 @media (min-width: 1350px) {
     .is-style-caption-left,
     .is-style-caption-right {
@@ -63,4 +63,4 @@
     .alignfull.is-style-caption-right > figcaption {
         text-align: right;
     }
-}
+} */
