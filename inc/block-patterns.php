@@ -13,8 +13,8 @@
 function frost_register_block_patterns() {
 
 	$block_pattern_categories = array(
-		'footer' => array( 'label' => __( 'Footer', 'nautilus' ) ),
-		'header' => array( 'label' => __( 'Header', 'nautilus' ) ),
+		'footer' => array( 'label' => __( 'Footers', 'nautilus' ) ),
+		'header' => array( 'label' => __( 'Headers', 'nautilus' ) ),
 		'page'   => array( 'label' => __( 'Page', 'nautilus' ) ),
 		'query'  => array( 'label' => __( 'Query', 'nautilus' ) ),
 	);
@@ -24,6 +24,8 @@ function frost_register_block_patterns() {
 	}
 
 	$block_patterns = array(
+		'footer-dark',
+		'footer-light',
         'header-dark',
 		'header-light',
 		'hidden-404',

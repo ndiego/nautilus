@@ -1,6 +1,6 @@
 <?php
 /**
- * Header default
+ * Header default - dark
  *
  * @package Nautilus
  */
