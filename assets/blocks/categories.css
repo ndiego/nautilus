@@ -44,6 +44,7 @@
 .wp-block-categories.is-style-horizontal.wp-block-categories-list,
 .wp-block-categories.is-style-horizontal .wp-block-categories__list {
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 /* The "Show hierarchy" option is not supported with the Horizontal style. */

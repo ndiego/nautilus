@@ -122,9 +122,10 @@ function nautilus_enqueue_core_block_styles() {
 
 	$blocks = array(
 		'archives',
-		'button',
+		'buttons',
 		'categories',
 		'code',
+		'columns',
 		'gallery',
 		'group',
 		'image',
@@ -132,6 +133,7 @@ function nautilus_enqueue_core_block_styles() {
 		'latest-comments',
 		'navigation',
 		'post-author',
+		'post-comments',
 		'post-comments-form',
 		'post-featured-image',
 		'post-terms',
@@ -161,3 +163,10 @@ require get_template_directory() . '/inc/block-patterns.php';
 
 // Add block styles.
 require get_template_directory() . '/inc/block-styles.php';
+
+// Customize the comments form.
+function nautilus_edit_comment_form_defaults( $defaults ) {
+	$defaults[ 'title_reply' ] = __( 'Share Your Thoughts', 'nautilus' );
+	return $defaults;
+}
+add_action( 'comment_form_defaults', 'nautilus_edit_comment_form_defaults' );

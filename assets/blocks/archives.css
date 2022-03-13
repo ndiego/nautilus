@@ -34,4 +34,5 @@ ul.wp-block-archives {
 --------------------------------------------- */
 .wp-block-archives.is-style-horizontal {
     flex-direction: row;
+    flex-wrap: wrap;
 }

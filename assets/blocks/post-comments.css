@@ -1,0 +1,130 @@
+/* Post Comments
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+.wp-block-post-comments .commentlist {
+    margin-bottom: calc(3 * var(--wp--style--block-gap));
+}
+
+.wp-block-post-comments .commentlist .comment {
+    padding-left: 1.75rem;
+    margin-top: var(--wp--style--block-gap);
+    margin-bottom: 0;
+}
+
+.wp-block-post-comments article {
+    padding: 2rem 2rem 2rem 2.75rem;
+    border: 1px solid var(--wp--preset--color--neutral-300);
+    border-radius: var(--wp--custom--border-radius--normal);
+}
+
+.wp-block-post-comments .comment-meta {
+    font-size: var(--wp--preset--font-size--tiny);
+    line-height: inherit;
+    margin-left: -4.5rem;
+}
+
+.wp-block-post-comments .comment-author .avatar {
+    border-radius: 1000px;
+    display: block;
+    float: left;
+    height: 3.5rem;
+    margin-right: 1rem;
+    margin-top: 0;
+    width: 3.5rem;
+}
+
+.wp-block-post-comments .comment-author b {
+    font-family: var(--wp--preset--font-family--primary);
+    font-size: calc(1.25 * var(--wp--preset--font-size--medium));
+    font-weight: 600;
+    color: var(--wp--preset--color--primary);
+}
+
+.wp-block-post-comments .comment-meta > *:not(.comment-author):not(.comment-metadata) {
+    margin-left: 4.5rem;
+}
+
+.wp-block-post-comments .comment-author .says {
+    display: none;
+}
+
+.wp-block-post-comments .comment-metadata {
+    font-family: var(--wp--preset--font-family--primary);
+    font-size: var(--wp--preset--font-size--tiny);
+    margin-top: 0.25rem;
+}
+
+/* The timestamp */
+.wp-block-post-comments .comment-metadata > a {
+    color: var(--wp--preset--color--primary-light);
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.wp-block-post-comments .comment-body > * {
+    margin-top: var(--wp--style--block-gap);
+}
+
+.wp-block-post-comments .comment-body > *:first-child {
+    margin-top: 0;
+}
+
+.wp-block-post-comments .comment-body .comment-content p {
+    font-size: var(--wp--preset--font-size--medium);
+    line-height: var(--wp--custom--typography--line-height--normal);
+    margin-top: var(--wp--style--block-gap);
+    margin-bottom: 0;
+}
+
+.wp-block-post-comments .comment-body .reply {
+    font-size: var(--wp--preset--font-size--medium);
+    margin-bottom: 0;
+}
+
+.wp-block-post-comments .comment-reply-title {
+    font-size: var(--wp--preset--font-size--large);
+    margin: 0;
+}
+
+.wp-block-post-comments .comment-reply-title small {
+    display: block;
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 400;
+    margin-top: 0.4rem;
+}
+
+.wp-block-post-comments input:not([type=submit]),
+.wp-block-post-comments textarea {
+    border: 1px solid var(--wp--preset--color--neutral-300);
+    border-radius: var(--wp--custom--border-radius--normal);
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments .comment-form-cookies-consent {
+    align-items: center;
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments .comment-form-cookies-consent #wp-comment-cookies-consent {
+    margin: 0 0.5rem 0 0;
+}
+
+.wp-block-post-comments .form-submit.wp-block-button {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+/*
+ * This styling should pull from the button styles that are conditionally loaded
+ * but they don't. Therefore we need to add the hover effect directly.
+ */
+.wp-block-post-comments .wp-block-button .wp-block-button__link:hover {
+    background-color: var(--wp--preset--color--primary-light) !important;
+}

@@ -395,8 +395,8 @@
                 },
                 "spacing": {
 					"margin": {
-						"top": "calc(2 * var(--wp--custom--spacing--gap))",
-						"bottom": "calc(2 * var(--wp--custom--spacing--gap))"
+						"top": "calc(1.5 * var(--wp--custom--spacing--gap))",
+						"bottom": "calc(1.5 * var(--wp--custom--spacing--gap))"
 					},
 					"padding": {
 						"top": "var(--wp--custom--spacing--gap)",
