@@ -14,7 +14,7 @@ ul.wp-block-archives {
 
 .wp-block-archives li {
     /* Due to the fact that we cannot style the post count separately */
-    color: var(--wp--preset--color--tertiary);
+    color: var(--wp--preset--color--neutral-500);
     list-style: none;
     /* We need added specificity here to counter our main theme list styles. */
     margin: 0 !important;
@@ -26,7 +26,7 @@ ul.wp-block-archives {
 
 .wp-block-archives a:hover {
     /* Due to the fact that we cannot style the post count separately */
-    color: var(--wp--preset--color--foreground);
+    color: var(--wp--preset--color--primary);
     text-decoration: underline;
 }
 

@@ -84,42 +84,42 @@
 				},
 				{
 					"slug": "primary-light",
-					"color": "#334155",
+					"color": "#475569",
 					"name": "Primary (Light)"
 				},
 				{
 					"slug": "primary-lighter",
-					"color": "#64748B",
+					"color": "#CBD5E1",
 					"name": "Primary (Lighter)"
 				},
 				{
 					"slug": "secondary",
-					"color": "#0b8082",
+					"color": "#0B8082",
 					"name": "Secondary"
 				},
 				{
 					"slug": "secondary-light",
-					"color": "#0A9499",
+					"color": "#05a9b2",
 					"name": "Secondary (Light)"
 				},
 				{
 					"slug": "secondary-lighter",
-					"color": "#e0f7f7",
+					"color": "#E0F7F7",
 					"name": "Secondary (Lighter)"
 				},
 				{
 					"slug": "tertiary",
-					"color": "#926d01",
+					"color": "#926D01",
 					"name": "Tertiary"
 				},
 				{
 					"slug": "tertiary-light",
-					"color": "#cdaf4b",
+					"color": "#CDAF4B",
 					"name": "Tertiary (Light)"
 				},
 				{
 					"slug": "tertiary-lighter",
-					"color": "#f5eccf",
+					"color": "#F5ECCF",
 					"name": "Tertiary (Lighter)"
 				},
 				{
@@ -129,12 +129,12 @@
 				},
 				{
 					"slug": "info",
-					"color": "#027ab6",
+					"color": "#027AB6",
 					"name": "Info"
 				},
 				{
 					"slug": "warning",
-					"color": "#b91c1c",
+					"color": "#B91C1C",
 					"name": "Warning"
 				},
 				{
@@ -144,17 +144,17 @@
 				},
 				{
 					"slug": "neutral-100",
-					"color": "#f3f4f6",
+					"color": "#F3F4F6",
 					"name": "Neutral (100)"
 				},
 				{
 					"slug": "neutral-300",
-					"color": "#d1d5db",
+					"color": "#D1D5DB",
 					"name": "Neutral (300)"
 				},
 				{
 					"slug": "neutral-500",
-					"color": "#6b7280",
+					"color": "#6B7280",
 					"name": "Neutral (500)"
 				},
 				{
@@ -294,12 +294,12 @@
 						},
 						{
 							"slug": "secondary",
-							"color": "#0b8082",
+							"color": "#0B8082",
 							"name": "Secondary"
 						},
 						{
 							"slug": "tertiary",
-							"color": "#926d01",
+							"color": "#926D01",
 							"name": "Tertiary"
 						},
 						{
@@ -309,17 +309,17 @@
 						},
 						{
 							"slug": "info",
-							"color": "#027ab6",
+							"color": "#027AB6",
 							"name": "Info"
 						},
 						{
 							"slug": "warning",
-							"color": "#b91c1c",
+							"color": "#B91C1C",
 							"name": "Warning"
 						},
 						{
 							"slug": "neutral",
-							"color": "#f9fafb",
+							"color": "#F9FAFB",
 							"name": "Neutral"
 						}
 					]

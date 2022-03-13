@@ -5,7 +5,7 @@
 --------------------------------------------- */
 
 .wp-block-latest-comments__comment-date {
-    color: var(--wp--preset--color--tertiary);
+    color: var(--wp--preset--color--primary-light);
     font-weight: 500;
     font-family: var(--wp--preset--font-family--primary);
     font-size: var(--wp--preset--font-size--tiny);

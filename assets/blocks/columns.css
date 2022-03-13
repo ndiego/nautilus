@@ -1,14 +1,14 @@
-/* Group
+/* Columns
 ----------------------------------------------------------------------------- */
 
 /* General Styles
 --------------------------------------------- */
 
 /*
- * Remove the auto-padding added to group blocks
+ * Remove the auto-padding added to columns blocks
  * with background colors applied.
  */
 
-.wp-block-group:where(.has-background) {
+.wp-block-columns:where(.has-background) {
     padding: 0;
 }

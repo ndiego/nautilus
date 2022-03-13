@@ -15,7 +15,7 @@
 
 .wp-block-latest-posts__post-author,
 .wp-block-latest-posts__post-date {
-    color: var(--wp--preset--color--tertiary);
+    color: var(--wp--preset--color--primary-light);
     display: inline-block;
     font-weight: 500;
     font-family: var(--wp--preset--font-family--primary);
