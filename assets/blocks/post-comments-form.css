@@ -17,7 +17,7 @@
 
 .wp-block-post-comments-form input:not([type=submit]),
 .wp-block-post-comments-form textarea {
-    border: 1px solid var(--wp--preset--color--borders);
+    border: 1px solid var(--wp--preset--color--neutral-300);
     border-radius: 4px;
     font-size: var(--wp--preset--font-size--small);
 }

@@ -7,7 +7,7 @@
 }
 
 .wp-block-quote {
-    border-left: 1px solid var(--wp--preset--color--borders);
+    border-left: 1px solid var(--wp--preset--color--neutral-300);
 }
 
 .wp-block-quote p {
@@ -15,7 +15,7 @@
 }
 
 .wp-block-quote cite {
-	color: var(--wp--preset--color--tertiary);
+	color: var(--wp--preset--color--primary-light);
     display: inline-block;
     font-weight: 500;
 	font-size: var(--wp--preset--font-size--tiny);

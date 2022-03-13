@@ -122,6 +122,7 @@ function nautilus_enqueue_core_block_styles() {
 
 	$blocks = array(
 		'archives',
+		'button',
 		'categories',
 		'code',
 		'gallery',

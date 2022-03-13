@@ -5,7 +5,7 @@
 --------------------------------------------- */
 
 .wp-block-image > figcaption {
-    color: var(--wp--preset--color--tertiary);
+    color: var(--wp--preset--color--primary-lighter);
     font-size: var(--wp--preset--font-size--small);
     margin-top: 1rem;
     margin-bottom: 0;

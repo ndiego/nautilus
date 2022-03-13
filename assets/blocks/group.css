@@ -4,5 +4,9 @@
  */
 
 .wp-block-group:where(.has-background) {
-        padding: 0;
+    padding: 0;
+}
+
+.wp-block-columns:where(.has-background) {
+    padding: 0;
 }

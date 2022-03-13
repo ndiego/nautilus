@@ -56,11 +56,11 @@ a:focus {
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
  */
-.wp-block-search__button:hover,
+/* .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
 	opacity: 0.80;
-}
+} */
 
 /*
  * Add subtle transition effects to links, buttons and input fields.
@@ -89,9 +89,9 @@ label {
 }
 
 select {
-	border: 1px solid var(--wp--preset--color--borders);
+	border: 1px solid var(--wp--preset--color--neutral-300);
 	border-radius: 4px;
-	color: var(--wp--preset--color--tertiary);
+	color: var(--wp--preset--color--primary-light);
 	min-height: 30px;
 	padding: 0 1.5rem 0 0.5rem;
 }
@@ -122,12 +122,12 @@ li:where(:not([class*='wp-block'])) ul {
  */
 *:not(.wp-block-code) > code,
 kbd {
-    background-color: var(--wp--preset--color--primary);
+    background-color: var(--wp--preset--color--neutral-100);
     border-radius: 4px;
-	color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--primary-light);
 	font-family: var(--wp--preset--font-family--monospace);
     font-size: var(--wp--preset--font-size--small);
-    padding: 0.3rem 0.5rem;
+    padding: 0.3rem 0.4rem;
     position: relative;
 }
 
@@ -145,7 +145,7 @@ kbd {
  * Custom color for the * indicator in forms.
  */
 span.required {
-	color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--accent);
 	font-weight: 600;
 }
 
@@ -161,27 +161,31 @@ span.required {
  * https://github.com/WordPress/gutenberg/issues/35884
  ---------------------------------------------------------------------------- */
 .wp-site-blocks,
-body > .is-root-container,
+.is-root-container,
 .edit-post-visual-editor__post-title-wrapper,
-.wp-block-group.alignfull,
-.wp-block-group.has-background,
+
+/* Need to check this, should almost always be a group */
+.wp-block-template-part > *,
+
+/* Add default padding to container blocks when aligned full */
 .wp-block-cover.alignfull,
-.is-root-container .wp-block[data-align="full"] > .wp-block-group,
-.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
+.wp-block-columns.alignfull,
+.wp-block-group.alignfull {
 	padding-left: var(--wp--custom--spacing--outer);
 	padding-right: var(--wp--custom--spacing--outer);
 }
 
 .wp-site-blocks .alignfull,
-.wp-site-blocks > .wp-block-group.has-background,
+/* .wp-site-blocks > .wp-block-group.has-background,
 .wp-site-blocks > .wp-block-cover,
 .wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
 .wp-site-blocks > .wp-block-template-part > .wp-block-cover,
 body > .is-root-container > .wp-block-group.has-background,
 body > .is-root-container > .wp-block-cover,
 body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
-body > .is-root-container > .wp-block-template-part > .wp-block-cover,
-.is-root-container .wp-block[data-align="full"] {
+body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
+.is-root-container.block-editor-block-list__layout > .wp-block-template-part,
+.is-root-container.block-editor-block-list__layout .alignfull {
 	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	width: unset;
@@ -190,18 +194,18 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 /*
  * Blocks inside columns don't have negative margins.
  */
-.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
-.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* .wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"], */
 
 /*
  * We also want to avoid stacking negative margins.
  */
-.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+/* .wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
 .is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
 	margin-left: auto !important;
 	margin-right: auto !important;
 	width: inherit;
-}
+} */
 
 /*
  * Responsive menu container padding.
@@ -241,6 +245,14 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 
 .relative {
         position: relative;
+}
+
+.opacity-50 {
+	opacity: 0.5 !important;
+}
+
+.opacity-20 {
+	opacity: 0.2 !important;
 }
 
 @media (min-width: 781px) {

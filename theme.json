@@ -20,16 +20,18 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
+			"defaultGradients": false,
+			"defaultPalette": false,
 			"duotone": [
 				{
-					"colors": [ "#0C1C31", "#f9f9f9" ],
-					"slug": "foreground-and-background",
-					"name": "Foreground and background"
+					"colors": [ "#0F172A", "#F9FAFB" ],
+					"slug": "primary-and-neutral",
+					"name": "Primary and Neutral"
 				},
 				{
-					"colors": [ "#f9f9f9", "#0C1C31" ],
+					"colors": [ "#F9FAFB", "#0F172A" ],
 					"slug": "background-and-foreground",
-					"name": "Background and foreground"
+					"name": "Neutral and Primary"
 				}
 			],
 			"gradients": [
@@ -76,34 +78,94 @@
 			],
             "palette":  [
 				{
-					"slug": "foreground",
-					"color": "#0C1C31",
-					"name": "Foreground"
-				},
-				{
-					"slug": "background",
-					"color": "#f9f9f9",
-					"name": "Background"
-				},
-				{
 					"slug": "primary",
-					"color": "#0A9499",
+					"color": "#0F172A",
 					"name": "Primary"
 				},
 				{
+					"slug": "primary-light",
+					"color": "#334155",
+					"name": "Primary (Light)"
+				},
+				{
+					"slug": "primary-lighter",
+					"color": "#64748B",
+					"name": "Primary (Lighter)"
+				},
+				{
 					"slug": "secondary",
-					"color": "#FF7700",
+					"color": "#0b8082",
 					"name": "Secondary"
 				},
 				{
+					"slug": "secondary-light",
+					"color": "#0A9499",
+					"name": "Secondary (Light)"
+				},
+				{
+					"slug": "secondary-lighter",
+					"color": "#e0f7f7",
+					"name": "Secondary (Lighter)"
+				},
+				{
 					"slug": "tertiary",
-					"color": "#6E6E7F",
+					"color": "#926d01",
 					"name": "Tertiary"
 				},
 				{
-					"slug": "borders",
-					"color": "#CACACA",
-					"name": "Borders"
+					"slug": "tertiary-light",
+					"color": "#cdaf4b",
+					"name": "Tertiary (Light)"
+				},
+				{
+					"slug": "tertiary-lighter",
+					"color": "#f5eccf",
+					"name": "Tertiary (Lighter)"
+				},
+				{
+					"slug": "accent",
+					"color": "#FF7700",
+					"name": "Accent"
+				},
+				{
+					"slug": "info",
+					"color": "#027ab6",
+					"name": "Info"
+				},
+				{
+					"slug": "warning",
+					"color": "#b91c1c",
+					"name": "Warning"
+				},
+				{
+					"slug": "neutral",
+					"color": "#F9FAFB",
+					"name": "Neutral"
+				},
+				{
+					"slug": "neutral-100",
+					"color": "#f3f4f6",
+					"name": "Neutral (100)"
+				},
+				{
+					"slug": "neutral-300",
+					"color": "#d1d5db",
+					"name": "Neutral (300)"
+				},
+				{
+					"slug": "neutral-500",
+					"color": "#6b7280",
+					"name": "Neutral (500)"
+				},
+				{
+					"slug": "neutral-700",
+					"color": "#374151",
+					"name": "Neutral (700)"
+				},
+				{
+					"slug": "neutral-900",
+					"color": "#111827",
+					"name": "Neutral (900)"
 				}
 			]
 		},
@@ -189,6 +251,89 @@
 		"layout": {
 			"contentSize": "720px",
 			"wideSize": "1200px"
+		},
+		"blocks": {
+			"core/code": {
+				"border": {
+					"color": false,
+					"radius": false,
+					"style": false,
+					"width": false
+				},
+				"color": {
+					"custom": false,
+					"customGradient": false,
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"padding": false
+				},
+				"typography": {
+					"customFontSize": false,
+		            "fontFamilies": [],
+		            "fontSizes": [],
+		            "fontStyle": false,
+		            "fontWeight": false,
+		            "letterSpacing": false,
+					"lineHeight": false,
+		            "textDecoration": false,
+		            "textTransform": false
+				}
+			},
+			"core/button": {
+				"color": {
+					"custom": false,
+					"customGradient": false,
+					"gradients": [],
+					"palette":  [
+						{
+							"slug": "primary",
+							"color": "#0F172A",
+							"name": "Primary"
+						},
+						{
+							"slug": "secondary",
+							"color": "#0b8082",
+							"name": "Secondary"
+						},
+						{
+							"slug": "tertiary",
+							"color": "#926d01",
+							"name": "Tertiary"
+						},
+						{
+							"slug": "accent",
+							"color": "#FF7700",
+							"name": "Accent"
+						},
+						{
+							"slug": "info",
+							"color": "#027ab6",
+							"name": "Info"
+						},
+						{
+							"slug": "warning",
+							"color": "#b91c1c",
+							"name": "Warning"
+						},
+						{
+							"slug": "neutral",
+							"color": "#f9fafb",
+							"name": "Neutral"
+						}
+					]
+				},
+				"border": {
+					"color": false,
+					"radius": false,
+					"style": false,
+					"width": false
+				},
+				"typography": {
+					"fontFamilies": []
+				}
+			}
 		}
 	},
 	"styles": {
@@ -204,12 +349,14 @@
 			},
 			"core/button": {
 				"border": {
+					"color": "transparent",
 					"radius": "var(--wp--custom--border-radius--normal)",
+					"style": "solid",
                     "width": "1px"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--foreground)",
-					"text": "var(--wp--preset--color--background)"
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--neutral)"
 				},
 				"spacing": {
 					"padding": {
@@ -243,15 +390,19 @@
 					"width": "0px"
                 },
                 "color": {
-                    "background": "var(--wp--preset--color--primary)",
-                    "text": "var(--wp--preset--color--background)"
+                    "background": "var(--wp--preset--color--neutral-100)",
+                    "text": "var(--wp--preset--color--primary-light)"
                 },
                 "spacing": {
+					"margin": {
+						"top": "calc(2 * var(--wp--custom--spacing--gap))",
+						"bottom": "calc(2 * var(--wp--custom--spacing--gap))"
+					},
 					"padding": {
-						"top": "2rem",
-						"right": "2rem",
-						"bottom": "2rem",
-						"left": "2rem"
+						"top": "var(--wp--custom--spacing--gap)",
+						"right": "var(--wp--custom--spacing--gap)",
+						"bottom": "var(--wp--custom--spacing--gap)",
+						"left": "var(--wp--custom--spacing--gap)"
 					}
 				},
                 "typography": {
@@ -339,8 +490,8 @@
 			}
 		},
 		"color": {
-			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--foreground)"
+			"background": "var(--wp--preset--color--neutral-light)",
+			"text": "var(--wp--preset--color--primary)"
 		},
 		"elements": {
 			"h1": {
@@ -394,7 +545,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--primary)"
+					"text": "var(--wp--preset--color--secondary)"
 				}
 			}
 		},
