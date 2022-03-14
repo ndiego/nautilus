@@ -183,7 +183,8 @@
 				}
 			},
             "border-radius": {
-                "normal": "4px"
+                "normal": "4px",
+				"round": "9999px"
             }
 		},
 		"spacing": {
@@ -436,6 +437,18 @@
                     "lineHeight": "var(--wp--custom--typography--line-height--small)"
                 }
             },
+			"core/pullquote": {
+				"border": {
+					"radius": "var(--wp--custom--border-radius--normal)",
+					"width": "0px"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--neutral-100)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)"
+				}
+			},
 			"core/page-list": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--primary)"

@@ -1,0 +1,16 @@
+/* Spacer
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+/*
+ * Enable true spacers (override blockGap)
+ */
+.wp-block-spacer {
+	margin-top: 0 !important;
+}
+
+.wp-block-spacer + * {
+	margin-top: 0 !important;
+}

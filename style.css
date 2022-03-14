@@ -254,10 +254,6 @@ p:last-child,
 	margin-top: 10px !important;
 } */
 
-.wp-block-spacer + * {
-	margin-top: 0 !important;
-}
-
 /*
  * Utility styles.
  * A couple utilities that are used throughout patterns and parts

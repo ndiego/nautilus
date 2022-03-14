@@ -1,0 +1,35 @@
+/* Pull Quote
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+/* We have to set the background directly due to bug. */
+.wp-block-pullquote {
+    background-color: var(--wp--preset--color--neutral-100) !important;
+    margin-bottom: 0;
+    padding: calc(2 * var(--wp--style--block-gap));
+}
+
+.wp-block-pullquote blockquote {
+    margin: 0;
+}
+
+.wp-block-pullquote p {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+/* Note the markup is not consistent between the Editor and frontend. */
+.wp-block-pullquote cite,
+.wp-block-pullquote .wp-block-pullquote__citation {
+    color: var(--wp--preset--color--primary-light);
+    display: inline-block;
+    font-weight: 500;
+    font-size: var(--wp--preset--font-size--small);
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-top: calc(1.5 * var(--wp--style--block-gap));
+    text-transform: uppercase;
+}

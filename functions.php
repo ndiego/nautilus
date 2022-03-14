@@ -137,11 +137,14 @@ function nautilus_enqueue_core_block_styles() {
 		'post-comments-form',
 		'post-featured-image',
 		'post-terms',
+		'pullquote',
 		'quote',
 		'rss',
 		'separator',
+		'spacer',
 		'site-title',
 		'tag-cloud',
+		'template-part',
 	);
 
 	foreach ( $blocks as $block ) {
