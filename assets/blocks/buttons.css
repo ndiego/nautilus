@@ -3,47 +3,34 @@
 
 /* Block Style: Filled
 --------------------------------------------- */
-.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
-.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-primary-background-color:hover {
-    background-color: var(--wp--preset--color--primary-light) !important;
-}
-
-.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-secondary-background-color:hover {
-    background-color: var(--wp--preset--color--secondary-light) !important;
-}
-
-.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-tertiary-background-color:hover {
-    background-color: var(--wp--preset--color--tertiary-light) !important;
-}
 
 /*
  * Accent, info, and warning colors do not have light variants, so just use
  * opacity.
  */
-.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-accent-background-color:hover {
-    background-color: var(--wp--preset--color--accent) !important;
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
     opacity: 0.8;
 }
 
-.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-info-background-color:hover {
-    background-color: var(--wp--preset--color--info) !important;
-    opacity: 0.8;
+.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-primary-background-color:hover {
+    background-color: var(--wp--preset--color--primary-light) !important;
+    opacity: 1;
 }
 
-.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-warning-background-color:hover {
-    background-color: var(--wp--preset--color--warning) !important;
-    opacity: 0.8;
+.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-secondary-background-color:hover {
+    background-color: var(--wp--preset--color--secondary-light) !important;
+    opacity: 1;
 }
 
-.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-warning-background-color:hover {
-    background-color: var(--wp--preset--color--warning) !important;
-    opacity: 0.8;
+.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-tertiary-background-color:hover {
+    background-color: var(--wp--preset--color--tertiary-light) !important;
+    opacity: 1;
 }
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-neutral-background-color:hover {
     background-color: var(--wp--preset--color--neutral-300) !important;
+    opacity: 1;
 }
-
 
 /* Block Style: Outline
 --------------------------------------------- */

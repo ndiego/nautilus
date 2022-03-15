@@ -284,7 +284,6 @@
 			},
 			"core/button": {
 				"color": {
-					"custom": false,
 					"customGradient": false,
 					"gradients": [],
 					"palette":  [
@@ -503,7 +502,7 @@
 			}
 		},
 		"color": {
-			"background": "var(--wp--preset--color--neutral-light)",
+			"background": "var(--wp--preset--color--neutral)",
 			"text": "var(--wp--preset--color--primary)"
 		},
 		"elements": {
