@@ -3,18 +3,13 @@
 	"customTemplates": [
 		{
 			"name": "blank",
-			"postTypes": [
-				"page",
-				"post"
-			],
+			"postTypes": [ "page", "post" ],
 			"title": "Blank"
 		},
 		{
-			"name": "no-title",
-			"postTypes": [
-				"page"
-			],
-			"title": "Page (No Title)"
+			"name": "page-has-title",
+			"postTypes": [ "page" ],
+			"title": "Page (Has Title)"
 		}
 	],
 	"settings": {
@@ -144,7 +139,7 @@
 				},
 				{
 					"slug": "neutral-100",
-					"color": "#F3F4F6",
+					"color": "#E5E7EB",
 					"name": "Neutral (100)"
 				},
 				{

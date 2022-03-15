@@ -124,7 +124,7 @@ li:where(:not([class*='wp-block'])) ul {
 kbd {
     background-color: var(--wp--preset--color--neutral-100);
     border-radius: 4px;
-	color: var(--wp--preset--color--primary-light);
+	color: var(--wp--preset--color--primary);
 	font-family: var(--wp--preset--font-family--monospace);
     font-size: var(--wp--preset--font-size--small);
     padding: 0.3rem 0.4rem;
@@ -229,23 +229,47 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
  * support blockGap (i.e. Column, Cover, Media & Text)
  */
 .wp-block-column > *,
-.wp-block-cover > *,
+.wp-block-cover .wp-block-cover__inner-container > *,
 .wp-block-media-text .wp-block-media-text__content > * {
 	margin-top: var(--wp--custom--spacing--gap);
 	margin-bottom: 0;
 }
 
 .wp-block-column > *:first-child,
-.wp-block-cover > *:first-child,
+.wp-block-cover .wp-block-cover__inner-container > *:first-child,
 .wp-block-media-text .wp-block-media-text__content > *:first-child {
 	margin-top: 0;
+}
+
+/*
+ * Visually separate the page/post title from the post content.
+ */
+.edit-post-visual-editor__post-title-wrapper {
+	background-color: #fff;
+	border-bottom: 1px solid #dddddd;
+    margin-top: 0;
+    margin-bottom: calc(2 * var(--wp--style--block-gap));
+	margin-bottom: 0;
+	padding-top: var(--wp--style--block-gap);
+    padding-bottom: var(--wp--style--block-gap);
+}
+
+.edit-post-visual-editor__post-title-wrapper h1 {
+	color: var(--wp--preset--color--primary);
+	font-size: var(--wp--preset--font-size--large);
+	text-align: center;
+}
+
+/* Add a little separation, but allow blocks with margin control to override. */
+.block-editor-block-list__layout.is-root-container > *:first-child {
+    margin-top: calc(2 * var(--wp--style--block-gap));
 }
 
 /*
  * Utility styles.
  * A couple utilities that are used throughout patterns and parts
  * where core does not support these functionalities.
- */
+ --------------------------------------------- */
 
 .my-0 {
 	margin-bottom: 0 !important;
