@@ -1,6 +1,6 @@
 /*
 Theme Name:        Nautilus
-Theme URI:         https://github.com/wordpress/twentytwentytwo/
+Theme URI:         https://github.com/ndiego/nautilus/
 Author:            Nick Diego
 Author URI:        https://www.nickdiego.com
 Description:       A block-based WordPress theme from 20,000 leagues under the sea.
@@ -225,34 +225,21 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
 --------------------------------------------- */
 
 /*
- * Remove bottom margin when blocks are placed in container blocks that do not
+ * Mock block spacing when blocks are placed in container blocks that do not
  * support blockGap (i.e. Column, Cover, Media & Text)
  */
-h1:last-child,
-h2:last-child,
-h3:last-child,
-h4:last-child,
-h5:last-child,
-h6:last-child,
-p:last-child,
-.wp-block-image:last-child {
+.wp-block-column > *,
+.wp-block-cover > *,
+.wp-block-media-text .wp-block-media-text__content > * {
+	margin-top: var(--wp--custom--spacing--gap);
 	margin-bottom: 0;
 }
 
-/* .is-root-container h1 + *,
-.is-root-container h2 + *,
-.is-root-container h3 + *,
-.is-root-container h4 + *,
-.is-root-container h5 + *,
-.is-root-container h6 + *,
-.wp-block-post-content h1 + *,
-.wp-block-post-content h2 + *,
-.wp-block-post-content h3 + *,
-.wp-block-post-content h4 + *,
-.wp-block-post-content h5 + *,
-.wp-block-post-content h6 + * {
-	margin-top: 10px !important;
-} */
+.wp-block-column > *:first-child,
+.wp-block-cover > *:first-child,
+.wp-block-media-text .wp-block-media-text__content > *:first-child {
+	margin-top: 0;
+}
 
 /*
  * Utility styles.

@@ -19,7 +19,7 @@
 --------------------------------------------- */
 
 .wp-block-separator.is-style-dots {
-    line-height: .25;
+    line-height: 0.25;
 }
 
 .wp-block-separator.is-style-dots:before {
@@ -34,7 +34,7 @@
 .wp-block-separator.is-style-waves {
     background-color: unset !important;
     border: 0;
-    height: 10px !important;
+    height: 12px !important;
     width: 100% !important;
 }
 
@@ -44,8 +44,8 @@
     display: block;
     height: 100%;
     width: 100%;
-    -webkit-mask-image: url( '../images/waves.svg' );
-    mask-image: url( '../images/waves.svg' );
+    -webkit-mask-image: url( '../images/waves-2px.svg' );
+    mask-image: url( '../images/waves-2px.svg' );
     -webkit-mask-position: center;
     mask-position: center;
     -webkit-mask-repeat: no-repeat;

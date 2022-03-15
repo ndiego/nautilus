@@ -24,10 +24,12 @@ function frost_register_block_patterns() {
 	}
 
 	$block_patterns = array(
-		'footer-dark',
-		'footer-light',
-        'header-dark',
-		'header-light',
+		'footer-basic',
+		'footer-primary',
+		'footer',
+        'header-basic',
+		'header-primary',
+		'header',
 		'hidden-404',
 	);
 

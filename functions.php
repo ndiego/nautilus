@@ -131,6 +131,7 @@ function nautilus_enqueue_core_block_styles() {
 		'image',
 		'latest-posts',
 		'latest-comments',
+		'media-text',
 		'navigation',
 		'post-author',
 		'post-comments',

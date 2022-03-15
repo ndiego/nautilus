@@ -8,8 +8,8 @@
 return array(
 	'title'      => __( 'Header with light background.', 'nautilus' ),
     'categories' => array( 'header' ),
-	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem"}}},"layout":{"inherit":true}} -->
-            <div class="wp-block-group alignfull" style="padding-top:1.5rem;padding-bottom:1.5rem">
+	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"}}},"layout":{"inherit":true}} -->
+            <div class="wp-block-group alignfull" style="padding-top:2rem;padding-bottom:2rem">
             <!-- wp:group {"align":"wide","layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->
             <div class="wp-block-group alignwide">
             <!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"flex","allowOrientation":false,"flexWrap":"nowrap"}} -->

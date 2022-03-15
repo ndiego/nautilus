@@ -1,0 +1,19 @@
+/* Media & Text
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+/* Improve spacing on Media & Text blocks. */
+.wp-block-media-text .wp-block-media-text__content {
+    padding: clamp(var(--wp--style--block-gap), 8%, calc(2*var(--wp--style--block-gap)));
+}
+
+
+/* Block Style: Remove Content Padding
+* (Not exposed in the UI. Useful when padding is controlled with group block.)
+--------------------------------------------- */
+
+.wp-block-media-text.is_style_no_content_margin .wp-block-media-text__content {
+    padding: 0;
+}
