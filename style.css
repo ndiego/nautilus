@@ -245,23 +245,23 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
  * Visually separate the page/post title from the post content.
  */
 .edit-post-visual-editor__post-title-wrapper {
+	align-items: center;
+	display: flex;
 	background-color: #fff;
 	border-bottom: 1px solid #dddddd;
     margin-top: 0;
-    margin-bottom: calc(2 * var(--wp--style--block-gap));
 	margin-bottom: 0;
-	padding-top: var(--wp--style--block-gap);
-    padding-bottom: var(--wp--style--block-gap);
+	min-height: 48px;
 }
 
 .edit-post-visual-editor__post-title-wrapper h1 {
 	color: var(--wp--preset--color--primary);
-	font-size: var(--wp--preset--font-size--large);
+	font-size: var(--wp--preset--font-size--medium);
 	text-align: center;
 }
 
 /* Add a little separation, but allow blocks with margin control to override. */
-.block-editor-block-list__layout.is-root-container:not(.edit-site-block-editor__block-list) > *:first-child {
+.block-editor-block-list__layout.is-root-container:not(.edit-site-block-editor__block-list) > *:first-child:not(.alignfull) {
     margin-top: calc(2 * var(--wp--style--block-gap));
 }
 
