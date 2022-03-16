@@ -261,7 +261,7 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
 }
 
 /* Add a little separation, but allow blocks with margin control to override. */
-.block-editor-block-list__layout.is-root-container > *:first-child {
+.block-editor-block-list__layout.is-root-container:not(.edit-site-block-editor__block-list) > *:first-child {
     margin-top: calc(2 * var(--wp--style--block-gap));
 }
 

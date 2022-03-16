@@ -59,8 +59,8 @@ return array(
             <!-- /wp:column --></div>
             <!-- /wp:columns -->
 
-			<!-- wp:separator {"color":"primary-light","align":"wide","className":"is-style-wide opacity-20"} -->
-			<hr class="wp-block-separator alignwide has-text-color has-background has-primary-light-background-color has-primary-light-color is-style-wide opacity-20"/>
+			<!-- wp:separator {"color":"neutral-300","align":"wide","className":"is-style-wide"} -->
+			<hr class="wp-block-separator alignwide has-text-color has-background has-neutral-300-background-color has-neutral-300-color is-style-wide"/>
 			<!-- /wp:separator -->
 
             <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"3rem"}}},"layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->
