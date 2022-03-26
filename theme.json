@@ -465,15 +465,6 @@
 					"radius": "var(--wp--custom--border-radius--normal)"
 				}
 			},
-			"core/quote": {
-				"spacing": {
-					"padding": {
-						"top": "0.5rem",
-						"bottom": "0.5rem",
-						"left": "2rem"
-					}
-				}
-			},
             "core/separator": {
                 "border": {
                     "width": "0 0 1px 0"

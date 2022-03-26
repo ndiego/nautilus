@@ -24,12 +24,13 @@
 /* Note the markup is not consistent between the Editor and frontend. */
 .wp-block-pullquote cite,
 .wp-block-pullquote .wp-block-pullquote__citation {
-    color: var(--wp--preset--color--primary-light);
+    color: currentColor;
     display: inline-block;
     font-weight: 500;
     font-size: var(--wp--preset--font-size--small);
     letter-spacing: 1px;
     line-height: 1;
     margin-top: calc(1.5 * var(--wp--style--block-gap));
+    opacity: .6;
     text-transform: uppercase;
 }

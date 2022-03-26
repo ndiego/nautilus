@@ -30,6 +30,9 @@ function nautilus_register_block_styles() {
         'core/post-terms' => array(
             'outline' => __( 'Outline', 'nautilus' ),
         ),
+        'core/quote' => array(
+            'fancy' => __( 'Fancy', 'nautilus' ),
+        ),
         'core/separator'  => array(
             'waves' => __( 'Waves', 'nautilus' ),
         ),
