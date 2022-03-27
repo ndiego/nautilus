@@ -242,6 +242,20 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
 }
 
 /*
+ * Give headings more blockGap when in post content.
+ */
+.is-root-container > h1:not(:first-child),
+.is-root-container > h2:not(:first-child),
+.is-root-container > h3:not(:first-child),
+.is-root-container > h4:not(:first-child),
+.wp-block-post-content > h1:not(:first-child),
+.wp-block-post-content > h2:not(:first-child),
+.wp-block-post-content > h3:not(:first-child),
+.wp-block-post-content > h4:not(:first-child) {
+	margin-top: calc(2 * var(--wp--custom--spacing--gap));
+}
+
+/*
  * Visually separate the page/post title from the post content.
  */
 .edit-post-visual-editor__post-title-wrapper {

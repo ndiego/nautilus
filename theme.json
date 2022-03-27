@@ -229,7 +229,7 @@
 				},
 				{
 					"name": "Large",
-					"size": "1.9rem",
+					"size": "2rem",
 					"slug": "large"
 				},
 				{
@@ -536,9 +536,9 @@
 			},
 			"h6": {
 				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)",
 					"fontWeight": "600",
-					"lineHeight": "var(--wp--custom--typography--line-height--normal)",
-					"fontSize": "var(--wp--preset--font-size--medium)"
+					"lineHeight": "var(--wp--custom--typography--line-height--normal)"
 				}
 			},
 			"link": {
