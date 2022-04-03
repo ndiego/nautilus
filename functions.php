@@ -115,10 +115,12 @@ function nautilus_get_font_face_styles() {
 }
 
 /**
- *
+ * Enqueue block styles.
  * Reference: https://make.wordpress.org/core/2021/12/15/using-multiple-stylesheets-per-block/
+ *
+ * @since 0.1.0
  */
-function nautilus_enqueue_core_block_styles() {
+function nautilus_enqueue_block_styles() {
 
 	$blocks = array(
 		'archives',
@@ -160,13 +162,74 @@ function nautilus_enqueue_core_block_styles() {
 		);
 	}
 }
-add_action( 'after_setup_theme', 'nautilus_enqueue_core_block_styles' );
+add_action( 'after_setup_theme', 'nautilus_enqueue_block_styles' );
 
-// Add block patterns.
-require get_template_directory() . '/inc/block-patterns.php';
+/**
+ * Registers block patterns and categories.
+ *
+ * @since 0.1.0
+ */
+function nautilus_register_block_pattern_categories() {
 
-// Add block styles.
-require get_template_directory() . '/inc/block-styles.php';
+	$block_pattern_categories = array(
+		'footer' => array( 'label' => __( 'Footers', 'nautilus' ) ),
+		'header' => array( 'label' => __( 'Headers', 'nautilus' ) ),
+		'page'   => array( 'label' => __( 'Page', 'nautilus' ) ),
+		'query'  => array( 'label' => __( 'Query', 'nautilus' ) ),
+	);
+
+	foreach ( $block_pattern_categories as $name => $properties ) {
+		register_block_pattern_category( $name, $properties );
+	}
+}
+add_action( 'init', 'nautilus_register_block_pattern_categories' );
+
+/**
+ * Register block styles.
+ *
+ * @since 0.1.0
+ */
+function nautilus_register_block_styles() {
+
+    $block_styles = array(
+        'core/archives' => array(
+            'horizontal' => __( 'Horizontal', 'nautilus' ),
+        ),
+        'core/categories' => array(
+            'horizontal' => __( 'Horizontal', 'nautilus' ),
+        ),
+        'core/image'      => array(
+            'caption-left'  => __( 'Caption Left', 'nautilus' ),
+            'caption-right' => __( 'Caption Right', 'nautilus' ),
+        ),
+        'core/gallery'    => array(
+            'caption-left'  => __( 'Caption Left', 'nautilus' ),
+            'caption-right' => __( 'Caption Right', 'nautilus' ),
+        ),
+        'core/post-terms' => array(
+            'outline' => __( 'Outline', 'nautilus' ),
+        ),
+        'core/quote' => array(
+            'fancy' => __( 'Fancy', 'nautilus' ),
+        ),
+        'core/separator'  => array(
+            'waves' => __( 'Waves', 'nautilus' ),
+        ),
+    );
+
+    foreach( $block_styles as $block => $styles ) {
+        foreach ( $styles as $style_name => $style_label ) {
+            register_block_style(
+                $block,
+                array(
+                    'name'  => $style_name,
+                    'label' => $style_label,
+                )
+            );
+        }
+    }
+}
+add_action( 'init', 'nautilus_register_block_styles' );
 
 // Customize the comments form.
 function nautilus_edit_comment_form_defaults( $defaults ) {
