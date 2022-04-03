@@ -13,7 +13,7 @@ A WordPress block theme from 20,000 leagues under the sea.
 
 == Changelog ==
 
-= 0.1.0 =
+= 0.1.0 - TBD =
 * Initial development release
 
 == Copyright ==
@@ -33,4 +33,13 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-Block Pattern Images:
+Source Sans Font
+Source Serif Font
+Copyright 2014-2022 Adobe (http://www.adobe.com/)
+License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
+Source: https://github.com/adobe-fonts/source-sans
+
+Source Serif Font
+Copyright 2014-2022 Adobe (http://www.adobe.com/)
+License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
+Source: https://github.com/adobe-fonts/source-serif
