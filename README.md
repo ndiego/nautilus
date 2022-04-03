@@ -1,2 +1,2 @@
-![Nautilus Banner](https://user-images.githubusercontent.com/4832319/161444502-33ac9d46-1902-4021-aba6-e4289b2b2581.png)
+![Nautilus Banner](https://user-images.githubusercontent.com/4832319/161444681-94fec962-ac81-453d-a08e-8b91e84c6586.png)
 
