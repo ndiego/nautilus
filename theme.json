@@ -15,6 +15,7 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
+			"defaultDuotone": false,
 			"defaultGradients": false,
 			"defaultPalette": false,
 			"duotone": [
@@ -25,50 +26,28 @@
 				},
 				{
 					"colors": [ "#F9FAFB", "#0F172A" ],
-					"slug": "background-and-foreground",
+					"slug": "neutral-and-primary",
 					"name": "Neutral and Primary"
-				}
-			],
-			"gradients": [
-				{
-					"slug": "vertical-secondary-to-tertiary",
-					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--tertiary) 100%)",
-					"name": "Vertical secondary to tertiary"
 				},
 				{
-					"slug": "vertical-secondary-to-background",
-					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--background) 100%)",
-					"name": "Vertical secondary to background"
+					"colors": [ "#0B8082", "#F9FAFB" ],
+					"slug": "secondary-and-neutral",
+					"name": "Secondary and Neutral"
 				},
 				{
-					"slug": "vertical-tertiary-to-background",
-					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--tertiary) 0%,var(--wp--preset--color--background) 100%)",
-					"name": "Vertical tertiary to background"
+					"colors": [ "#F9FAFB", "#0B8082" ],
+					"slug": "neutral-and-secondary",
+					"name": "Neutral and Secondary"
 				},
 				{
-					"slug": "diagonal-primary-to-primary",
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--primary) 0%,var(--wp--preset--color--primary) 100%)",
-					"name": "Diagonal primary to primary"
+					"colors": [ "#926D01", "#F9FAFB" ],
+					"slug": "tertiary-and-neutral",
+					"name": "Tertiary and Neutral"
 				},
 				{
-					"slug": "diagonal-secondary-to-background",
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--secondary) 50%,var(--wp--preset--color--background) 50%)",
-					"name": "Diagonal secondary to background"
-				},
-				{
-					"slug": "diagonal-background-to-secondary",
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--background) 50%,var(--wp--preset--color--secondary) 50%)",
-					"name": "Diagonal background to secondary"
-				},
-				{
-					"slug": "diagonal-tertiary-to-background",
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--tertiary) 50%,var(--wp--preset--color--background) 50%)",
-					"name": "Diagonal tertiary to background"
-				},
-				{
-					"slug": "diagonal-background-to-tertiary",
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--background) 50%,var(--wp--preset--color--tertiary) 50%)",
-					"name": "Diagonal background to tertiary"
+					"colors": [ "#F9FAFB", "#926D01" ],
+					"slug": "neutral-and-tertiary",
+					"name": "Neutral and Tertiary"
 				}
 			],
             "palette":  [
@@ -183,14 +162,7 @@
             }
 		},
 		"spacing": {
-			"units": [
-				"%",
-				"px",
-				"em",
-				"rem",
-				"vh",
-				"vw"
-			]
+			"units": [ "%", "px", "rem" ]
 		},
 		"typography": {
 			"dropCap": false,
