@@ -19,7 +19,6 @@
 		<p class="has-primary-font-family has-primary-light-color has-text-color has-small-font-size">© 2022 Outermost, LLC.</p>
 		<!-- /wp:paragraph -->
 
-		<!-- /wp:social-links -->
 		<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","justifyContent":"left","orientation":"horizontal","flexWrap":"nowrap"},"fontSize":"small"} -->
 			<!-- wp:navigation-link {"label":"Terms","url":"#"} /-->
 			<!-- wp:navigation-link {"label":"Privacy","url":"#"} /-->

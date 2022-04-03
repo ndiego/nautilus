@@ -548,7 +548,11 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "var(--wp--custom--spacing--gap)"
+			"blockGap": "var(--wp--custom--spacing--gap)",
+			"padding": {
+				"right": "var(--wp--custom--spacing--gap)",
+				"left": "var(--wp--custom--spacing--gap)"
+			}
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--primary)",

@@ -74,8 +74,8 @@
 	</div>
 	<!-- /wp:columns -->
 
-	<!-- wp:separator {"color":"neutral","align":"wide","className":"is-style-wide opacity-20"} -->
-	<hr class="wp-block-separator alignwide has-text-color has-background has-neutral-background-color has-neutral-color is-style-wide opacity-20"/>
+	<!-- wp:separator {"style":{"color":{"background":"#f9fafb1a"}},"className":"alignwide is-style-wide"} -->
+	<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background alignwide is-style-wide" style="background-color:#f9fafb1a;color:#f9fafb1a"/>
 	<!-- /wp:separator -->
 
 	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"3rem"}}},"layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->

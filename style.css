@@ -3,7 +3,7 @@ Theme Name:        Nautilus
 Theme URI:         https://github.com/ndiego/nautilus/
 Author:            Nick Diego
 Author URI:        https://www.nickdiego.com
-Description:       A block-based WordPress theme from 20,000 leagues under the sea.
+Description:       A WordPress block theme from 20,000 leagues under the sea.
 Requires at least: 5.9
 Tested up to:      5.9
 Requires PHP:      5.6
@@ -11,7 +11,6 @@ Version:           0.1.0
 License:           GNU General Public License v2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:       nautilus
-Tags:              one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
 */
 
 /* Defaults
@@ -50,30 +49,6 @@ a:hover,
 a:focus {
 	color: currentColor;
 }
-
-/*
- * Button hover styles.
- * Necessary until the following issue is resolved in Gutenberg:
- * https://github.com/WordPress/gutenberg/issues/27075
- */
-/* .wp-block-search__button:hover,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-button__link:hover {
-	opacity: 0.80;
-} */
-
-/*
- * Add subtle transition effects to links, buttons and input fields.
- */
-/* a,
-button,
-input:focus,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-textarea:focus {
-    transition: all 0.2s ease-in-out;
-} */
 
 /*
  * Custom styles for form inputs, textareas and labels.
@@ -160,32 +135,38 @@ span.required {
  * https://github.com/WordPress/gutenberg/issues/35607
  * https://github.com/WordPress/gutenberg/issues/35884
  ---------------------------------------------------------------------------- */
-.wp-site-blocks,
-.is-root-container,
-.edit-post-visual-editor__post-title-wrapper,
 
-/* Need to check this, should almost always be a group */
-.wp-block-template-part > *,
-
-/* Add default padding to container blocks when aligned full */
+/*
+ * Default "site" left/right padding is set in theme.json, but we want to mock
+ * it by default on full width blocks.
+ */
 .wp-block-cover.alignfull,
 .wp-block-columns.alignfull,
-.wp-block-group.alignfull {
+.wp-block-group.alignfull,
+
+/*
+ * We also need to mock this in the Editor for template parts. This is needed
+ * becaause alignfull blocks are not rendered in the Editor when placed in a
+ * template part block.
+ */
+.is-root-container.block-editor-block-list__layout > .wp-block-template-part > * {
 	padding-left: var(--wp--custom--spacing--outer);
 	padding-right: var(--wp--custom--spacing--outer);
 }
 
+/*
+ * For full width blocks, we need to override the "site" padding so the blocks
+ * are actually full width.
+ */
 .wp-site-blocks .alignfull,
-/* .wp-site-blocks > .wp-block-group.has-background,
-.wp-site-blocks > .wp-block-cover,
-.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
-.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
-body > .is-root-container > .wp-block-group.has-background,
-body > .is-root-container > .wp-block-cover,
-body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
-body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
-.is-root-container.block-editor-block-list__layout > .wp-block-template-part,
-.is-root-container.block-editor-block-list__layout .alignfull {
+.is-root-container.block-editor-block-list__layout .alignfull,
+
+/*
+ * Template parts at the root level need to be "full width" even though parts do
+ * not technically support alignment control (yet). This is only needed for the
+ * Editor because on the frontend, alignfull is rendered for the inner blocks.
+ */
+.is-root-container.block-editor-block-list__layout > .wp-block-template-part {
 	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	width: unset;
@@ -194,18 +175,18 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
 /*
  * Blocks inside columns don't have negative margins.
  */
-/* .wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
-.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"], */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container.block-editor-block-list__layout .wp-block-columns .wp-block-column .alignfull,
 
 /*
  * We also want to avoid stacking negative margins.
  */
-/* .wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
-.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container.block-editor-block-list__layout .alignfull:not(.wp-block-group) .alignfull {
 	margin-left: auto !important;
 	margin-right: auto !important;
 	width: inherit;
-} */
+}
 
 /*
  * Responsive menu container padding.
@@ -214,15 +195,15 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
  * the Block Editor in the future.
  */
 .wp-block-navigation__responsive-container.is-menu-open {
-	padding-top: var(--wp--custom--spacing--outer);
-	padding-bottom: var(--wp--custom--spacing--large);
+	padding: var(--wp--custom--spacing--outer);
+	padding-bottom: calc(2 * var(--wp--custom--spacing--outer));
 	padding-right: var(--wp--custom--spacing--outer);
 	padding-left: var(--wp--custom--spacing--outer);
 }
 
 
 /* Experimental Styles
---------------------------------------------- */
+----------------------------------------------------------------------------- */
 
 /*
  * Mock block spacing when blocks are placed in container blocks that do not
@@ -281,29 +262,22 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
 
 /*
  * Utility styles.
- * A couple utilities that are used throughout patterns and parts
- * where core does not support these functionalities.
- --------------------------------------------- */
+ * A couple utilities that are used throughout patterns and parts where core
+ * does not support these functionalities.
+----------------------------------------------------------------------------- */
 
 .my-0 {
 	margin-bottom: 0 !important;
 	margin-top: 0 !important;
 }
 
-.mt-0 {
-        margin-top: 0 !important;
-}
-
+.mt-0,
 .mt-0 .wp-block-post-template {
-        margin-top: 0 !important;
+    margin-top: 0 !important;
 }
 
 .items-start {
 	align-items: flex-start !important;
-}
-
-.relative {
-        position: relative;
 }
 
 .opacity-50 {
@@ -325,7 +299,6 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover, */
 		display: none !important;
 	}
 }
-
 
 @media (max-width: 599px) {
 	.hide-on-mobile {
