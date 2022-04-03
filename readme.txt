@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A block-based WordPress theme from 20,000 leagues under the sea.
+A WordPress block theme from 20,000 leagues under the sea.
 
 == Changelog ==
 
@@ -18,7 +18,7 @@ A block-based WordPress theme from 20,000 leagues under the sea.
 
 == Copyright ==
 
-Nautilus WordPress Theme, 2021 Nick Diego
+Nautilus WordPress Theme, 2022 Nick Diego
 Nautilus is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
