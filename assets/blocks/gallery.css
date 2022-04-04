@@ -16,15 +16,13 @@
 }
 
 .wp-block-gallery > figcaption {
-    color: var(--wp--preset--color--secondary);
+    color: var(--wp--preset--color--primary-light);
     font-size: var(--wp--preset--font-size--small);
-    margin-top: 1rem;
-    margin-bottom: 0;
 }
 
 /* Block Style: Caption right/left
----------------------------------------------
-@media (min-width: 1350px) {
+--------------------------------------------- */
+/* @media (min-width: 1350px) {
     .is-style-caption-left,
     .is-style-caption-right {
         position: relative;
@@ -48,9 +46,7 @@
         text-align: right;
     }
 
-    [data-align="full"] > .is-style-caption-right > figcaption,
     .alignfull.is-style-caption-right > figcaption,
-    [data-align="full"] > .is-style-caption-left > figcaption,
     .alignfull.is-style-caption-left > figcaption {
         max-width: unset;
         padding-left: var(--wp--style--block-gap);
@@ -59,7 +55,6 @@
         text-align: left;
     }
 
-    [data-align="full"] > .is-style-caption-right > figcaption,
     .alignfull.is-style-caption-right > figcaption {
         text-align: right;
     }

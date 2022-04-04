@@ -4,6 +4,10 @@
 /* General Styles
 --------------------------------------------- */
 
+.wp-block-image {
+    line-height: 0;
+}
+
 .wp-block-image > figcaption {
     color: var(--wp--preset--color--primary-light);
     font-size: var(--wp--preset--font-size--small);
