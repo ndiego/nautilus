@@ -12,7 +12,9 @@
 /*
  * Fixes bug when a block is aligned left/right in Groups.
  * Reference: https://github.com/WordPress/gutenberg/issues/39344
+ *
+ * This causes issues with fullWidth groups, so removing for now.
  */
-.wp-block-group {
-    overflow: auto;
-}
+/* .wp-block-group {
+    overflow-x: auto;
+} */
