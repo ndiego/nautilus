@@ -198,14 +198,14 @@ function nautilus_register_block_styles() {
         'core/categories' => array(
             'horizontal' => __( 'Horizontal', 'nautilus' ),
         ),
-        'core/image'      => array(
-            'caption-left'  => __( 'Caption Left', 'nautilus' ),
-            'caption-right' => __( 'Caption Right', 'nautilus' ),
-        ),
-        'core/gallery'    => array(
-            'caption-left'  => __( 'Caption Left', 'nautilus' ),
-            'caption-right' => __( 'Caption Right', 'nautilus' ),
-        ),
+        // 'core/image'      => array(
+        //     'caption-left'  => __( 'Caption Left', 'nautilus' ),
+        //     'caption-right' => __( 'Caption Right', 'nautilus' ),
+        // ),
+        // 'core/gallery'    => array(
+        //     'caption-left'  => __( 'Caption Left', 'nautilus' ),
+        //     'caption-right' => __( 'Caption Right', 'nautilus' ),
+        // ),
         'core/post-terms' => array(
             'outline' => __( 'Outline', 'nautilus' ),
         ),
