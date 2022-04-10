@@ -162,6 +162,11 @@ span.required {
 .is-root-container.block-editor-block-list__layout .alignfull,
 
 /*
+ * Need to correct the post title editor.
+ */
+.edit-post-visual-editor__post-title-wrapper,
+
+/*
  * Template parts at the root level need to be "full width" even though parts do
  * not technically support alignment control (yet). This is only needed for the
  * Editor because on the frontend, alignfull is rendered for the inner blocks.
