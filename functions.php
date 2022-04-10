@@ -143,6 +143,7 @@ function nautilus_enqueue_block_styles() {
 		'pullquote',
 		'quote',
 		'rss',
+		'search',
 		'separator',
 		'spacer',
 		'site-title',
