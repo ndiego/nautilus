@@ -3,6 +3,7 @@
  * Title: 404 error content, but with tentacles.
  * Slug: nautilus/404-tentacles
  * Categories: page
+ * Inserter: false
  */
 
 ?>

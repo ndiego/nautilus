@@ -3,6 +3,7 @@
  * Title: 404 error content.
  * Slug: nautilus/404
  * Categories: page
+ * Inserter: false
  */
 
 ?>
