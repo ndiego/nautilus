@@ -170,12 +170,44 @@
 				{
 					"fontFamily": "\"Source Sans\",sans-serif",
 					"name": "Source Sans",
-					"slug": "primary"
+					"slug": "primary",
+					"fontFace": [
+						{
+							"fontFamily": "Source Sans",
+							"fontWeight": "200 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans/SourceSans3VF-Roman.ttf.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans",
+							"fontWeight": "200 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans/SourceSans3VF-Italic.ttf.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "\"Source Serif\",serif",
 					"name": "Source Serif",
-					"slug": "secondary"
+					"slug": "secondary",
+					"fontFace": [
+						{
+							"fontFamily": "Source Serif",
+							"fontWeight": "200 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif/SourceSerif4Variable-Roman.ttf.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif",
+							"fontWeight": "200 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif/SourceSerif4Variable-Italic.ttf.woff2" ]
+						}
+					]
 				},
                 {
                     "fontFamily": "Menlo,Consolas,monaco,monospace",
@@ -340,6 +372,11 @@
 					"letterSpacing": "0.5px",
 					"lineHeight": "var(--wp--custom--typography--line-height--tiny)",
 					"textTransform": "uppercase"
+				}
+			},
+			"core/buttons": {
+				"spacing": {
+					"blockGap": "4rem"
 				}
 			},
 			"core/categories": {

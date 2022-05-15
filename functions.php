@@ -41,9 +41,6 @@ function nautilus_styles() {
 		wp_get_theme()->get( 'Version' ),
 	);
 
-	// Add styles inline.
-	wp_add_inline_style( 'nautilus-styles', nautilus_get_font_face_styles() );
-
 	// Enqueue theme stylesheet.
 	wp_enqueue_style( 'nautilus-styles' );
 
@@ -57,9 +54,6 @@ add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
  */
 function nautilus_editor_styles() {
 
-	// Add our font styles inline.
-	wp_add_inline_style( 'wp-block-library', nautilus_get_font_face_styles() );
-
 	// WordPress core block styles can only be unregistered using JavaScript.
 	wp_enqueue_script(
 		'nautilus-unregister-block-styles',
@@ -70,49 +64,6 @@ function nautilus_editor_styles() {
 	);
 }
 add_action( 'admin_init', 'nautilus_editor_styles' );
-
-/**
- * Get font face styles.
- * Called by functions nautilus_styles() and nautilus_editor_styles() above.
- *
- * @return string
- */
-function nautilus_get_font_face_styles() {
-
-	return "
-	@font-face{
-		font-family: 'Source Serif';
-		font-weight: 200 900;
-		font-style: normal;
-		font-stretch: normal;
-		src: url('" . get_theme_file_uri( 'assets/fonts/source-serif/SourceSerif4Variable-Roman.ttf.woff2' ) . "') format('woff2');
-	}
-
-	@font-face{
-		font-family: 'Source Serif';
-		font-weight: 200 900;
-		font-style: italic;
-		font-stretch: normal;
-		src: url('" . get_theme_file_uri( 'assets/fonts/source-serif/SourceSerif4Variable-Italic.ttf.woff2' ) . "') format('woff2');
-	}
-
-    @font-face{
-        font-family: 'Source Sans';
-        font-weight: 200 900;
-        font-style: normal;
-        font-stretch: normal;
-        src: url('" . get_theme_file_uri( 'assets/fonts/source-sans/SourceSans3VF-Roman.ttf.woff2' ) . "') format('woff2');
-    }
-
-    @font-face{
-        font-family: 'Source Sans';
-        font-weight: 200 900;
-        font-style: italic;
-        font-stretch: normal;
-        src: url('" . get_theme_file_uri( 'assets/fonts/source-sans/SourceSans3VF-Italic.ttf.woff2' ) . "') format('woff2');
-    }
-	";
-}
 
 /**
  * Enqueue block styles.
@@ -238,3 +189,32 @@ function nautilus_edit_comment_form_defaults( $defaults ) {
 	return $defaults;
 }
 add_action( 'comment_form_defaults', 'nautilus_edit_comment_form_defaults' );
+
+
+function myplugin_register_template() {
+    $post_type_object = get_post_type_object( 'post' );
+    $post_type_object->template = array(
+		array( 'core/pattern', array(
+			'slug' => 'nautilus/post',
+		) ),
+    );
+}
+add_action( 'init', 'myplugin_register_template' );
+
+//
+// function myplugin_register_book_post_type() {
+//     $args = array(
+//         'public' => true,
+//         'label'  => 'Books',
+//         'show_in_rest' => true,
+//         'template' => array(
+//             array( 'core/pattern', array(
+//                 'slug' => 'nautilus/post',
+//             ) ),
+//         ),
+// 		'hierarchical'  => true,
+// 		'supports'      => array( 'title', 'editor', 'page-attributes' ),
+//     );
+//     register_post_type( 'book', $args );
+// }
+// add_action( 'init', 'myplugin_register_book_post_type' );
