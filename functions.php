@@ -66,52 +66,43 @@ function nautilus_editor_styles() {
 add_action( 'admin_init', 'nautilus_editor_styles' );
 
 /**
- * Enqueue block styles.
+ * Enqueue individual block stylesheets.
  * Reference: https://make.wordpress.org/core/2021/12/15/using-multiple-stylesheets-per-block/
  *
  * @since 0.1.0
  */
 function nautilus_enqueue_block_styles() {
 
-	$blocks = array(
-		'archives',
-		'buttons',
-		'categories',
-		'code',
-		'columns',
-		'gallery',
-		'group',
-		'image',
-		'latest-posts',
-		'latest-comments',
-		'media-text',
-		'navigation',
-		'post-author',
-		'post-comments',
-		'post-comments-form',
-		'post-featured-image',
-		'post-terms',
-		'pullquote',
-		'quote',
-		'rss',
-		'search',
-		'separator',
-		'spacer',
-		'site-title',
-		'tag-cloud',
-		'template-part',
+	// Get all available block types.
+	$block_types = glob( dirname( __FILE__ ) . '/assets/blocks/*/' );
+	$block_types = array_map(
+		function( $type_path ) { return basename( $type_path ); },
+		$block_types
 	);
 
-	foreach ( $blocks as $block ) {
-		// Enqueue asset per block.
-		wp_enqueue_block_style(
-			'core/' . $block,
-			array(
-				'handle' => 'nautilus-core-' . $block . '-styles',
-				'src'    => get_theme_file_uri( 'assets/blocks/' . $block . '.css' ),
-				'path'   => get_theme_file_path( 'assets/blocks/' . $block . '.css' ), // Add "path" to allow inlining asset.
-			),
+	foreach ( $block_types as $block_type ) {
+
+		// Get all available block styles of the given block type.
+		$block_styles = glob( dirname( __FILE__ ) . '/assets/blocks/' . $block_type . '/*.css' );
+		$block_styles = array_map(
+			function( $styles_path ) { return basename( $styles_path, '.css' ); },
+			$block_styles
 		);
+
+		foreach ( $block_styles as $block_style ) {
+
+			// Enqueue individual block stylesheets.
+			wp_enqueue_block_style(
+				$block_type . '/' . $block_style,
+				array(
+					'handle' => 'example-theme-' . $block_type . '-' . $block_style . '-styles',
+					'src'    => get_theme_file_uri( 'assets/blocks/' . $block_type . '/' . $block_style . '.css' ),
+
+					// Add "path" to allow inlining of block styles when possible.
+					'path'   => get_theme_file_path( 'assets/blocks/' . $block_type . '/' . $block_style . '.css' ),
+				),
+			);
+		}
 	}
 }
 add_action( 'after_setup_theme', 'nautilus_enqueue_block_styles' );
@@ -191,15 +182,15 @@ function nautilus_edit_comment_form_defaults( $defaults ) {
 add_action( 'comment_form_defaults', 'nautilus_edit_comment_form_defaults' );
 
 
-function myplugin_register_template() {
-    $post_type_object = get_post_type_object( 'post' );
-    $post_type_object->template = array(
-		array( 'core/pattern', array(
-			'slug' => 'nautilus/post',
-		) ),
-    );
-}
-add_action( 'init', 'myplugin_register_template' );
+// function myplugin_register_template() {
+//     $post_type_object = get_post_type_object( 'post' );
+//     $post_type_object->template = array(
+// 		array( 'core/pattern', array(
+// 			'slug' => 'nautilus/post',
+// 		) ),
+//     );
+// }
+// add_action( 'init', 'myplugin_register_template' );
 
 //
 // function myplugin_register_book_post_type() {
