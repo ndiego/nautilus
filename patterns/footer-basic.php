@@ -1,14 +1,19 @@
 <?php
 /**
- * Title: Footer with light background.
+ * Title: Basic footer with no background color.
  * Slug: nautilus/footer-basic
  * Categories: footer
+ * Block Types: core/template-part/footer
  * Viewport Width: 1296
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"3rem"}}},"layout":{"inherit":true}} -->
-<div class="wp-block-group alignfull" style="margin-top:3rem">
+<!-- wp:group {"align":"full","layout":{"inherit":true}} -->
+<div class="wp-block-group alignfull">
+	<!-- wp:spacer {"height":"3rem"} -->
+	<div style="height:3rem" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
 	<!-- wp:separator {"color":"neutral-300","align":"wide","className":"is-style-wide"} -->
 	<hr class="wp-block-separator alignwide has-text-color has-background has-neutral-300-background-color has-neutral-300-color is-style-wide"/>
 	<!-- /wp:separator -->

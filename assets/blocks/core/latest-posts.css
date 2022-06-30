@@ -5,7 +5,7 @@
 --------------------------------------------- */
 
 .wp-block-latest-posts__featured-image img {
-    border-radius: var(--wp--custom--border-radius--normal);
+    border-radius: var(--wp--custom--border-radius--default);
 }
 
 /* The post title is missing a class so need to target this way. */

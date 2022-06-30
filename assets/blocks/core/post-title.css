@@ -1,0 +1,16 @@
+/* Post Title
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+.editor-styles-wrapper .wp-block-post-title a,
+.wp-block-post-title a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+.editor-styles-wrapper .wp-block-post-title a:hover,
+.wp-block-post-title a:hover {
+    color: var(--wp--preset--color--secondary);
+}

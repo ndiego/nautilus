@@ -17,7 +17,7 @@
 .wp-block-post-comments article {
     padding: 2rem 2rem 2rem 2.75rem;
     border: 1px solid var(--wp--preset--color--neutral-300);
-    border-radius: var(--wp--custom--border-radius--normal);
+    border-radius: var(--wp--custom--border-radius--default);
 }
 
 .wp-block-post-comments .comment-meta {
@@ -103,7 +103,7 @@
 .wp-block-post-comments input:not([type=submit]),
 .wp-block-post-comments textarea {
     border: 1px solid var(--wp--preset--color--neutral-300);
-    border-radius: var(--wp--custom--border-radius--normal);
+    border-radius: var(--wp--custom--border-radius--default);
     font-size: var(--wp--preset--font-size--small);
 }
 

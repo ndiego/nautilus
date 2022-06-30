@@ -1,8 +1,9 @@
 <?php
 /**
- * Title: Footer with dark background.
+ * Title: Footer with primary background color.
  * Slug: nautilus/footer-primary
  * Categories: footer
+ * Block Types: core/template-part/footer
  * Viewport Width: 1296
  */
 

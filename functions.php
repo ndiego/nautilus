@@ -95,7 +95,7 @@ function nautilus_enqueue_block_styles() {
 			wp_enqueue_block_style(
 				$block_type . '/' . $block_style,
 				array(
-					'handle' => 'example-theme-' . $block_type . '-' . $block_style . '-styles',
+					'handle' => 'nautilus-theme-' . $block_type . '-' . $block_style . '-styles',
 					'src'    => get_theme_file_uri( 'assets/blocks/' . $block_type . '/' . $block_style . '.css' ),
 
 					// Add "path" to allow inlining of block styles when possible.
@@ -106,6 +106,16 @@ function nautilus_enqueue_block_styles() {
 	}
 }
 add_action( 'after_setup_theme', 'nautilus_enqueue_block_styles' );
+
+/**
+ * Increase inline style limit to 50kb.
+ *
+ * @since 0.1.0
+ */
+function nautilus_increase_inline_size_limit() {
+	return 5000; // Size in bytes.
+}
+//add_filter( 'styles_inline_size_limit', 'nautilus_increase_inline_size_limit' );
 
 /**
  * Registers block patterns and categories.

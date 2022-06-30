@@ -22,7 +22,7 @@
 
 .wp-block-post-terms.is-style-outline a {
     border: 1px solid var(--wp--preset--color--neutral-300);
-    border-radius: var(--wp--custom--border-radius--normal);
+    border-radius: var(--wp--custom--border-radius--default);
     color: var(--wp--preset--color--primary-light);
     display: inline-block;
     line-height: var(--wp--custom--typography--line-height--tiny);

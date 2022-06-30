@@ -1,8 +1,9 @@
 <?php
 /**
- * Title: Header with light background.
+ * Title: Basic header with no background color.
  * Slug: nautilus/header-basic
  * Categories: header
+ * Block Types: core/template-part/header
  * Viewport Width: 1296
  */
 
@@ -13,7 +14,7 @@
 	<div class="wp-block-group alignwide">
 		<!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"flex","allowOrientation":false,"flexWrap":"nowrap"}} -->
 		<div class="wp-block-group">
-			<!-- wp:site-logo {"width":60,"align":"center","className":"is-style-default","style":{"color":{"duotone":["#0F172A","#F9FAFB"]}}} /-->
+			<!-- wp:site-logo {"width":60,"align":"center","className":"is-style-default flex-shrink-0","style":{"color":{"duotone":["#0F172A","#F9FAFB"]}}} /-->
 			<!-- wp:site-title {"textAlign":"right","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} /-->
 		</div>
 		<!-- /wp:group -->

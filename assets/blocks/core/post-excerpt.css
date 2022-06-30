@@ -1,0 +1,18 @@
+/* Post Excerpt
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+
+/*
+ * The Post Excerpt block does not support blockGap, so let's fix that.
+ */
+.wp-block-post-excerpt > * {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.wp-block-post-excerpt > * + * {
+    margin-block-start: var(--wp--style--block-gap);
+    margin-block-end: 0;
+}

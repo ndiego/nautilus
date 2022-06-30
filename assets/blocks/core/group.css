@@ -18,3 +18,42 @@
 /* .wp-block-group {
     overflow-x: auto;
 } */
+
+
+/* Block Style: Hover Box
+ *
+ * This style is not directly accessible in the UI.
+--------------------------------------------- */
+
+@media (min-width: 600px) {
+
+    .wp-block-group.is-style-hover-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .wp-block-group.is-style-hover-box > *:not(.wp-block-buttons):not(.wp-block-read-more) {
+        transform: translateY( 1.75rem );
+        transition: all 0.2s ease-in-out;
+    }
+
+    .wp-block-group.is-style-hover-box > .wp-block-buttons,
+    .wp-block-group.is-style-hover-box > .wp-block-read-more {
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .wp-block-group.is-style-hover-box:hover {
+        box-shadow: var(--wp--custom--box-shadow--default);
+    }
+
+    .wp-block-group.is-style-hover-box:hover > *:not(.wp-block-buttons):not(.wp-block-read-more) {
+        transform: translateY( 0 );
+    }
+
+    .wp-block-group.is-style-hover-box:hover > .wp-block-buttons,
+    .wp-block-group.is-style-hover-box:hover > .wp-block-read-more {
+        opacity: 1;
+    }
+}
