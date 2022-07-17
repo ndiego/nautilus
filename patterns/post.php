@@ -2,7 +2,8 @@
 /**
  * Title: Post starter content.
  * Slug: nautilus/post
- * Inserter: false
+ * Block Types: core/post-content
+ * Post Types: page
  */
 
 ?>

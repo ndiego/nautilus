@@ -1,13 +1,1 @@
-/* Template Part
------------------------------------------------------------------------------ */
-
-/* General Styles
---------------------------------------------- */
-
-/*
- * Disable margin (blockGap) on footer template parts. Needed until template
- * parts get more dimension controls.
- */
-footer.wp-block-template-part {
-	margin-top: 0 !important;
-}
+footer.wp-block-template-part{margin-top:0 !important}

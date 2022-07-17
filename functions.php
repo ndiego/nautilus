@@ -12,6 +12,7 @@
  * Add support for core block visual styles.
  * Styles load in both the editor and the front end.
  *
+ * @since 0.1.0
  * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#default-block-styles
  *
  * @return void
@@ -22,12 +23,14 @@ function nautilus_support() {
 	add_theme_support( 'wp-block-styles' );
 
     // Enqueue editor styles.
-    add_editor_style( get_template_directory_uri() . '/style.css' );
+    add_editor_style( 'style.css' );
 }
 add_action( 'after_setup_theme', 'nautilus_support' );
 
 /**
  * Enqueue styles.
+ *
+ * @since 0.1.0
  *
  * @return void
  */
@@ -49,6 +52,8 @@ add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
 
 /**
  * Enqueue editor styles.
+ * 
+ * @since 0.1.0
  *
  * @return void
  */
@@ -71,7 +76,7 @@ add_action( 'admin_init', 'nautilus_editor_styles' );
  *
  * @since 0.1.0
  */
-function nautilus_enqueue_block_styles() {
+function nautilus_enqueue_block_stylesheets() {
 
 	// Get all available block types.
 	$block_types = glob( dirname( __FILE__ ) . '/assets/blocks/*/' );
@@ -105,17 +110,7 @@ function nautilus_enqueue_block_styles() {
 		}
 	}
 }
-add_action( 'after_setup_theme', 'nautilus_enqueue_block_styles' );
-
-/**
- * Increase inline style limit to 50kb.
- *
- * @since 0.1.0
- */
-function nautilus_increase_inline_size_limit() {
-	return 5000; // Size in bytes.
-}
-//add_filter( 'styles_inline_size_limit', 'nautilus_increase_inline_size_limit' );
+add_action( 'after_setup_theme', 'nautilus_enqueue_block_stylesheets' );
 
 /**
  * Registers block patterns and categories.
@@ -190,32 +185,3 @@ function nautilus_edit_comment_form_defaults( $defaults ) {
 	return $defaults;
 }
 add_action( 'comment_form_defaults', 'nautilus_edit_comment_form_defaults' );
-
-
-// function myplugin_register_template() {
-//     $post_type_object = get_post_type_object( 'post' );
-//     $post_type_object->template = array(
-// 		array( 'core/pattern', array(
-// 			'slug' => 'nautilus/post',
-// 		) ),
-//     );
-// }
-// add_action( 'init', 'myplugin_register_template' );
-
-//
-// function myplugin_register_book_post_type() {
-//     $args = array(
-//         'public' => true,
-//         'label'  => 'Books',
-//         'show_in_rest' => true,
-//         'template' => array(
-//             array( 'core/pattern', array(
-//                 'slug' => 'nautilus/post',
-//             ) ),
-//         ),
-// 		'hierarchical'  => true,
-// 		'supports'      => array( 'title', 'editor', 'page-attributes' ),
-//     );
-//     register_post_type( 'book', $args );
-// }
-// add_action( 'init', 'myplugin_register_book_post_type' );

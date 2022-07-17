@@ -1,15 +1,1 @@
-/* Latest Comments
------------------------------------------------------------------------------ */
-
-/* General Styles
---------------------------------------------- */
-
-.wp-block-latest-comments__comment-date {
-    color: var(--wp--preset--color--primary-light);
-    font-weight: 500;
-    font-family: var(--wp--preset--font-family--primary);
-    font-size: var(--wp--preset--font-size--tiny);
-    letter-spacing: 1px;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-}
+.wp-block-latest-comments__comment-date{color:var(--wp--preset--color--primary-light);font-weight:500;font-family:var(--wp--preset--font-family--primary);font-size:var(--wp--preset--font-size--tiny);letter-spacing:1px;margin-top:.5rem;text-transform:uppercase}

@@ -45,11 +45,6 @@ a {
 	text-underline-offset: 0.5ch;
 }
 
-a:hover,
-a:focus {
-	color: currentColor;
-}
-
 /*
  * Custom styles for form inputs, textareas and labels.
  */
@@ -295,6 +290,10 @@ span.required {
 
 .flex-shrink-0 {
 	flex-shrink: 0;
+}
+
+.box-shadow--default {
+	box-shadow: var(--wp--custom--box-shadow--default);
 }
 
 @media (min-width: 781px) {

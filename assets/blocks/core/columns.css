@@ -1,13 +1,1 @@
-/* Columns
------------------------------------------------------------------------------ */
-
-/* General Styles
---------------------------------------------- */
-
-/*
- * Remove the auto-padding added to columns blocks
- * with background colors applied.
- */
-.wp-block-columns:where(.has-background) {
-    padding: 0;
-}
+.wp-block-columns:where(.has-background){padding:0}

@@ -1,0 +1,59 @@
+/* Image Block
+----------------------------------------------------------------------------- */
+
+/* General Styles
+--------------------------------------------- */
+.wp-block-image {
+    line-height: 0;
+}
+
+.wp-block-image > figcaption {
+    color: var(--wp--preset--color--primary-light);
+    font-size: var(--wp--preset--font-size--small);
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+/* Block Style: Caption right/left
+--------------------------------------------- */
+@media (min-width: 1350px) {
+    .wp-block-image.is-style-caption-left,
+    .wp-block-image.is-style-caption-right {
+        position: relative;
+    }
+
+    .wp-block-image.is-style-caption-left > figcaption,
+    .wp-block-image.is-style-caption-right > figcaption {
+        bottom: var(--wp--style--block-gap);
+        max-width: 13rem;
+        max-width: clamp(10rem, 10vw, 14rem);
+        position: absolute;
+        width: 100%;
+    }
+
+    .wp-block-image.is-style-caption-right > figcaption {
+        right: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
+        text-align: left;
+    }
+
+    .wp-block-image.is-style-caption-left > figcaption {
+        left: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
+        text-align: right;
+    }
+
+    [data-align="full"] > .wp-block-image.is-style-caption-right > figcaption,
+    .wp-block-image.alignfull.is-style-caption-right > figcaption,
+    [data-align="full"] > .wp-block-image.is-style-caption-left > figcaption,
+    .wp-block-image.alignfull.is-style-caption-left > figcaption {
+        max-width: unset;
+        padding-left: var(--wp--style--block-gap);
+        padding-right: var(--wp--style--block-gap);
+        position: unset;
+        text-align: left;
+    }
+
+    [data-align="full"] > .wp-block-image.is-style-caption-right > figcaption,
+    .wp-block-image.alignfull.is-style-caption-right > figcaption {
+        text-align: right;
+    }
+}

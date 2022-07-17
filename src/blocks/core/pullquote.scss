@@ -1,0 +1,31 @@
+/* Pull Quote Block
+----------------------------------------------------------------------------- */
+
+.wp-block-pullquote {
+    // We have to set the background directly due to bug.
+    background-color: var(--wp--preset--color--neutral-100) !important;
+    margin-bottom: 0;
+    padding: calc(2 * var(--wp--style--block-gap));
+
+    blockquote {
+        margin: 0;
+    }
+
+    p {
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+    }
+
+    cite, .wp-block-pullquote__citation {
+        color: currentColor;
+        display: inline-block;
+        font-weight: 500;
+        font-size: var(--wp--preset--font-size--small);
+        letter-spacing: 1px;
+        line-height: 1;
+        margin-top: calc(1.5 * var(--wp--style--block-gap));
+        opacity: .6;
+        text-transform: uppercase;
+    }
+}

@@ -1,4 +1,4 @@
-/* Archives
+/* Archives Block
 ----------------------------------------------------------------------------- */
 
 /* General Styles
@@ -18,16 +18,6 @@ ul.wp-block-archives {
     list-style: none;
     /* We need added specificity here to counter our main theme list styles. */
     margin: 0 !important;
-}
-
-.wp-block-archives a {
-    text-decoration: none;
-}
-
-.wp-block-archives a:hover {
-    /* Due to the fact that we cannot style the post count separately */
-    color: var(--wp--preset--color--primary);
-    text-decoration: underline;
 }
 
 /* Block Style: Horizontal
