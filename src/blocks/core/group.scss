@@ -19,7 +19,6 @@
     overflow-x: auto;
 } */
 
-
 /* Block Style: Hover Box
  *
  * This style is not directly accessible in the UI.
@@ -57,3 +56,16 @@
         opacity: 1;
     }
 }
+
+/* Block Style: Full Height Stack
+ *
+ * This style is not directly accessible in the UI.
+--------------------------------------------- */
+.wp-block-group.is-style-full-height-stack {
+    height: 100%;
+    justify-content: space-between;
+
+    &> .wp-block-group {
+        width: 100%;
+    }
+} 

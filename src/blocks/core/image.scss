@@ -3,15 +3,11 @@
 
 /* General Styles
 --------------------------------------------- */
-.wp-block-image {
-    line-height: 0;
-}
 
-.wp-block-image > figcaption {
-    color: var(--wp--preset--color--primary-light);
-    font-size: var(--wp--preset--font-size--small);
-    margin-top: 1rem;
-    margin-bottom: 0;
+/* Override editor styles that are not present on the frontend */
+.editor-styles-wrapper .wp-block-image {
+    line-height: 0;
+    margin-bottom: 0 !important;
 }
 
 /* Block Style: Caption right/left

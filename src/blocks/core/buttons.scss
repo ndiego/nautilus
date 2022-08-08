@@ -1,6 +1,18 @@
 /* Buttons Block
 ----------------------------------------------------------------------------- */
 
+/* Custom styles for when inline-code is placed in buttons */
+.editor-styles-wrapper .wp-block-button .wp-block-button__link > code,
+.wp-block-button .wp-block-button__link > code {
+    color: inherit;
+    background-color: transparent;
+    font-size: .8em;
+    letter-spacing: 0;
+    opacity: .6;
+    padding: 0;
+    text-transform: none;
+}
+
 /* Block Style: Filled
 --------------------------------------------- */
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,

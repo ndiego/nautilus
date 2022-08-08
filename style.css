@@ -132,63 +132,6 @@ span.required {
  ---------------------------------------------------------------------------- */
 
 /*
- * Default "site" left/right padding is set in theme.json, but we want to mock
- * it by default on full width blocks.
- */
-.wp-block-cover.alignfull,
-.wp-block-columns.alignfull,
-.wp-block-group.alignfull,
-
-/*
- * We also need to mock this in the Editor for template parts. This is needed
- * becaause alignfull blocks are not rendered in the Editor when placed in a
- * template part block.
- */
-.is-root-container.block-editor-block-list__layout > .wp-block-template-part > * {
-	padding-left: var(--wp--custom--spacing--outer);
-	padding-right: var(--wp--custom--spacing--outer);
-}
-
-/*
- * For full width blocks, we need to override the "site" padding so the blocks
- * are actually full width.
- */
-.wp-site-blocks .alignfull,
-.is-root-container.block-editor-block-list__layout .alignfull,
-
-/*
- * Need to correct the post title editor.
- */
-.edit-post-visual-editor__post-title-wrapper,
-
-/*
- * Template parts at the root level need to be "full width" even though parts do
- * not technically support alignment control (yet). This is only needed for the
- * Editor because on the frontend, alignfull is rendered for the inner blocks.
- */
-.is-root-container.block-editor-block-list__layout > .wp-block-template-part {
-	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
-	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
-	width: unset;
-}
-
-/*
- * Blocks inside columns don't have negative margins.
- */
-.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
-.is-root-container.block-editor-block-list__layout .wp-block-columns .wp-block-column .alignfull,
-
-/*
- * We also want to avoid stacking negative margins.
- */
-.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
-.is-root-container.block-editor-block-list__layout .alignfull:not(.wp-block-group) .alignfull {
-	margin-left: auto !important;
-	margin-right: auto !important;
-	width: inherit;
-}
-
-/*
  * Responsive menu container padding.
  * This ensures the responsive container inherits the same
  * spacing defined above. This behavior may be built into
@@ -290,6 +233,10 @@ span.required {
 
 .flex-shrink-0 {
 	flex-shrink: 0;
+}
+
+.box-shadow--minimal {
+	box-shadow: var(--wp--custom--box-shadow--minimal);
 }
 
 .box-shadow--default {
