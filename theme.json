@@ -15,7 +15,6 @@
 	],
 	"settings": {
 		"appearanceTools": true,
-		"useRootPaddingAwareAlignments": true,
 		"color": {
 			"defaultDuotone": false,
 			"defaultGradients": false,
@@ -173,58 +172,65 @@
 				"round": "9999px"
             },
 			"box-shadow": {
-				"default": "0 10px 20px rgba(0, 0, 0, 0.05)",
+				"default": "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;",
 				"minimal": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;"
 			}
 		},
 		"spacing": {
-			"units": [ "%", "px", "rem" ]
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
 		},
 		"typography": {
 			"dropCap": false,
 			"fluid": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "\"Source Sans\",sans-serif",
-					"name": "Source Sans",
-					"slug": "primary",
 					"fontFace": [
 						{
 							"fontFamily": "Source Sans",
-							"fontWeight": "200 900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
+							"fontWeight": "200 900",
 							"src": [ "file:./assets/fonts/source-sans/SourceSans3VF-Roman.ttf.woff2" ]
 						},
 						{
 							"fontFamily": "Source Sans",
-							"fontWeight": "200 900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
+							"fontWeight": "200 900",
 							"src": [ "file:./assets/fonts/source-sans/SourceSans3VF-Italic.ttf.woff2" ]
 						}
-					]
+					],
+					"fontFamily": "\"Source Sans\",sans-serif",
+					"name": "Source Sans",
+					"slug": "primary"
 				},
 				{
-					"fontFamily": "\"Source Serif\",serif",
-					"name": "Source Serif",
-					"slug": "secondary",
 					"fontFace": [
 						{
 							"fontFamily": "Source Serif",
-							"fontWeight": "200 900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
+							"fontWeight": "200 900",
 							"src": [ "file:./assets/fonts/source-serif/SourceSerif4Variable-Roman.ttf.woff2" ]
 						},
 						{
 							"fontFamily": "Source Serif",
-							"fontWeight": "200 900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
+							"fontWeight": "200 900",
 							"src": [ "file:./assets/fonts/source-serif/SourceSerif4Variable-Italic.ttf.woff2" ]
 						}
-					]
+					],
+					"fontFamily": "\"Source Serif\",serif",
+					"name": "Source Serif",
+					"slug": "secondary"
 				},
                 {
                     "fontFamily": "Menlo,Consolas,monaco,monospace",
@@ -235,25 +241,25 @@
 			"fontSizes": [
                 {
 					"fluid": {
-						"min": ".6rem",
-						"max": ".875"
+						"min": "0.75rem",
+						"max": "0.875rem"
 					},
                     "name": "Tiny",
-                    "size": ".875rem",
+                    "size": "0.875rem",
                     "slug": "tiny"
                 },
 				{
 					"fluid": {
-						"min": ".85rem",
-						"max": "1rem"
+						"min": "1rem",
+						"max": "1.125rem"
 					},
 					"name": "Small",
-					"size": "1rem",
+					"size": "1.125rem",
 					"slug": "small"
 				},
 				{
 					"fluid": {
-						"min": "1.1rem",
+						"min": "1.125rem",
 						"max": "1.25rem"
 					},
 					"name": "Medium",
@@ -261,22 +267,34 @@
 					"slug": "medium"
 				},
 				{
+					"fluid": {
+						"min": "1.625rem",
+						"max": "1.875rem"
+					},
 					"name": "Large",
-					"size": "2rem",
+					"size": "1.75rem",
 					"slug": "large"
 				},
 				{
+					"fluid": {
+						"min": "2rem",
+						"max": "2.5"
+					},
 					"name": "Extra Large",
-					"size": "clamp(1.75rem, 3vw, 2.5rem)",
+					"size": "2.25rem",
 					"slug": "x-large"
 				},
 				{
+					"fluid": {
+						"min": "2.75rem"
+					},
 					"name": "Huge",
-					"size": "clamp(2.5rem, 4vw, 3.25rem)",
+					"size": "3.25rem",
 					"slug": "xx-large"
 				}
 			]
 		},
+		"useRootPaddingAwareAlignments": true,
 		"layout": {
 			"contentSize": "720px",
 			"wideSize": "1200px"
@@ -306,6 +324,19 @@
 								"textDecoration": "underline"
 							}
 						}
+					}
+				}
+			},
+			"core/button": {
+				"border": {
+                    "width": "1px"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.6em",
+						"right": "1.2em",
+						"bottom": "0.6em",
+						"left": "1.2em"
 					}
 				}
 			},
@@ -397,7 +428,6 @@
 			},
             "core/query-title": {
                 "typography": {
-                    "fontWeight": "300",
                     "lineHeight": "var:custom|typography|line-height|small"
                 }
             },
@@ -506,10 +536,10 @@
 				},
 				"spacing": {
 					"padding": {
-						"top": "0.8em",
+						"top": "0.6em",
 						"right": "1.2em",
 						"bottom": "0.8em",
-						"left": "1.2em"
+						"left": "1.6em"
 					}
 				},
 				"typography": {
@@ -517,7 +547,6 @@
 					"fontSize": "var:preset|font-size|small",
 					"fontWeight": "500",
 					"letterSpacing": "0.5px",
-					"lineHeight": "var:custom|typography|line-height|tiny",
 					"textTransform": "uppercase"
 				}
 			},

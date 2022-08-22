@@ -4,6 +4,10 @@
 /* General Styles
 --------------------------------------------- */
 
+.wp-block-image > figcaption {
+    text-align: center;
+}
+
 /* Override editor styles that are not present on the frontend */
 .editor-styles-wrapper .wp-block-image {
     line-height: 0;
@@ -51,5 +55,23 @@
     [data-align="full"] > .wp-block-image.is-style-caption-right > figcaption,
     .wp-block-image.alignfull.is-style-caption-right > figcaption {
         text-align: right;
+    }
+}
+
+/* Custom classes for box shadows.
+--------------------------------------------- */
+.wp-block-image.box-shadow--default {
+    box-shadow: none;
+
+    &> img {
+        box-shadow: var(--wp--custom--box-shadow--default);
+    }
+} 
+
+.wp-block-image.box-shadow--minimal {
+    box-shadow: none;
+    
+    &> img {
+        box-shadow: var(--wp--custom--box-shadow--minimal);
     }
 }

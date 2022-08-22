@@ -24,6 +24,9 @@ html {
 	box-sizing: border-box;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+
+	/* Add smooth scrolling to anchor links throughout the site. */
+	scroll-behavior: smooth;
 }
 
 *,
@@ -96,7 +99,18 @@ kbd {
     border-radius: 4px;
 	color: var(--wp--preset--color--primary);
 	font-family: var(--wp--preset--font-family--monospace);
-    font-size: var(--wp--preset--font-size--small);
+    font-size: 0.75em;
+    padding: 0.3rem 0.4rem;
+    position: relative;
+}
+
+*.has-dark-code:not(.wp-block-code) > code,
+.has-dark-code kbd {
+    background-color: var(--wp--preset--color--primary-light);
+    border-radius: 4px;
+	color: var(--wp--preset--color--primary-lighter);
+	font-family: var(--wp--preset--font-family--monospace);
+    font-size: 0.75em;
     padding: 0.3rem 0.4rem;
     position: relative;
 }
@@ -241,6 +255,16 @@ span.required {
 
 .box-shadow--default {
 	box-shadow: var(--wp--custom--box-shadow--default);
+}
+
+.border-radius--default {
+	border-radius: var(--wp--custom--border-radius--default);
+	overflow: hidden;
+}
+
+.text-decoration--none a { 
+	text-decoration-thickness: 0 !important;
+	text-decoration: none !important;
 }
 
 @media (min-width: 781px) {

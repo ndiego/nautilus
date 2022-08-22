@@ -1,0 +1,13 @@
+/* Query Title Block
+----------------------------------------------------------------------------- */
+.wp-block-query-title {
+  /* Custom styling for the title prefix. The prefix class is added manually in functions.php */
+}
+.wp-block-query-title .query-title-prefix {
+  color: var(--wp--preset--color--primary-light);
+  display: block;
+  margin-bottom: 1rem;
+  font-size: var(--wp--preset--font-size--medium);
+  font-weight: 500;
+  text-transform: uppercase;
+}

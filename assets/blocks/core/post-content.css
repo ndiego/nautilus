@@ -1,0 +1,9 @@
+/* Post Contents Block
+----------------------------------------------------------------------------- */
+/* General Styles
+--------------------------------------------- */
+/* Add some extra spacing around images, galleries, and code blocks */
+.wp-block-post-content > .wp-block-code, .wp-block-post-content > .wp-block-gallery, .wp-block-post-content > .wp-block-image {
+  margin-block-start: calc(1.5 * var(--wp--custom--spacing--gap));
+  margin-block-end: calc(1.5 * var(--wp--custom--spacing--gap));
+}

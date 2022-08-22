@@ -182,3 +182,17 @@ function nautilus_edit_comment_form_defaults( $defaults ) {
 	return $defaults;
 }
 add_action( 'comment_form_defaults', 'nautilus_edit_comment_form_defaults' );
+
+
+/**
+ * Remove the colon and give archive title prefixes a class. 
+ *
+ * @since 0.1.0
+ */
+function nautilus_modify_archive_title_prefixes( $title, $original_title, $prefix ) {
+	$prefix_no_colon = str_replace( ":", "", $prefix );
+
+    return sprintf( '<span class="query-title-prefix">%s</span>%s', $prefix_no_colon, $original_title ); 
+} 
+add_filter( 'get_the_archive_title', 'nautilus_modify_archive_title_prefixes', 10, 3 );
+

@@ -7,14 +7,6 @@
   padding: 0;
 }
 
-.wp-block-group.is-style-full-height-stack {
-  height: 100%;
-  justify-content: space-between;
-}
-.wp-block-group.is-style-full-height-stack > .wp-block-group {
-  width: 100%;
-}
-
 /*
  * Fixes bug when a block is aligned left/right in Groups.
  * Reference: https://github.com/WordPress/gutenberg/issues/39344
@@ -28,6 +20,10 @@
  *
  * This style is not directly accessible in the UI.
 --------------------------------------------- */
+.wp-block-group.is-style-hover-box {
+  box-shadow: var(--wp--custom--box-shadow--minimal);
+}
+
 @media (min-width: 600px) {
   .wp-block-group.is-style-hover-box {
     display: flex;
@@ -53,4 +49,23 @@
 .wp-block-group.is-style-hover-box:hover > .wp-block-read-more {
     opacity: 1;
   }
+}
+/* Block Style: Full Height Stack
+ *
+ * This style is not directly accessible in the UI.
+--------------------------------------------- */
+.wp-block-group.is-style-full-height-stack {
+  height: 100%;
+  justify-content: space-between;
+}
+.wp-block-group.is-style-full-height-stack > .wp-block-group {
+  width: 100%;
+}
+
+.wp-block-group.is-style-80-vh-stack {
+  height: 100vh;
+  justify-content: space-between;
+}
+.wp-block-group.is-style-80-vh-stack > .wp-block-group {
+  width: 100%;
 }
