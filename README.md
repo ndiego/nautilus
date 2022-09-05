@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- WordPress 5.9+
+- WordPress 6.0+
 - [Gutenberg](https://wordpress.org/plugins/gutenberg/)
 
 ## Utility classes

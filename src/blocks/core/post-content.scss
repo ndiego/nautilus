@@ -1,15 +1,27 @@
-/* Post Contents Block
+/* Post Content
 ----------------------------------------------------------------------------- */
 
-/* General Styles
---------------------------------------------- */
-
-/* Add some extra spacing around images, galleries, and code blocks */
+// Add some extra spacing around images, galleries, code blocks and headings.
+.editor-styles-wrapper .is-root-container,
 .wp-block-post-content {
     &> .wp-block-code,
     &> .wp-block-gallery,
     &> .wp-block-image {
-        margin-block-start: calc(1.5 * var(--wp--custom--spacing--gap) );
-        margin-block-end: calc(1.5 * var(--wp--custom--spacing--gap) );
+        margin-block-start: var(--wp--preset--spacing--large);
+        margin-block-end: var(--wp--preset--spacing--large);
+    }
+
+    &> h1:not(:first-child),
+    &> h2:not(:first-child),
+    &> h3:not(:first-child),
+    &> h4:not(:first-child) {
+        margin-top: var(--wp--preset--spacing--large);
+    }
+
+    &> h1:not(:first-child) + *,
+    &> h2:not(:first-child) + *,
+    &> h3:not(:first-child) + *,
+    &> h4:not(:first-child) + * {
+        margin-top: var(--wp--preset--spacing--small);
     }
 }

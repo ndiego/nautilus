@@ -1,5 +1,5 @@
-/* Post Terms Block
------------------------------------------------------------------------------ */
+/* Post Terms
+ ----------------------------------------------------------------------------- */
 
 .wp-block-post-terms {
     a {
@@ -11,19 +11,20 @@
     }
 
     .wp-block-post-terms__separator {
-        color: var(--wp--preset--color--neutral-300);
+        color: var(--wp--preset--color--primary-light);
+        margin-right: 0.2em;
     }
 
     /* Block Style: Outline
-    --------------------------------------------- */
+     --------------------------------------------- */
     &.is-style-outline {
         a {
-            border: 1px solid var(--wp--preset--color--neutral-300);
+            border: var(--wp--custom--border--default);
             border-radius: var(--wp--custom--border-radius--default);
-            color: var(--wp--preset--color--primary-light);
+            color: var(--wp--preset--color--primary);
             display: inline-block;
-            line-height: var(--wp--custom--typography--line-height--tiny);
-            padding: 0.6em 1.2em;
+            line-height: 1;
+            padding: 0.85em 1.2em .8em;
             text-decoration: none;
 
             &:hover {

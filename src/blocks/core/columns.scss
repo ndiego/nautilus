@@ -1,18 +1,9 @@
-/* Columns Block
------------------------------------------------------------------------------ */
+/* Columns
+ ----------------------------------------------------------------------------- */
 
-/* General Styles
---------------------------------------------- */
-
-/* Columns blocks with border radius does not always work correctly, so fix let's that. */
-.wp-block-columns[style*="border-radius"] {
-    overflow: hidden;
-}
-
-/*
- * Remove the auto-padding added to columns blocks
- * with background colors applied.
- */
-.wp-block-columns:where(.has-background) {
-    padding: 0;
+.wp-block-columns {
+    // Columns blocks with border radius does not always work correctly, so fix let's that.
+    &[style*="border-radius"] {
+        overflow: hidden;
+    }
 }

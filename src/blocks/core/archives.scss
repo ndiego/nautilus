@@ -1,28 +1,27 @@
-/* Archives Block
------------------------------------------------------------------------------ */
+/* Archives
+ ----------------------------------------------------------------------------- */
 
-/* General Styles
---------------------------------------------- */
-
-/* We need added specificity here to counter WP core styles. */
+// We need added specificity here to counter WP core styles.
 ul.wp-block-archives {
     display: flex;
     flex-direction: column;
     gap: 0.5rem 0.7rem;
     padding: 0;
-}
 
-.wp-block-archives li {
-    /* Due to the fact that we cannot style the post count separately */
-    color: var(--wp--preset--color--neutral-500);
-    list-style: none;
-    /* We need added specificity here to counter our main theme list styles. */
-    margin: 0 !important;
-}
+    li {
+        // Due to the fact that we cannot style the post count separately.
+        color: var(--wp--preset--color--primary-light);
+        list-style: none;
 
-/* Block Style: Horizontal
---------------------------------------------- */
-.wp-block-archives.is-style-horizontal {
-    flex-direction: row;
-    flex-wrap: wrap;
+        // We need added specificity here to counter our main theme list styles.
+        margin: 0 !important;
+    }
+
+    /* Block Style: Horizontal
+     --------------------------------------------- */
+     
+    &.is-style-horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }

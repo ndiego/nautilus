@@ -48,24 +48,24 @@ function nautilus_styles() {
 add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
 
 /**
- * Enqueue editor styles.
+ * Add/remove block styles and variations.
  * 
  * @since 0.1.0
  *
  * @return void
  */
-function nautilus_editor_styles() {
+function nautilus_block_styles_variations() {
 
 	// WordPress core block styles can only be unregistered using JavaScript.
-	wp_enqueue_script(
-		'nautilus-unregister-block-styles',
-		get_theme_file_uri( '/assets/js/unregister-block-styles.js' ),
-		array( 'wp-blocks', 'wp-dom' ),
+	wp_enqueue_script( 
+		'nautilus-block-styles-variations', 
+		get_template_directory_uri() . '/assets/js/block-styles-variations.js', 
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) ,
 		wp_get_theme()->get( 'Version' ),
 		true
 	);
 }
-add_action( 'admin_init', 'nautilus_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'nautilus_block_styles_variations' );
 
 /**
  * Enqueue individual block stylesheets.
@@ -143,14 +143,14 @@ function nautilus_register_block_styles() {
         'core/categories' => array(
             'horizontal' => __( 'Horizontal', 'nautilus' ),
         ),
-        // 'core/image'      => array(
-        //     'caption-left'  => __( 'Caption Left', 'nautilus' ),
-        //     'caption-right' => __( 'Caption Right', 'nautilus' ),
-        // ),
-        // 'core/gallery'    => array(
-        //     'caption-left'  => __( 'Caption Left', 'nautilus' ),
-        //     'caption-right' => __( 'Caption Right', 'nautilus' ),
-        // ),
+        'core/image'      => array(
+            'caption-left'  => __( 'Caption Left', 'nautilus' ),
+            'caption-right' => __( 'Caption Right', 'nautilus' ),
+        ),
+        'core/gallery'    => array(
+            'caption-left'  => __( 'Caption Left', 'nautilus' ),
+            'caption-right' => __( 'Caption Right', 'nautilus' ),
+        ),
         'core/post-terms' => array(
             'outline' => __( 'Outline', 'nautilus' ),
         ),
@@ -195,4 +195,3 @@ function nautilus_modify_archive_title_prefixes( $title, $original_title, $prefi
     return sprintf( '<span class="query-title-prefix">%s</span>%s', $prefix_no_colon, $original_title ); 
 } 
 add_filter( 'get_the_archive_title', 'nautilus_modify_archive_title_prefixes', 10, 3 );
-

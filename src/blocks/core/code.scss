@@ -1,11 +1,24 @@
-/* Code Block
------------------------------------------------------------------------------ */
+/* Code
+ ----------------------------------------------------------------------------- */
 
-/* General Styles
---------------------------------------------- */
-.wp-block-code > code {
-	overflow-wrap: normal;
-	overflow-x: scroll;
-	tab-size: 4;
-	white-space: pre;
+.wp-block-code {
+	&> code {
+		overflow-wrap: normal;
+		overflow-x: scroll;
+		tab-size: 4;
+	
+		// Need important to override some Editor styles.
+		white-space: pre !important;
+	}
+
+	/* Block Style: Wrap
+     *
+     * This style is not directly accessible in the UI.
+     --------------------------------------------- */
+	 
+	&.is-style-wrap {
+		&> code {
+			white-space: pre-wrap !important;
+		}
+	}
 }

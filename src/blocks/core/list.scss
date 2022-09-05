@@ -1,0 +1,23 @@
+/* List
+ ----------------------------------------------------------------------------- */
+
+.wp-block-list {
+    li {
+        margin-bottom: 0.4rem;
+        
+        ol, ul {
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+        }  
+    }
+}
+
+// List blocks do not have the block class on the frontend.
+li:where(:not([class*='wp-block'])) {
+	margin-bottom: 0.4rem;
+
+    ol, ul {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }  
+}

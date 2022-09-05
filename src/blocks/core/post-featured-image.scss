@@ -1,12 +1,7 @@
-/* Post Featured Image Block
------------------------------------------------------------------------------ */
+/* Post Featured Image
+ ----------------------------------------------------------------------------- */
 
-/* General Styles
---------------------------------------------- */
-
-/*
- * Temporary fix that allows the border radius set in theme.json to work.
- */
+// Temporary fix that allows the border radius set in theme.json to work.
 .wp-block-post-featured-image {
     overflow: hidden;
 }

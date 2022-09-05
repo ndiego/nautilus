@@ -1,8 +1,1 @@
-/* Navigation Block
------------------------------------------------------------------------------ */
-/* General Styles
---------------------------------------------- */
-/* Ensure carrot icons are vertically centered */
-.wp-block-navigation .wp-block-navigation__submenu-icon svg {
-  margin-top: 0;
-}
+.wp-block-navigation .wp-block-navigation__submenu-icon svg{margin-top:0}

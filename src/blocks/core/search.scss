@@ -1,6 +1,9 @@
-/* Search Block
------------------------------------------------------------------------------ */
 
-.wp-block-search button {
-    cursor: pointer;
+/* Search
+ ----------------------------------------------------------------------------- */
+
+.wp-block-search {
+    .wp-block-search__input {
+        padding: 0.5rem 1rem;
+    }
 }

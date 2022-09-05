@@ -1,10 +1,30 @@
-/* Cover Block
------------------------------------------------------------------------------ */
+/* Cover
+ ----------------------------------------------------------------------------- */
 
-/* General Styles
---------------------------------------------- */
+.wp-block-cover {
+    // Fix an issue when there are child flex blocks.
+    .block-editor-block-list__layout.is-layout-flex {
+        width: auto;
+    }
 
-/* Fix an issue when there are child flex blocks */
-.wp-block-cover .block-editor-block-list__layout.is-layout-flex {
-    width: auto;
+    /* Block Style: Slide
+     *
+     * This style is not directly accessible in the UI.
+     --------------------------------------------- */
+     
+    &.is-style-slide {
+        border-bottom: 1px solid var(--wp--preset--color--primary-light);
+        min-height: calc(100vh + 1px) !important;
+        
+        .wp-block-cover__inner-container {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 782px) {
+            border-bottom: 0px;
+            min-height: auto !important;
+        }
+    }
 }

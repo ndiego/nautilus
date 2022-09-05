@@ -14,7 +14,7 @@ Text Domain:       nautilus
 */
 
 /* Defaults
------------------------------------------------------------------------------ */
+ ----------------------------------------------------------------------------- */
 
 body {
 	overflow-x: hidden;
@@ -36,7 +36,7 @@ html {
 }
 
 /* General Styles (Styles not supported in theme.json and not block specific)
------------------------------------------------------------------------------ */
+ ----------------------------------------------------------------------------- */
 
 /*
  * Text and navigation link styles.
@@ -49,6 +49,13 @@ a {
 }
 
 /*
+ * Make bold styles look a bit nicer.
+ */
+strong {
+	font-weight: 600;
+}
+
+/*
  * Custom styles for form inputs, textareas and labels.
  */
 input,
@@ -56,37 +63,29 @@ textarea {
 	font-size: var(--wp--preset--font-size--small);
 }
 
+input:not([type=submit]),
+textarea {
+	border: var(--wp--custom--border--default);
+	border-radius: var(--wp--custom--border-radius--default);
+	font-size: var(--wp--preset--font-size--small);
+}
+
 label {
 	font-family: var(--wp--preset--font-family--primary);
+	font-size: var(--wp--preset--font-size--medium);
 	font-weight: 500;
 }
 
 select {
-	border: 1px solid var(--wp--preset--color--neutral-300);
+	border: var(--wp--custom--border--default);
 	border-radius: 4px;
 	color: var(--wp--preset--color--primary-light);
 	min-height: 30px;
 	padding: 0 1.5rem 0 0.5rem;
 }
 
-/*
- * Set the line-height for image and gallery captions.
- */
-figcaption {
-    line-height: var(--wp--custom--typography--line-height--medium);
-}
-
-/*
- * List styles need extra specificity so they do not clash with blocks.
- */
-li:where(:not([class*='wp-block'])) {
-	margin-bottom: 0.4rem;
-}
-
-li:where(:not([class*='wp-block'])) ol,
-li:where(:not([class*='wp-block'])) ul {
-	margin-top: 0.8rem;
-	margin-bottom: 0.8rem;
+cite {
+	font-style: normal;
 }
 
 /*
@@ -99,18 +98,18 @@ kbd {
     border-radius: 4px;
 	color: var(--wp--preset--color--primary);
 	font-family: var(--wp--preset--font-family--monospace);
-    font-size: 0.75em;
+    font-size: 0.8em;
     padding: 0.3rem 0.4rem;
     position: relative;
 }
 
-*.has-dark-code:not(.wp-block-code) > code,
+*.has-dark-code:not(.wp-block-code) code,
 .has-dark-code kbd {
     background-color: var(--wp--preset--color--primary-light);
     border-radius: 4px;
 	color: var(--wp--preset--color--primary-lighter);
 	font-family: var(--wp--preset--font-family--monospace);
-    font-size: 0.75em;
+    font-size: 0.8em;
     padding: 0.3rem 0.4rem;
     position: relative;
 }
@@ -130,20 +129,10 @@ kbd {
  */
 span.required {
 	color: var(--wp--preset--color--accent);
+	font-family: var(--wp--preset--font-family--primary);
+	font-size: var(--wp--preset--font-size--medium);
 	font-weight: 600;
 }
-
-/*
- * Alignment styles.
- * These rules are temporary, and should not be relied on or
- * modified too heavily by themes or plugins that build on
- * Twenty Twenty-Two. These are meant to be a precursor to
- * a global solution provided by the Block Editor.
- *
- * Relevant issues:
- * https://github.com/WordPress/gutenberg/issues/35607
- * https://github.com/WordPress/gutenberg/issues/35884
- ---------------------------------------------------------------------------- */
 
 /*
  * Responsive menu container padding.
@@ -158,7 +147,7 @@ span.required {
 
 
 /* Experimental Styles
------------------------------------------------------------------------------ */
+ ----------------------------------------------------------------------------- */
 
 /*
  * Mock block spacing when blocks are placed in container blocks that do not
@@ -176,21 +165,7 @@ span.required {
 }
 
 /*
- * Give headings more blockGap when in post content.
- */
-.is-root-container > h1:not(:first-child),
-.is-root-container > h2:not(:first-child),
-.is-root-container > h3:not(:first-child),
-.is-root-container > h4:not(:first-child),
-.wp-block-post-content > h1:not(:first-child),
-.wp-block-post-content > h2:not(:first-child),
-.wp-block-post-content > h3:not(:first-child),
-.wp-block-post-content > h4:not(:first-child) {
-	margin-top: calc(2 * var(--wp--custom--spacing--gap));
-}
-
-/*
- * Visually separate the page/post title from the post content.
+ * Visually separate the page/post title from the post content in Editor.
  */
 .edit-post-visual-editor__post-title-wrapper {
 	align-items: center;
@@ -215,9 +190,7 @@ span.required {
 
 /*
  * Utility styles.
- * A couple utilities that are used throughout patterns and parts where core
- * does not support these functionalities.
------------------------------------------------------------------------------ */
+ ----------------------------------------------------------------------------- */
 
 /* Not used, check this */
 .my-0 {
@@ -249,6 +222,10 @@ span.required {
 	flex-shrink: 0;
 }
 
+.flex-1 {
+	flex: 1;
+}
+
 .box-shadow--minimal {
 	box-shadow: var(--wp--custom--box-shadow--minimal);
 }
@@ -262,9 +239,27 @@ span.required {
 	overflow: hidden;
 }
 
+/* Utility styles for links. */
 .text-decoration--none a { 
 	text-decoration-thickness: 0 !important;
 	text-decoration: none !important;
+}
+
+.has-hidden-links a { 
+	text-decoration-thickness: 0 !important;
+	text-decoration: none !important;
+}
+
+.has-hidden-links a:hover { 
+	text-decoration: underline !important;
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 0.5ch !important;
+}
+
+.has-hover-no-duotone:hover img,
+img.has-hover-no-duotone:hover {
+	filter: url() !important;
+	transition: all 10s ease-in-out;
 }
 
 @media (min-width: 781px) {
@@ -282,5 +277,18 @@ span.required {
 @media (max-width: 599px) {
 	.hide-on-mobile {
 		display: none !important;
+	}
+}
+
+@media (max-width: 782px) {
+	.mobile-align-center,
+	.mobile-align-center .has-text-align-left,
+	.mobile-align-center .has-text-align-center {
+		text-align: center !important;
+	}
+
+	.mobile-align-center.is-layout-flex,
+	.mobile-align-center .is-layout-flex {
+		display: inline-flex;
 	}
 }

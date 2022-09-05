@@ -1,15 +1,29 @@
-/* Post Comments Form Block
- * (Currently not used until the Comments Loop is more stable)
------------------------------------------------------------------------------ */
-
-/* General Styles
---------------------------------------------- */
+/* Post Comments Form
+ ----------------------------------------------------------------------------- */
 
 .wp-block-post-comments-form {
     font-size: var(--wp--preset--font-size--small);
 
+    // Mock blockGap on the comment form.
+    .comment-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--wp--preset--spacing--medium);
+
+        &> * {
+            margin-block-start: 0;
+            margin-block-end: var(--wp--preset--spacing--small);
+        }
+    
+        &> * + * {
+            margin-block-start: var(--wp--preset--spacing--small);
+            margin-block-end: 0;
+        }
+    }
+
     .comment-reply-title {
-        font-size: var(--wp--preset--font-size--x-large);
+        font-size: var(--wp--preset--font-size--xx-large);
+        margin: 0;
 
         small {
             display: block;
@@ -21,7 +35,10 @@
 
     .comment-form-cookies-consent {
         align-items: center;
-        font-size: var(--wp--preset--font-size--small);
+
+        label {
+            font-size: var(--wp--preset--font-size--small);
+        }
 
         #wp-comment-cookies-consent {
             margin: 0 0.5rem 0 0;
@@ -29,13 +46,13 @@
     }
 
     .form-submit.wp-block-button {
-        margin-top: 2rem;
+        margin-top: var(--wp--preset--spacing--medium);
     }
 
+    // Need this to override core default styles.
     input:not([type=submit]),
     textarea {
-        border: 1px solid var(--wp--preset--color--neutral-300);
-        border-radius: 4px;
+        border: var(--wp--custom--border--default);
         font-size: var(--wp--preset--font-size--small);
     }
 }

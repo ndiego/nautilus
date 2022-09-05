@@ -1,47 +1,46 @@
 /* Tag Cloud
------------------------------------------------------------------------------ */
+ ----------------------------------------------------------------------------- */
 
-/* General Styles
---------------------------------------------- */
-.wp-block-tag-cloud a {
-    text-decoration: none;
-}
+.wp-block-tag-cloud {
+    a {
+        font-size: var(--wp--preset--font-size--x-small) !important;
+        text-decoration: none;
 
-.wp-block-tag-cloud a:hover {
-    text-decoration: underline;
-}
+        &:hover {
+            text-decoration: underline;
+        }
 
-.wp-block-tag-cloud a {
-    font-size: var(--wp--preset--font-size--tiny) !important;
-}
+        .tag-link-count {
+            color: var(--wp--preset--color--neutral-500);
+        }
+    }
 
-.wp-block-tag-cloud a .tag-link-count {
-    color: var(--wp--preset--color--neutral-500);
-}
+    /* Block Style: Outline
+     -------------------------------------------- */
 
-/* Block Style: Outline
---------------------------------------------- */
+    &.is-style-outline {
+        a {
+            border: var(--wp--custom--border--default);
+            border-radius: var(--wp--custom--border-radius--default);
+            color: var(--wp--preset--color--primary-light);
+            display: inline-block;
+            font-size: var(--wp--preset--font-size--x-small) !important;
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: var(--wp--custom--typography--line-height--x-small);
+            padding: 0.6em 1.2em;
+            text-decoration: none;
+            text-transform: none;
 
-.wp-block-tag-cloud.is-style-outline a {
-    border: 1px solid var(--wp--preset--color--neutral-300);
-    border-radius: var(--wp--custom--border-radius--default);
-    color: var(--wp--preset--color--primary-light);
-    display: inline-block;
-    font-size: var(--wp--preset--font-size--tiny) !important;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: var(--wp--custom--typography--line-height--tiny);
-    padding: 0.6em 1.2em;
-    text-decoration: none;
-    text-transform: none;
-}
+            &:hover {
+                background-color: var(--wp--preset--color--primary);
+                border-color: var(--wp--preset--color--primary);
+                color: var(--wp--preset--color--neutral);
+            }
 
-.wp-block-tag-cloud.is-style-outline a .tag-link-count {
-    color: currentColor;
-}
-
-.wp-block-tag-cloud.is-style-outline a:hover {
-    background-color: var(--wp--preset--color--primary);
-    border-color: var(--wp--preset--color--primary);
-    color: var(--wp--preset--color--neutral);
+            .tag-link-count {
+                color: currentColor;
+            }
+        }
+    }
 }

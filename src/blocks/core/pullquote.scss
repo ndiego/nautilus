@@ -1,5 +1,5 @@
-/* Pull Quote Block
------------------------------------------------------------------------------ */
+/* Pull Quote
+ ----------------------------------------------------------------------------- */
 
 .wp-block-pullquote {
     // We have to set the background directly due to bug.
@@ -17,7 +17,8 @@
         margin: 0;
     }
 
-    cite, .wp-block-pullquote__citation {
+    cite, 
+    .wp-block-pullquote__citation {
         color: currentColor;
         display: inline-block;
         font-weight: 500;
