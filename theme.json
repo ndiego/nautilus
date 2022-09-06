@@ -173,7 +173,6 @@
 			},
 			"spacing": {
 				"gap": "1.5rem",
-				"outer": "1.5rem",
 				"responsive": "clamp(1.5rem, 2.5vw, 3rem)"
 			},
 			"typography": {
@@ -665,7 +664,7 @@
 			"heading": {
 				"typography": {
 					"fontWeight": "600",
-					"lineHeight": "var:custom|typography|line-height|x-small"
+					"lineHeight": "var:custom|typography|line-height|small"
 				}
 			},
 			"h1": {

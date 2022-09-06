@@ -4,8 +4,7 @@ Theme URI:         https://github.com/ndiego/nautilus/
 Author:            Nick Diego
 Author URI:        https://www.nickdiego.com
 Description:       A WordPress block theme from 20,000 leagues under the sea.
-Requires at least: 5.9
-Tested up to:      5.9
+Requires at least: 5.96.06.0
 Requires PHP:      5.6
 Version:           0.1.0
 License:           GNU General Public License v2 or later
@@ -35,13 +34,11 @@ html {
 	box-sizing: inherit;
 }
 
-/* General Styles (Styles not supported in theme.json and not block specific)
+/* General Styles (Styles not supported in theme.json and/or not block specific)
  ----------------------------------------------------------------------------- */
 
 /*
  * Text and navigation link styles.
- * Necessary until the following issue is resolved in Gutenberg:
- * https://github.com/WordPress/gutenberg/issues/27075
  */
 a {
 	text-decoration-thickness: 1px;
@@ -84,6 +81,9 @@ select {
 	padding: 0 1.5rem 0 0.5rem;
 }
 
+/*
+ * Set default font style for cite.
+ */
 cite {
 	font-style: normal;
 }
@@ -115,16 +115,6 @@ kbd {
 }
 
 /*
- * When inline code is selected, the Editor applies contextual styling. Since
- * our code color is near white, we need to reset to the default text color.
- */
-.rich-text:focus > code[data-rich-text-format-boundary],
-.rich-text:focus > kbd[data-rich-text-format-boundary] {
-	color: currentColor;
-	border-radius: 4px;
-}
-
-/*
  * Custom color for the * indicator in forms.
  */
 span.required {
@@ -141,8 +131,8 @@ span.required {
  * the Block Editor in the future.
  */
 .wp-block-navigation__responsive-container.is-menu-open {
-	padding: var(--wp--custom--spacing--outer);
-	padding-bottom: calc(2 * var(--wp--custom--spacing--outer));
+	padding: var(--wp--preset--spacing--medium);
+	padding-bottom: calc(2 * var(--wp--preset--spacing--medium));
 }
 
 
@@ -151,11 +141,11 @@ span.required {
 
 /*
  * Mock block spacing when blocks are placed in container blocks that do not
- * support blockGap (i.e. Column, Cover, Media & Text)
+ * support blockGap (i.e. Cover, Media & Text)
  */
 .wp-block-cover .wp-block-cover__inner-container > *,
 .wp-block-media-text .wp-block-media-text__content > * {
-	margin-top: var(--wp--custom--spacing--gap);
+	margin-top: var(--wp--style--block-gap);
 	margin-bottom: 0;
 }
 
@@ -179,7 +169,7 @@ span.required {
 
 .edit-post-visual-editor__post-title-wrapper h1 {
 	color: var(--wp--preset--color--primary);
-	font-size: var(--wp--preset--font-size--medium);
+	font-size: 18px;
 	text-align: center;
 }
 
@@ -192,7 +182,7 @@ span.required {
  * Utility styles.
  ----------------------------------------------------------------------------- */
 
-/* Not used, check this */
+/* Margin */
 .my-0 {
 	margin-bottom: 0 !important;
 	margin-top: 0 !important;
@@ -203,17 +193,16 @@ span.required {
     margin-top: 0 !important;
 }
 
-/* Not used, check this */
+/* Height */
 .height-100 {
 	height: 100%;
 }
 
-/* Not used, check this */
+/* Flexbox */
 .items-start {
 	align-items: flex-start !important;
 }
 
-/* Not used, check this */
 .justify-space-between {
 	justify-content: space-between !important;
 }
@@ -226,6 +215,7 @@ span.required {
 	flex: 1;
 }
 
+/* Box Shadow */
 .box-shadow--minimal {
 	box-shadow: var(--wp--custom--box-shadow--minimal);
 }
@@ -234,12 +224,13 @@ span.required {
 	box-shadow: var(--wp--custom--box-shadow--default);
 }
 
+/* Border */
 .border-radius--default {
 	border-radius: var(--wp--custom--border-radius--default);
 	overflow: hidden;
 }
 
-/* Utility styles for links. */
+/* Links */
 .text-decoration--none a { 
 	text-decoration-thickness: 0 !important;
 	text-decoration: none !important;
@@ -262,6 +253,7 @@ img.has-hover-no-duotone:hover {
 	transition: all 10s ease-in-out;
 }
 
+/* Conditionally display content browser width. */
 @media (min-width: 781px) {
 	.hide-on-desktop {
 		display: none !important;
@@ -280,6 +272,7 @@ img.has-hover-no-duotone:hover {
 	}
 }
 
+/* Center align content on mobile. */
 @media (max-width: 782px) {
 	.mobile-align-center,
 	.mobile-align-center .has-text-align-left,

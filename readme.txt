@@ -1,7 +1,7 @@
 === Nautilus ===
 Contributors: ndiego
-Requires at least: 5.8
-Tested up to: 5.9
+Requires at least: 6.0
+Tested up to: 6.0
 Requires PHP: 5.6
 Stable tag: 0.1.0
 License: GPLv2 or later
@@ -14,7 +14,7 @@ A WordPress block theme from 20,000 leagues under the sea.
 == Changelog ==
 
 = 0.1.0 - TBD =
-* Initial development release
+* Initial development release.
 
 == Copyright ==
 

@@ -1,28 +1,29 @@
 <?php
 /**
- * Twenty Twenty-Two functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * Nautilus functions and definitions.
  *
  * @package Nautilus
- * @since 0.1.0
+ * @author  Nick Diego
+ * @license GNU General Public License v2 or later
+ * @link    https://github.com/ndiego/nautilus
  */
 
 /**
- * Add support for core block visual styles.
- * Styles load in both the editor and the front end.
+ * Add theme supports and styles.
  *
  * @since 0.1.0
- * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#default-block-styles
  *
  * @return void
  */
-function nautilus_support() {
+function nautilus_setup() {
 
     // Enqueue editor styles.
     add_editor_style( 'style.css' );
+
+	// Remove core block patterns.
+	remove_theme_support( 'core-block-patterns' );
 }
-add_action( 'after_setup_theme', 'nautilus_support' );
+add_action( 'after_setup_theme', 'nautilus_setup' );
 
 /**
  * Enqueue styles.
@@ -43,7 +44,6 @@ function nautilus_styles() {
 
 	// Enqueue theme stylesheet.
 	wp_enqueue_style( 'nautilus-styles' );
-
 }
 add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
 
@@ -176,13 +176,16 @@ function nautilus_register_block_styles() {
 }
 add_action( 'init', 'nautilus_register_block_styles' );
 
-// Customize the comments form.
+/**
+ * Customize the comments form. 
+ *
+ * @since 0.1.0
+ */
 function nautilus_edit_comment_form_defaults( $defaults ) {
 	$defaults[ 'title_reply' ] = __( 'Share Your Thoughts', 'nautilus' );
 	return $defaults;
 }
 add_action( 'comment_form_defaults', 'nautilus_edit_comment_form_defaults' );
-
 
 /**
  * Remove the colon and give archive title prefixes a class. 

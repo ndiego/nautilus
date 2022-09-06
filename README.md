@@ -9,13 +9,7 @@
 - WordPress 6.0+
 - [Gutenberg](https://wordpress.org/plugins/gutenberg/)
 
-## Utility classes
+## Plugin Dependencies
 
-Nautilus employs a handful of utility classes to correct for bugs in WordPress
-or add functionality that does not currently exist at the block level. The list
-of available utility classes is subject to change as WordPress evolves.
-
-.flex-shrink-0
-
-This class prevents blocks placed in flex containers from shrinking. This is
-particularly useful in Site Logo and Image blocks when placed inside of Row blocks.
+- [Icon Block](https://wordpress.org/plugins/icon-block/)
+- [Social Sharing Block](https://wordpress.org/plugins/social-sharing-block/)
