@@ -151,11 +151,6 @@
 					"slug": "black",
 					"color": "#000000",
 					"name": "Black"
-				},
-				{
-					"slug": "background",
-					"color": "#000000",
-					"name": "Black"
 				}
 			]
 		},
@@ -361,7 +356,7 @@
 				},
 				{
 					"fluid": {
-						"min": "4.75rem",
+						"min": "4.25rem",
 						"max": "7.125rem"
 					},
 					"name": "5X Large",
@@ -585,7 +580,7 @@
 				"typography": {
 					"fontSize": "var:preset|font-size|medium",
 					"fontWeight": "500",
-					"letterSpacing": "1px",
+					"letterSpacing": "0.5px",
 					"textTransform": "uppercase"
 				},
 				"elements": {

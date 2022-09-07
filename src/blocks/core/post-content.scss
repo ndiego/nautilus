@@ -7,15 +7,15 @@
     &> .wp-block-code,
     &> .wp-block-gallery,
     &> .wp-block-image {
-        margin-block-start: var(--wp--preset--spacing--large);
-        margin-block-end: var(--wp--preset--spacing--large);
+        margin-block-start: var(--wp--preset--spacing--x-large);
+        margin-block-end: var(--wp--preset--spacing--x-large);
     }
 
     &> h1:not(:first-child),
     &> h2:not(:first-child),
     &> h3:not(:first-child),
     &> h4:not(:first-child) {
-        margin-top: var(--wp--preset--spacing--large);
+        margin-top: var(--wp--preset--spacing--x-large);
     }
 
     &> h1:not(:first-child) + *,
