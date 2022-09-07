@@ -48,3 +48,12 @@
         }
     }
 }
+
+// We need the editor wrapper class to override specificity.
+.editor-styles-wrapper {
+    .wp-block-separator {
+        &.is-style-waves {
+            background-color: unset !important;
+        }
+    }
+}

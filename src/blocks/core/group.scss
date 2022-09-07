@@ -55,5 +55,10 @@
                 }
             }
         }
+
+        @media (max-width: 599px) {
+            padding-top: var(--wp--preset--spacing--x-large) !important;
+            padding-bottom: var(--wp--preset--spacing--x-large) !important;
+        }
     }
 }
