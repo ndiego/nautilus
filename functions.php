@@ -54,18 +54,35 @@ add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
  *
  * @return void
  */
-function nautilus_block_styles_variations() {
+function nautilus_editor_script_styles() {
 
 	// WordPress core block styles can only be unregistered using JavaScript.
 	wp_enqueue_script( 
 		'nautilus-block-styles-variations', 
 		get_template_directory_uri() . '/assets/js/block-styles-variations.js', 
-		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) ,
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
 		wp_get_theme()->get( 'Version' ),
 		true
 	);
+
+	// WordPress core block styles can only be unregistered using JavaScript.
+	wp_enqueue_script( 
+		'nautilus-modify-block-supports', 
+		get_template_directory_uri() . '/assets/js/modify-block-supports.js', 
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+
+	// Enqueue custom Editor styles.
+	wp_enqueue_style( 
+		'nautilus-editor-styles', 
+		get_template_directory_uri() . '/editor.css', 
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
 }
-add_action( 'enqueue_block_editor_assets', 'nautilus_block_styles_variations' );
+add_action( 'enqueue_block_editor_assets', 'nautilus_editor_script_styles' );
 
 /**
  * Enqueue individual block stylesheets.

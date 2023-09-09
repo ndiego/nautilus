@@ -9,4 +9,11 @@
             margin-top: 0;
         }
     }
+
+    // Responsive menu container padding.
+    // Needed because the theme does not have top/bottom root padding.
+    .wp-block-navigation__responsive-container.is-menu-open {
+        padding: var(--wp--preset--spacing--medium);
+        padding-bottom: calc(2 * var(--wp--preset--spacing--medium));
+    }
 }

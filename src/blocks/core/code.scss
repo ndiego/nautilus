@@ -2,6 +2,8 @@
  ----------------------------------------------------------------------------- */
 
 .wp-block-code {
+	background: var(--wp--preset--color--primary) !important;
+
 	&> code {
 		overflow-wrap: normal;
 		overflow-x: scroll;
@@ -9,6 +11,13 @@
 	
 		// Need important to override some Editor styles.
 		white-space: pre !important;
+	}
+
+	.prism-titlename {
+		background-color: var(--wp--preset--color--primary-light);
+		color: var(--wp--preset--color--neutral-100);
+		font-weight: 500;
+		padding: 8px 16px;
 	}
 
 	/* Block Style: Wrap

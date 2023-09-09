@@ -6,13 +6,23 @@
     // Improve spacing on Media & Text blocks.
     .wp-block-media-text__content {
         padding: clamp(var(--wp--style--block-gap), 8%, calc(2*var(--wp--style--block-gap)));
+
+        // Mock block spacing.
+        &> * {
+            margin-top: var(--wp--style--block-gap);
+            margin-bottom: 0;
+        }
+
+        &> *:first-child {
+            margin-top: 0;
+        }
     }
 
     /* Block Style: Remove Content Padding
      * (Not exposed in the UI. Useful when padding is controlled with group block.)
      --------------------------------------------- */
 
-    &.is_style_no_content_margin {
+    &.is_style_no_content_padding {
         .wp-block-media-text__content {
             padding: 0;
         }

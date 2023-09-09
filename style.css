@@ -4,284 +4,179 @@ Theme URI:         https://github.com/ndiego/nautilus/
 Author:            Nick Diego
 Author URI:        https://www.nickdiego.com
 Description:       A WordPress block theme from 20,000 leagues under the sea.
-Requires at least: 5.96.06.0
+Requires at least: 6.3
 Requires PHP:      5.6
 Version:           0.1.0
 License:           GNU General Public License v2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:       nautilus
 */
-
 /* Defaults
  ----------------------------------------------------------------------------- */
-
-body {
-	overflow-x: hidden;
-}
-
 html {
-	box-sizing: border-box;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-
-	/* Add smooth scrolling to anchor links throughout the site. */
-	scroll-behavior: smooth;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 /* General Styles (Styles not supported in theme.json and/or not block specific)
  ----------------------------------------------------------------------------- */
-
-/*
- * Text and navigation link styles.
- */
 a {
-	text-decoration-thickness: 1px;
-	text-underline-offset: 0.5ch;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.5ch;
 }
 
-/*
- * Make bold styles look a bit nicer.
- */
 strong {
-	font-weight: 600;
+  font-weight: 600;
 }
 
-/*
- * Custom styles for form inputs, textareas and labels.
- */
 input,
 textarea {
-	font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--small);
 }
 
 input:not([type=submit]),
 textarea {
-	border: var(--wp--custom--border--default);
-	border-radius: var(--wp--custom--border-radius--default);
-	font-size: var(--wp--preset--font-size--small);
+  border: var(--wp--custom--border--default);
+  border-radius: var(--wp--custom--border-radius--default);
+  font-size: var(--wp--preset--font-size--small);
 }
 
 label {
-	font-family: var(--wp--preset--font-family--primary);
-	font-size: var(--wp--preset--font-size--medium);
-	font-weight: 500;
+  font-family: var(--wp--preset--font-family--primary);
+  font-size: var(--wp--preset--font-size--medium);
+  font-weight: 500;
 }
 
 select {
-	border: var(--wp--custom--border--default);
-	border-radius: 4px;
-	color: var(--wp--preset--color--primary-light);
-	min-height: 30px;
-	padding: 0 1.5rem 0 0.5rem;
+  border: var(--wp--custom--border--default);
+  border-radius: 4px;
+  color: var(--wp--preset--color--primary-light);
+  min-height: 30px;
+  padding: 0 1.5rem 0 0.5rem;
 }
 
-/*
- * Set default font style for cite.
- */
 cite {
-	font-style: normal;
+  font-style: normal;
 }
 
-/*
- * Code and keyboard input styles.
- * Inline code styling, need to explicitly exclude the code block.
- */
 *:not(.wp-block-code) > code,
 kbd {
-    background-color: var(--wp--preset--color--neutral-100);
-    border-radius: 4px;
-	color: var(--wp--preset--color--primary);
-	font-family: var(--wp--preset--font-family--monospace);
-    font-size: 0.8em;
-    padding: 0.3rem 0.4rem;
-    position: relative;
+  background-color: var(--wp--preset--color--neutral-100);
+  border-radius: 4px;
+  color: var(--wp--preset--color--primary);
+  font-family: var(--wp--preset--font-family--monospace);
+  font-size: 0.8em;
+  padding: 0.3rem 0.4rem;
+  position: relative;
 }
 
 *.has-dark-code:not(.wp-block-code) code,
 .has-dark-code kbd {
-    background-color: var(--wp--preset--color--primary-light);
-    border-radius: 4px;
-	color: var(--wp--preset--color--primary-lighter);
-	font-family: var(--wp--preset--font-family--monospace);
-    font-size: 0.8em;
-    padding: 0.3rem 0.4rem;
-    position: relative;
+  background-color: var(--wp--preset--color--primary-light);
+  border-radius: 4px;
+  color: var(--wp--preset--color--primary-lighter);
+  font-family: var(--wp--preset--font-family--monospace);
+  font-size: 0.8em;
+  padding: 0.3rem 0.4rem;
+  position: relative;
 }
 
-/*
- * Custom color for the * indicator in forms.
- */
 span.required {
-	color: var(--wp--preset--color--accent);
-	font-family: var(--wp--preset--font-family--primary);
-	font-size: var(--wp--preset--font-size--medium);
-	font-weight: 600;
+  color: var(--wp--preset--color--accent);
+  font-family: var(--wp--preset--font-family--primary);
+  font-size: var(--wp--preset--font-size--medium);
+  font-weight: 600;
 }
 
 /*
- * Responsive menu container padding.
- * This ensures the responsive container inherits the same
- * spacing defined above. This behavior may be built into
- * the Block Editor in the future.
- */
-.wp-block-navigation__responsive-container.is-menu-open {
-	padding: var(--wp--preset--spacing--medium);
-	padding-bottom: calc(2 * var(--wp--preset--spacing--medium));
-}
-
-
-/* Experimental Styles
+ * Utility classes.
  ----------------------------------------------------------------------------- */
-
-/*
- * Mock block spacing when blocks are placed in container blocks that do not
- * support blockGap (i.e. Cover, Media & Text)
- */
-.wp-block-cover .wp-block-cover__inner-container > *,
-.wp-block-media-text .wp-block-media-text__content > * {
-	margin-top: var(--wp--style--block-gap);
-	margin-bottom: 0;
+.has-align-items-start {
+  align-items: flex-start;
 }
 
-.wp-block-cover .wp-block-cover__inner-container > *:first-child,
-.wp-block-media-text .wp-block-media-text__content > *:first-child {
-	margin-top: 0;
+.has-align-items-stretch {
+  align-items: stretch;
 }
 
-/*
- * Visually separate the page/post title from the post content in Editor.
- */
-.edit-post-visual-editor__post-title-wrapper {
-	align-items: center;
-	display: flex;
-	background-color: #fff;
-	border-bottom: 1px solid #dddddd;
-    margin-top: 0;
-	margin-bottom: 0;
-	min-height: 48px;
+.has-justify-space-between {
+  justify-content: space-between;
 }
 
-.edit-post-visual-editor__post-title-wrapper h1 {
-	color: var(--wp--preset--color--primary);
-	font-size: 18px;
-	text-align: center;
+.has-flex-shrink-0 {
+  flex-shrink: 0;
 }
 
-/* Add a little separation, but allow blocks with margin control to override. */
-.block-editor-block-list__layout.is-root-container:not(.edit-site-block-editor__block-list):not(.is-outline-mode) > *:first-child:not(.alignfull) {
-    margin-top: calc(2 * var(--wp--style--block-gap));
+.has-flex-1 {
+  flex: 1;
 }
 
-/*
- * Utility styles.
- ----------------------------------------------------------------------------- */
-
-/* Margin */
-.my-0 {
-	margin-bottom: 0 !important;
-	margin-top: 0 !important;
+.has-white-space-nowrap {
+  white-space: nowrap;
 }
 
-.mt-0,
-.mt-0 .wp-block-post-template {
-    margin-top: 0 !important;
-}
-
-/* Height */
-.height-100 {
-	height: 100%;
-}
-
-/* Flexbox */
-.items-start {
-	align-items: flex-start !important;
-}
-
-.justify-space-between {
-	justify-content: space-between !important;
-}
-
-.flex-shrink-0 {
-	flex-shrink: 0;
-}
-
-.flex-1 {
-	flex: 1;
-}
-
-/* Box Shadow */
 .box-shadow--minimal {
-	box-shadow: var(--wp--custom--box-shadow--minimal);
+  box-shadow: var(--wp--custom--box-shadow--minimal);
 }
-
 .box-shadow--default {
-	box-shadow: var(--wp--custom--box-shadow--default);
+  box-shadow: var(--wp--custom--box-shadow--default);
 }
 
-/* Border */
 .border-radius--default {
-	border-radius: var(--wp--custom--border-radius--default);
-	overflow: hidden;
+  border-radius: var(--wp--custom--border-radius--default);
+  overflow: hidden;
+}
+.border-radius--round {
+  border-radius: var(--wp--custom--border-radius--round);
+  overflow: hidden;
 }
 
-/* Links */
-.text-decoration--none a { 
-	text-decoration-thickness: 0 !important;
-	text-decoration: none !important;
+.text-decoration--none a {
+  text-decoration-thickness: 0 !important;
+  text-decoration: none !important;
 }
 
-.has-hidden-links a { 
-	text-decoration-thickness: 0 !important;
-	text-decoration: none !important;
+.has-hidden-links a {
+  text-decoration-thickness: 0 !important;
+  text-decoration: none !important;
+}
+.has-hidden-links a:hover {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.5ch !important;
 }
 
-.has-hidden-links a:hover { 
-	text-decoration: underline !important;
-	text-decoration-thickness: 1px !important;
-	text-underline-offset: 0.5ch !important;
+@media (max-width: 782px) {
+  .has-no-mobile-border img {
+    border: none !important;
+  }
 }
 
-.has-hover-no-duotone:hover img,
-img.has-hover-no-duotone:hover {
-	filter: url() !important;
-	transition: all 10s ease-in-out;
-}
-
-/* Conditionally display content browser width. */
 @media (min-width: 781px) {
-	.hide-on-desktop {
-		display: none !important;
-	}
+  .hide-on-desktop {
+    display: none !important;
+  }
 }
-
 @media (max-width: 782px) {
-	.hide-on-tablet {
-		display: none !important;
-	}
+  .hide-on-tablet {
+    display: none !important;
+  }
 }
-
 @media (max-width: 599px) {
-	.hide-on-mobile {
-		display: none !important;
-	}
+  .hide-on-mobile {
+    display: none !important;
+  }
 }
-
-/* Center align content on mobile. */
 @media (max-width: 782px) {
-	.mobile-align-center,
-	.mobile-align-center .has-text-align-left,
-	.mobile-align-center .has-text-align-center {
-		text-align: center !important;
-	}
-
-	.mobile-align-center.is-layout-flex,
-	.mobile-align-center .is-layout-flex {
-		display: inline-flex;
-	}
+  .mobile-align-center,
+  .mobile-align-center .has-text-align-left,
+  .mobile-align-center .has-text-align-center {
+    text-align: center !important;
+  }
+  .mobile-align-center.is-layout-flex,
+  .mobile-align-center .is-layout-flex {
+    display: inline-flex;
+  }
 }

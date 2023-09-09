@@ -236,6 +236,20 @@
 				{
 					"fontFace": [
 						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"fontWeight": "200 900",
+							"src": [ "file:./assets/fonts/inter/Inter.var.woff2" ]
+						}
+					],
+					"fontFamily": "\"Inter\",sans-serif",
+					"name": "Inter",
+					"slug": "primaryw"
+				},
+				{
+					"fontFace": [
+						{
 							"fontFamily": "Source Sans",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -579,9 +593,7 @@
 			"core/site-title": {
 				"typography": {
 					"fontSize": "var:preset|font-size|medium",
-					"fontWeight": "500",
-					"letterSpacing": "0.5px",
-					"textTransform": "uppercase"
+					"fontWeight": "500"
 				},
 				"elements": {
 					"link": {
