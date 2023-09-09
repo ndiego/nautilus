@@ -23,6 +23,7 @@
      --------------------------------------------- */
 
     &.is-style-hover-box {
+        border-radius: var(--wp--custom--border-radius--default);
         box-shadow: var(--wp--custom--box-shadow--minimal);
 
         // Only show animation on desktop.
