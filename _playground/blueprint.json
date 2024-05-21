@@ -1,34 +1,34 @@
 {
-    "$schema": "https://playground.wordpress.net/blueprint-schema.json",
-    "landingPage": "/wp-admin/site-editor.php",
-    "preferredVersions": {
-        "php": "8.0",
-        "wp": "latest"
-    },
-    "steps": [
-        {
-            "step": "login",
-            "username": "admin",
-            "password": "password"
-        },
-        {
-            "step": "updateUserMeta",
-            "meta": {
-                "admin_color": "modern"
-            },
-            "userId": 1
-        },
-        {
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/wp-admin/site-editor.php",
+	"preferredVersions": {
+		"php": "8.0",
+		"wp": "latest"
+	},
+	"steps": [
+		{
+			"step": "login",
+			"username": "admin",
+			"password": "password"
+		},
+		{
+			"step": "updateUserMeta",
+			"meta": {
+				"admin_color": "modern"
+			},
+			"userId": 1
+		},
+		{
 			"step": "installTheme",
 			"themeZipFile": {
 				"resource": "url",
 				"url": "https://github-proxy.com/proxy/?repo=ndiego/nautilus"
 			},
-            "options": {
-                "activate": true
-            }
+			"options": {
+				"activate": true
+			}
 		},
-        {
+		{
 			"step": "installPlugin",
 			"pluginZipFile": {
 				"resource": "wordpress.org/plugins",
@@ -38,5 +38,5 @@
 				"weight": 2
 			}
 		}
-    ]
+	]
 }
