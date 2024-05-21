@@ -23,11 +23,17 @@
 			"themeZipFile": {
 				"resource": "url",
 				"url": "https://github-proxy.com/proxy/?repo=ndiego/nautilus"
-			},
-			"options": {
-				"activate": true
 			}
 		},
+		{
+			"step": "mv",
+			"fromPath": "/wordpress/wp-content/themes/nautilus-main",
+			"toPath": "/wordpress/wp-content/themes/nautilus"
+		},
+		{
+            "step": "activateTheme",
+            "themeFolderName": "nautilus"
+        },
 		{
 			"step": "installPlugin",
 			"pluginZipFile": {
