@@ -215,3 +215,20 @@ function nautilus_modify_archive_title_prefixes( $title, $original_title, $prefi
     return sprintf( '<span class="query-title-prefix">%s</span>%s', $prefix_no_colon, $original_title ); 
 } 
 add_filter( 'get_the_archive_title', 'nautilus_modify_archive_title_prefixes', 10, 3 );
+
+
+/**
+ * Replace breaks with new lines in all Code blocks on the front end.
+ * This filter fixes an issue in the Code Syntax Highlighting Block.
+ *
+ * @param string $block_content The block content about to be filtered.
+ * @return string The filtered block content.
+ */
+function nautilus_code_block_add_line_breaks( $block_content ) {
+	return str_ireplace(
+		[ '<br>', '<br/>', '<br />' ],
+		"\n",
+		$block_content
+	);
+}
+add_filter( 'render_block_core/code', 'nautilus_code_block_add_line_breaks', 10, 1 );
