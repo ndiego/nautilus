@@ -5,11 +5,13 @@
 		"php": "8.0",
 		"wp": "latest"
 	},
+	"login": true,
 	"steps": [
 		{
-			"step": "login",
-			"username": "admin",
-			"password": "password"
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "Nautilus"
+			}
 		},
 		{
 			"step": "updateUserMeta",
@@ -31,9 +33,9 @@
 			"toPath": "/wordpress/wp-content/themes/nautilus"
 		},
 		{
-            "step": "activateTheme",
-            "themeFolderName": "nautilus"
-        },
+			"step": "activateTheme",
+			"themeFolderName": "nautilus"
+		},
 		{
 			"step": "installPlugin",
 			"pluginZipFile": {
