@@ -127,24 +127,21 @@ function nautilus_enqueue_block_stylesheets() {
 add_action( 'after_setup_theme', 'nautilus_enqueue_block_stylesheets' );
 
 /**
- * Registers block patterns and categories.
+ * Registers custom pattern categories.
  *
  * @since 0.1.0
  */
-function nautilus_register_block_pattern_categories() {
+function nautilus_register_pattern_categories() {
 
-	$block_pattern_categories = array(
-		'footer' => array( 'label' => __( 'Footers', 'nautilus' ) ),
-		'header' => array( 'label' => __( 'Headers', 'nautilus' ) ),
-		'page'   => array( 'label' => __( 'Page', 'nautilus' ) ),
-		'query'  => array( 'label' => __( 'Query', 'nautilus' ) ),
+	register_block_pattern_category(
+		'nautilus_page',
+		array(
+			'label'       => _x( 'Pages', 'Block pattern category', 'nautilus' ),
+			'description' => __( 'A collection of full page layouts.', 'nautilus' ),
+		)
 	);
-
-	foreach ( $block_pattern_categories as $name => $properties ) {
-		register_block_pattern_category( $name, $properties );
-	}
 }
-add_action( 'init', 'nautilus_register_block_pattern_categories' );
+add_action( 'init', 'nautilus_register_pattern_categories' );
 
 /**
  * Register block styles.
