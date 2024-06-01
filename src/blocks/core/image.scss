@@ -2,28 +2,6 @@
  ----------------------------------------------------------------------------- */
 
 .wp-block-image {
-    &> figcaption {
-        text-align: center;
-    }
-
-    /* Custom classes for box shadows.
-     --------------------------------------------- */
-
-    &.box-shadow--default {
-        box-shadow: none !important;
-    
-        img {
-            box-shadow: var(--wp--custom--box-shadow--default);
-        }
-    } 
-    
-    &.box-shadow--minimal {
-        box-shadow: none !important;
-        
-        img {
-            box-shadow: var(--wp--custom--box-shadow--minimal);
-        }
-    }
 
     /* Block Style: Caption right/left
      --------------------------------------------- */
@@ -36,10 +14,10 @@
             &.alignfull,
             &.alignwide {
                 &> figcaption {
+                    box-sizing: border-box;
                     max-width: unset;
-                    padding-left: var(--wp--style--block-gap);
-                    padding-right: var(--wp--style--block-gap);
                     position: unset;
+                    text-align: center;
                 }
             }
 
@@ -64,23 +42,5 @@
                 text-align: right;
             }
         }
-    }
-}
-
-// Editor overrides due to inconsistent markup.
-.editor-styles-wrapper {
-    // Override editor styles that are not present on the frontend.
-    .wp-block-image {
-        line-height: 0;
-        margin-bottom: 0 !important;
-    }
-
-    // Images are wrapped in an alignment div in the Editor. 
-    [data-align="full"] > .wp-block-image.is-style-caption-right > figcaption,
-    [data-align="full"] > .wp-block-image.is-style-caption-left > figcaption {
-        max-width: unset;
-        padding-left: var(--wp--style--block-gap);
-        padding-right: var(--wp--style--block-gap);
-        position: unset;
     }
 }

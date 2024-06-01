@@ -2,13 +2,11 @@
  ----------------------------------------------------------------------------- */
 
 .wp-block-separator {
-    
-    /* Block Style: Wide
-     --------------------------------------------- */
 
     // This fixes the block style "collapsing" in Row blocks.
-    &.is-style-wide {
+    &:not(.is-style-dots):not(.is-style-waves) {
         flex-grow: 1;
+        height: 1px;
     }
 
     /* Block Style: Dots

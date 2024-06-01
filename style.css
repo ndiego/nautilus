@@ -22,9 +22,9 @@ html {
 
 /* General Styles (Styles not supported in theme.json and/or not block specific)
  ----------------------------------------------------------------------------- */
-a {
+a:where(:not(.wp-element-button)) {
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.5ch;
+  text-underline-offset: 2px;
 }
 
 strong {
@@ -76,7 +76,7 @@ kbd {
 .has-dark-code kbd {
   background-color: var(--wp--preset--color--primary-light);
   border-radius: 4px;
-  color: var(--wp--preset--color--primary-lighter);
+  color: var(--wp--preset--color--neutral);
   font-family: var(--wp--preset--font-family--monospace);
   font-size: 0.8em;
   padding: 0.3rem 0.4rem;
@@ -117,17 +117,21 @@ span.required {
   white-space: nowrap;
 }
 
+.box-shadow--small,
 .box-shadow--minimal {
-  box-shadow: var(--wp--custom--box-shadow--minimal);
+  box-shadow: var(--wp--preset--shadow--small);
 }
+
+.box-shadow--medium,
 .box-shadow--default {
-  box-shadow: var(--wp--custom--box-shadow--default);
+  box-shadow: var(--wp--preset--shadow--medium);
 }
 
 .border-radius--default {
   border-radius: var(--wp--custom--border-radius--default);
   overflow: hidden;
 }
+
 .border-radius--round {
   border-radius: var(--wp--custom--border-radius--round);
   overflow: hidden;

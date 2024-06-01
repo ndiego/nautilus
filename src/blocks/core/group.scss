@@ -3,20 +3,6 @@
 
 .wp-block-group {
 
-    /* Block Style: Full Height Stack
-     *
-     * This style is not directly accessible in the UI.
-     --------------------------------------------- */
-
-    &.is-style-full-height-stack {
-        height: 100%;
-        justify-content: space-between;
-
-        &> .wp-block-group {
-            width: 100%;
-        }
-    }
-
     /* Block Style: Hover Box
      *
      * This style is not directly accessible in the UI.
@@ -24,7 +10,7 @@
 
     &.is-style-hover-box {
         border-radius: var(--wp--custom--border-radius--default);
-        box-shadow: var(--wp--custom--box-shadow--minimal);
+        box-shadow: var(--wp--preset--shadow--small);
 
         // Only show animation on desktop.
         @media (min-width: 600px) {
@@ -44,7 +30,7 @@
             }
         
             &:hover {
-                box-shadow: var(--wp--custom--box-shadow--default);
+                box-shadow: var(--wp--preset--shadow--medium);
 
                 &> *:not(.wp-block-buttons):not(.wp-block-read-more) {
                     transform: translateY( 0 );

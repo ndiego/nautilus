@@ -15,7 +15,7 @@ Text Domain:       nautilus
 /* Defaults
  ----------------------------------------------------------------------------- */
 
- html {
+html {
 	box-sizing: border-box;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -27,10 +27,8 @@ Text Domain:       nautilus
 /* General Styles (Styles not supported in theme.json and/or not block specific)
  ----------------------------------------------------------------------------- */
 
-// Text and navigation link styles.
-a {
-	text-decoration-thickness: 1px;
-	text-underline-offset: 0.5ch;
+a:where(:not(.wp-element-button)) {
+	text-underline-offset: 2px;
 }
 
 // Make bold styles look a bit nicer.
@@ -87,7 +85,7 @@ kbd {
 .has-dark-code kbd {
     background-color: var(--wp--preset--color--primary-light);
     border-radius: 4px;
-	color: var(--wp--preset--color--primary-lighter);
+	color: var(--wp--preset--color--neutral);
 	font-family: var(--wp--preset--font-family--monospace);
     font-size: 0.8em;
     padding: 0.3rem 0.4rem;
@@ -136,11 +134,11 @@ span.required {
 // Box Shadow
 .box-shadow {
     &--minimal {
-        box-shadow: var(--wp--custom--box-shadow--minimal);
+        box-shadow: var(--wp--preset--shadow--small);
     }
 
     &--default {
-        box-shadow: var(--wp--custom--box-shadow--default);
+        box-shadow: var(--wp--preset--shadow--medium);
     }
 }
 
@@ -218,4 +216,15 @@ span.required {
 	.mobile-align-center .is-layout-flex {
 		display: inline-flex;
 	}
+}
+
+
+/* Jetpack Social */
+
+// .sd-like {
+//     margin-top: var(--wp--preset--spacing--40);
+// }
+
+.sd-title {
+    display: none !important;
 }

@@ -2,12 +2,6 @@
  ----------------------------------------------------------------------------- */
 
 .wp-block-spacer {
-	// Enable true spacers (override blockGap)
-	margin-top: 0 !important;
-
-	&+ * {
-		margin-top: 0 !important;
-	}
 
 	// Utility classes for reducing the size of spacers on mobile.
 	@media (max-width: 781px) {

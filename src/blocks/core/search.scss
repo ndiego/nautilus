@@ -2,8 +2,10 @@
 /* Search
  ----------------------------------------------------------------------------- */
 
+// There currently is no way to style form input in theme.json.
 .wp-block-search {
     .wp-block-search__input {
-        padding: 0.5rem 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

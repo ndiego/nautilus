@@ -156,6 +156,7 @@ function nautilus_register_block_styles() {
         ),
         'core/categories' => array(
             'horizontal' => __( 'Horizontal', 'nautilus' ),
+			'outline'    => __( 'Outline', 'nautilus' ),
         ),
         'core/image'      => array(
             'caption-left'  => __( 'Caption Left', 'nautilus' ),
@@ -173,6 +174,12 @@ function nautilus_register_block_styles() {
         ),
         'core/separator'  => array(
             'waves' => __( 'Waves', 'nautilus' ),
+        ),
+		'core/tag-cloud'  => array(
+            'outline' => __( 'Outline', 'nautilus' ),
+        ),
+		'core/post-terms'  => array(
+            'outline' => __( 'Outline', 'nautilus' ),
         ),
     );
 

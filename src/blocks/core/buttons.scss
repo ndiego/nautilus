@@ -1,14 +1,13 @@
 /* Buttons
  ----------------------------------------------------------------------------- */
 
-.editor-styles-wrapper .wp-block-button,
 .wp-block-button {
+    
     // Custom styles for when inline-code is placed in buttons.
     .wp-block-button__link > code {
         color: inherit;
         background-color: transparent;
         font-size: .8em;
-        letter-spacing: 0;
         opacity: 0.6;
         padding: 0;
         text-transform: none;
@@ -16,37 +15,18 @@
 
     /* Block Style: Filled
      --------------------------------------------- */
-     
+
     &:not(.is-style-outline) .wp-block-button__link {
         &.has-secondary-background-color:hover {
-            background-color: var(--wp--preset--color--secondary-light) !important;
+            background-color: color-mix(in srgb, var(--wp--preset--color--secondary) 90%, var(--wp--preset--color--neutral) 10%) !important;
         }
 
         &.has-tertiary-background-color:hover {
-            background-color: var(--wp--preset--color--tertiary-light) !important;
-        }
-
-        // Accent, info, and warning colors do not have light variants, so just use opacity.
-        &.has-accent-background-color:hover,
-        &.has-info-background-color:hover,
-        &.has-warning-background-color:hover {
-            opacity: 0.8;
-        }
-        
-        &.has-accent-background-color:hover {
-            background-color: var(--wp--preset--color--accent) !important;
-        }
-
-        &.has-info-background-color:hover {
-            background-color: var(--wp--preset--color--info) !important;
-        }
-
-        &.has-warning-background-color:hover {
-            background-color: var(--wp--preset--color--warning) !important;
+            background-color: color-mix(in srgb, var(--wp--preset--color--tertiary) 90%, var(--wp--preset--color--neutral) 10%) !important;
         }
 
         &.has-neutral-background-color:hover {
-            background-color: var(--wp--preset--color--neutral-300) !important;
+            background-color: color-mix(in srgb, var(--wp--preset--color--neutral) 98%, var(--wp--preset--color--primary) 2%) !important;
         }
     }
 
@@ -56,47 +36,16 @@
     &.is-style-outline .wp-block-button__link {
         // This forces buttons with outline styling to inherit the color of the button.
         // This is needed due to our button styling in theme.json.
-        border-color: inherit;
+        border-color: var(--wp--preset--color--neutral-300);
+        border-width: 1px;
+        padding: .8em 1.2em;
 
-        &:hover,
-        &.has-primary-color:hover,
-        &.has-secondary-color:hover,
-        &.has-tertiary-color:hover,
-        &.has-accent-color:hover,
-        &.has-info-color:hover,
-        &.has-warning-color:hover {
-            color: var(--wp--preset--color--neutral) !important;
+        &.has-neutral-color {
+            border-color: var(--wp--preset--color--neutral);
         }
 
-        &:hover,
-        &.has-primary-color:hover {
-            background-color: var(--wp--preset--color--primary) !important;
-            border-color: var(--wp--preset--color--primary);
-        }
-
-        &.has-secondary-color:hover {
-            background-color: var(--wp--preset--color--secondary) !important;
-            border-color: var(--wp--preset--color--secondary);
-        }
-
-        &.has-tertiary-color:hover {
-            background-color: var(--wp--preset--color--tertiary) !important;
-            border-color: var(--wp--preset--color--tertiary);
-        }
-
-        &.has-accent-color:hover {
-            background-color: var(--wp--preset--color--accent) !important;
-            border-color: var(--wp--preset--color--accent);
-        }
-
-        &.has-info-color:hover {
-            background-color: var(--wp--preset--color--info) !important;
-            border-color: var(--wp--preset--color--info);
-        }
-
-        &.has-warning-color:hover {
-            background-color: var(--wp--preset--color--warning) !important;
-            border-color: var(--wp--preset--color--warning);
+        &:hover {
+            background-color: var(--wp--preset--color--neutral-100);
         }
 
         &.has-neutral-color:hover {
