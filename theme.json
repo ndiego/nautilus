@@ -704,41 +704,6 @@
 						"top": "0"
 					}
 				}
-			},
-			"variations": {
-				"variation-b": {
-					"title": "Variation B",
-					"blockTypes": [
-						"core/group",
-						"core/columns"
-					],
-					"color": {
-						"background": "#000000",
-						"text": "#ffffff"
-					},
-					"elements": {
-						"heading": {
-                            "color": {
-                                "text": "#ffffff"
-                            }
-                        }
-                    },
-                    "blocks": {
-                        "core/group": {
-                            "color": {
-                                "background": "#825f58",
-                                "text": "#eed8d3"
-                            },
-                            "elements": {
-                                "heading": {
-                                    "color": {
-                                        "text": "#eed8d3"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
 			}
 		},
 		"color": {
