@@ -3,6 +3,11 @@
 
 .wp-block-image {
 
+    /* A custom wrapper element added manually */
+    .wp-block-image-container {
+        display: inline-block;
+    }
+
     /* Block Style: Caption right/left
      --------------------------------------------- */
 
@@ -32,14 +37,14 @@
         &.is-style-caption-right {
             &> figcaption {
                 right: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
-                text-align: left;
+                text-align: left !important;
             }
         }
 
         &.is-style-caption-left {
             &> figcaption {
                 left: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
-                text-align: right;
+                text-align: right !important;
             }
         }
     }

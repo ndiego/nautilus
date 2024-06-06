@@ -11,24 +11,24 @@
         gap: var(--wp--preset--spacing--x-small);
 
         a {
+            background-color: var(--wp--preset--color--white);
             border: var(--wp--custom--border--default);
-            border-radius: var(--wp--custom--border-radius--default);
+            border-radius: var(--wp--custom--border-radius--button);
             color: var(--wp--preset--color--primary);
             display: inline-block;
             font-size: var(--wp--preset--font-size--x-small) !important;
-            font-weight: 400;
+            font-weight: normal;
             line-height: var(--wp--custom--typography--line-height--x-small);
             padding: .8em 1.2em;
             text-decoration: none;
             text-transform: none;
 
             &:hover {
-                background-color: var(--wp--preset--color--neutral-100);
-                border-color: var(--wp--preset--color--neutral-300);
-            }
+                box-shadow: var(--wp--preset--shadow--x-small);
 
-            .tag-link-count {
-                color: currentColor;
+                a {
+                    text-decoration: none;
+                }
             }
         }
     }

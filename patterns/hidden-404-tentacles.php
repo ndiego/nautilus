@@ -2,7 +2,7 @@
 /**
  * Title: 404 error content, but with tentacles.
  * Slug: nautilus/hidden-404-tentacles
- * Categories: nautilus_page
+ * Inserter: false
  */
 
 ?>

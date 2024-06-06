@@ -2,26 +2,39 @@
 ----------------------------------------------------------------------------- */
 
 // Add some extra spacing around images, galleries, code blocks and headings.
-.editor-styles-wrapper .is-root-container,
 .wp-block-post-content {
     &> .wp-block-code,
-    &> .wp-block-gallery,
-    &> .wp-block-image {
-        margin-block-start: var(--wp--preset--spacing--x-large);
-        margin-block-end: var(--wp--preset--spacing--x-large);
+    &> figure {
+        margin-block-start: var(--wp--preset--spacing--large);
+        margin-block-end: var(--wp--preset--spacing--large);
     }
 
-    &> h1:not(:first-child),
     &> h2:not(:first-child),
     &> h3:not(:first-child),
     &> h4:not(:first-child) {
-        margin-top: var(--wp--preset--spacing--x-large);
+        padding-top: var(--wp--preset--spacing--medium);
     }
 
-    &> h1:not(:first-child) + *,
     &> h2:not(:first-child) + *,
     &> h3:not(:first-child) + *,
     &> h4:not(:first-child) + * {
         margin-top: var(--wp--preset--spacing--small);
     }
+
+    &> ul li,
+    &> ol li { 
+        margin: calc( var(--wp--preset--spacing--x-small) / 2 ) 0;
+    } 
 }
+
+// .wp-block-post-content > ol + p,
+// .wp-block-post-content > ul + p,
+// .wp-block-post-content > p + h2,
+// .wp-block-post-content > p + h3,
+// .wp-block-post-content > ul + h2,
+// .wp-block-post-content > ul + h3,
+// .wp-block-post-content > ol + h2,
+// .wp-block-post-content > ol + h3 {
+//     /* Add spacing above headings, so anchor links are not against the viewport. */
+//     padding-top: var(--wp--preset--spacing--medium);
+// }

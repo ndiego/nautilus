@@ -24,10 +24,6 @@
         &.has-tertiary-background-color:hover {
             background-color: color-mix(in srgb, var(--wp--preset--color--tertiary) 90%, var(--wp--preset--color--neutral) 10%) !important;
         }
-
-        &.has-neutral-background-color:hover {
-            background-color: color-mix(in srgb, var(--wp--preset--color--neutral) 98%, var(--wp--preset--color--primary) 2%) !important;
-        }
     }
 
     /* Block Style: Outline
@@ -42,10 +38,6 @@
 
         &.has-neutral-color {
             border-color: var(--wp--preset--color--neutral);
-        }
-
-        &:hover {
-            background-color: var(--wp--preset--color--neutral-100);
         }
 
         &.has-neutral-color:hover {

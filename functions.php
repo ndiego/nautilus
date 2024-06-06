@@ -12,8 +12,6 @@
  * Add theme supports and styles.
  *
  * @since 0.1.0
- *
- * @return void
  */
 function nautilus_setup() {
 
@@ -29,8 +27,6 @@ add_action( 'after_setup_theme', 'nautilus_setup' );
  * Enqueue styles.
  *
  * @since 0.1.0
- *
- * @return void
  */
 function nautilus_styles() {
 
@@ -51,8 +47,6 @@ add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
  * Add/remove block styles and variations.
  * 
  * @since 0.1.0
- *
- * @return void
  */
 function nautilus_editor_script_styles() {
 
@@ -72,14 +66,6 @@ function nautilus_editor_script_styles() {
 		array(),
 		wp_get_theme()->get( 'Version' ),
 		true
-	);
-
-	// Enqueue custom Editor styles.
-	wp_enqueue_style( 
-		'nautilus-editor-styles', 
-		get_template_directory_uri() . '/editor.css', 
-		array(),
-		wp_get_theme()->get( 'Version' )
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'nautilus_editor_script_styles' );
@@ -219,3 +205,27 @@ function nautilus_modify_archive_title_prefixes( $title, $original_title, $prefi
     return sprintf( '<span class="query-title-prefix">%s</span>%s', $prefix_no_colon, $original_title ); 
 } 
 add_filter( 'get_the_archive_title', 'nautilus_modify_archive_title_prefixes', 10, 3 );
+
+/**
+ * Filter the output of an image block to wrap the <img> element in a <span>.
+ * This is needed to apply image custom image borders on images with captions.
+ *
+ * @since 0.1.0
+ */
+function custom_wrap_image_block( $block_content, $block ) {
+
+	// Check if the block content contains a <figcaption> element
+	if ( strpos( $block_content, 'figcaption' ) !== false ) {
+		
+		// Append the caption class to the block.
+		$p = new WP_HTML_Tag_Processor( $block_content );
+		if ( $p->next_tag() ) {
+			$p->add_class( 'has-caption' );
+		}
+		$block_content = $p->get_updated_html();
+		$block_content = preg_replace( '/(<img[^>]+>)/', '<span class="wp-block-image-container">$1</span>', $block_content );
+	}
+
+    return $block_content;
+}
+add_filter( 'render_block_core/image', 'custom_wrap_image_block', 10, 2 );

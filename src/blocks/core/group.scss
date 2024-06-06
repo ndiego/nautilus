@@ -3,34 +3,29 @@
 
 .wp-block-group {
 
-    /* Block Style: Hover Box
+    /* Block Style: Hover Card
      *
      * This style is not directly accessible in the UI.
      --------------------------------------------- */
 
-    &.is-style-hover-box {
-        border-radius: var(--wp--custom--border-radius--default);
-        box-shadow: var(--wp--preset--shadow--small);
+    &.is-style-hover-card {
 
         // Only show animation on desktop.
         @media (min-width: 600px) {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         
             &> *:not(.wp-block-buttons):not(.wp-block-read-more) {
                 transform: translateY( 1.75rem );
-                transition: all 0.2s ease-in-out;
+                transition: all var(--wp--custom--transition--duration) ease-in-out;
             }
         
             &> .wp-block-buttons,
             &> .wp-block-read-more {
                 opacity: 0;
-                transition: all 0.2s ease-in-out;
+                transition: all var(--wp--custom--transition--duration) ease-in-out;
             }
         
             &:hover {
-                box-shadow: var(--wp--preset--shadow--medium);
+                box-shadow: var(--wp--preset--shadow--small);
 
                 &> *:not(.wp-block-buttons):not(.wp-block-read-more) {
                     transform: translateY( 0 );

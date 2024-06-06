@@ -12,18 +12,21 @@
      --------------------------------------------- */
     &.is-style-outline {
         a,
-        span:not(.rich-text):not(.wp-block-post-terms__separator) {
+        span:not(.rich-text):not(.wp-block-post-terms__separator):not([data-rich-text-placeholder]) {
+            background-color: var(--wp--preset--color--white);
             border: var(--wp--custom--border--default);
-            border-radius: var(--wp--custom--border-radius--default);
+            border-radius: var(--wp--custom--border-radius--button);
             color: var(--wp--preset--color--primary);
             display: inline-block;
+            font-weight: normal;
             line-height: var(--wp--custom--typography--line-height--x-small);
             padding: .8em 1.2em;
             text-decoration: none;
+            text-transform: none;
 
             &:hover {
-                background-color: var(--wp--preset--color--neutral-100);
-                border-color: var(--wp--preset--color--neutral-300);
+                box-shadow: var(--wp--preset--shadow--x-small);
+                text-decoration: none;
             }
         }
 
