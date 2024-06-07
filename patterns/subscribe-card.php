@@ -20,6 +20,6 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"white","textColor":"primary","borderRadius":4,"borderWeight":0,"borderColor":"white"} /-->
+    <!-- wp:jetpack/subscriptions {"subscribePlaceholder":"Enter your email…","buttonWidth":"30%","buttonBackgroundColor":"primary","textColor":"neutral","borderRadius":8,"borderWeight":0,"borderColor":"haze","padding":12,"spacing":18,"style":{"spacing":{"margin":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small"}}}} /-->
 </div>
 <!-- /wp:group -->
