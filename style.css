@@ -207,7 +207,9 @@ a.has-arrow-left a::before,
   z-index: 10;
 }
 
-.has-no-border::before {
+.has-no-border::before,
+.has-no-border .wp-block-image-container::before,
+.has-no-border .components-resizable-box__container::before {
   border-color: transparent !important;
 }
 
