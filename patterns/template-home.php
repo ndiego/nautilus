@@ -71,7 +71,7 @@
                     <!-- wp:pattern {"slug":"nautilus/hover-card-query"} /-->
                 <!-- /wp:post-template -->
 
-                <!-- wp:pattern {"slug":"nautilus/query-no-results"} /-->
+                <!-- wp:pattern {"slug":"nautilus/hidden-query-no-results"} /-->
             </div>
             <!-- /wp:query -->
         </div>
@@ -91,7 +91,7 @@
                 <!-- wp:pattern {"slug":"nautilus/hover-card-query"} /-->
             <!-- /wp:post-template -->
 
-            <!-- wp:pattern {"slug":"nautilus/query-no-results"} /-->
+            <!-- wp:pattern {"slug":"nautilus/hidden-query-no-results"} /-->
         </div>
         <!-- /wp:query -->
     </div>

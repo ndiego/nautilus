@@ -2,7 +2,7 @@
 /**
  * Title: 404 error content.
  * Slug: nautilus/hidden-404
- * Inserter: false
+ * Inserter: no
  */
 
 ?>

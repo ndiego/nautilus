@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Query no results
- * Slug: nautilus/query-no-results
- * Inserter: false
+ * Slug: nautilus/hidden-query-no-results
+ * Inserter: no
  */
 
 ?>

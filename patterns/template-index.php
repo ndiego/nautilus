@@ -24,7 +24,7 @@
             <!-- wp:pattern {"slug":"nautilus/hover-card-query"} /-->
         <!-- /wp:post-template -->
 
-        <!-- wp:pattern {"slug":"nautilus/query-no-results"} /-->
+        <!-- wp:pattern {"slug":"nautilus/hidden-query-no-results"} /-->
 
         <!-- wp:spacer {"height":"3rem"} -->
         <div style="height:3rem" aria-hidden="true" class="wp-block-spacer"></div>

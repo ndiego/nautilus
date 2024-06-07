@@ -4,7 +4,6 @@
  * Slug: nautilus/header
  * Categories: header
  * Block Types: core/template-part/header
- * Viewport Width: 1296
  */
 
 ?>

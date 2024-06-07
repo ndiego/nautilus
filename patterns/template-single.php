@@ -73,7 +73,7 @@
 
 <!-- wp:group {"metadata":{"name":"Comments"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|xxx-large"}}},"layout":{"inherit":true,"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--xxx-large)">
-    <!-- wp:pattern {"slug":"nautilus/comments"} /-->
+    <!-- wp:pattern {"slug":"nautilus/hidden-comments"} /-->
 </div>
 <!-- /wp:group -->
 
@@ -97,7 +97,7 @@
         <!-- wp:pattern {"slug":"nautilus/hover-card-query"} /-->
         <!-- /wp:post-template -->
 
-        <!-- wp:pattern {"slug":"nautilus/query-no-results"} /-->
+        <!-- wp:pattern {"slug":"nautilus/hidden-query-no-results"} /-->
     </div>
     <!-- /wp:query -->
 </div>

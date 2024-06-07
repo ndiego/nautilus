@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Comments
- * Slug: nautilus/comments
- * Inserter: false
+ * Slug: nautilus/hidden-comments
+ * Inserter: no
  */
 
 ?>
