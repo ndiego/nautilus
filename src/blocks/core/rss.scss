@@ -2,11 +2,6 @@
  ----------------------------------------------------------------------------- */
 
 .wp-block-rss {
-    // display: flex;
-    // flex-direction: column;
-    // gap: 1.5rem;
-    // margin: 0;
-
     .wp-block-rss__item-author,
     .wp-block-rss__item-publish-date {
         color: var(--wp--preset--color--primary-light);
@@ -14,9 +9,13 @@
         font-weight: 500;
         font-family: var(--wp--preset--font-family--primary);
         font-size: var(--wp--preset--font-size--x-small);
-        letter-spacing: 1px;
-        margin-top: 0.5rem;
         margin-right: 1rem;
         text-transform: uppercase;
+    }
+
+    .wp-block-rss__item-excerpt {
+        font-size: var(--wp--preset--font-size--small);
+        margin-top: 0.25rem;
+        margin-bottom: 1rem;
     }
 }

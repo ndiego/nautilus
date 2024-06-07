@@ -2,8 +2,7 @@
 /**
  * Title: 404 error content.
  * Slug: nautilus/hidden-404
- * Categories: page
- * Inserter: false
+ * Inserter: no
  */
 
 ?>
@@ -18,7 +17,7 @@
 	<p class="has-text-align-center">This page could not be found. Maybe try a search?</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:search {"label":"Search","showLabel":false,"width":50,"widthUnit":"%","buttonText":"Search","align":"center","style":{"border":{"radius":"4px","width":"1px"}},"borderColor":"neutral-300","backgroundColor":"primary","textColor":"neutral"} /-->
+	<!-- wp:search {"label":"Search","showLabel":false,"width":50,"widthUnit":"%","buttonText":"Search","align":"center","style":{"border":{"width":"1px"}},"borderColor":"neutral-300","backgroundColor":"primary","textColor":"neutral"} /-->
 
 	<!-- wp:spacer {"height":"4rem"} -->
 	<div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>

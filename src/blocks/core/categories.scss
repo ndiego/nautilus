@@ -46,4 +46,46 @@
             display: none;
         }
     }
+
+    /* Block Style: Outline
+     -------------------------------------------- */
+     &.is-style-outline {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--wp--preset--spacing--x-small);
+
+        li {
+            background-color: var(--wp--preset--color--white);
+            border: var(--wp--custom--border--default);
+            border-radius: var(--wp--custom--border-radius--button);
+            cursor: pointer;
+            display: inline-block;
+            font-size: var(--wp--preset--font-size--x-small) !important;
+            font-weight: normal;
+            line-height: var(--wp--custom--typography--line-height--x-small);
+            padding-right: 1.2em;
+            transition: box-shadow var(--wp--custom--transition--duration) ease-out;
+
+            a {
+                color: var(--wp--preset--color--primary);
+                display: inline-block;
+                padding: .8em 0 .8em 1.2em;
+                text-decoration: none;
+                text-transform: none;
+            }
+
+            &:hover {
+                box-shadow: var(--wp--preset--shadow--x-small);
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            .tag-link-count {
+                color: currentColor;
+            }
+        }
+    }
 }

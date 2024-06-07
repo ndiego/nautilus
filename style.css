@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name:        Nautilus
 Theme URI:         https://github.com/ndiego/nautilus/
@@ -6,7 +7,7 @@ Author URI:        https://www.nickdiego.com
 Description:       A WordPress block theme from 20,000 leagues under the sea.
 Requires at least: 6.3
 Requires PHP:      5.6
-Version:           0.1.0
+Version:           0.2.0
 License:           GNU General Public License v2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:       nautilus
@@ -22,15 +23,24 @@ html {
 
 /* General Styles (Styles not supported in theme.json and/or not block specific)
  ----------------------------------------------------------------------------- */
-a {
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.5ch;
+a:where(:not(.wp-element-button)) {
+  text-underline-offset: 2px;
+  transition: color var(--wp--custom--transition--duration) ease-in-out;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* Make bold styles look a bit nicer. */
 strong {
   font-weight: 600;
 }
 
+/* Custom styles for form inputs, textareas and labels. */
 input,
 textarea {
   font-size: var(--wp--preset--font-size--small);
@@ -43,7 +53,9 @@ textarea {
   font-size: var(--wp--preset--font-size--small);
 }
 
-label {
+label,
+.contact-form label,
+.jetpack-field-label .rich-text.jetpack-field-label__input {
   font-family: var(--wp--preset--font-family--primary);
   font-size: var(--wp--preset--font-size--medium);
   font-weight: 500;
@@ -57,10 +69,15 @@ select {
   padding: 0 1.5rem 0 0.5rem;
 }
 
-cite {
-  font-style: normal;
+/* Elements do not yet support CSS in theme.json */
+.wp-element-button,
+.is-style-outline a,
+.is-style-outline li,
+.wp-block-button__link {
+  transition: background-color var(--wp--custom--transition--duration) ease-out, color var(--wp--custom--transition--duration) ease-out;
 }
 
+/* Inline code and keyboard input styles. Need to explicitly exclude the Code block. */
 *:not(.wp-block-code) > code,
 kbd {
   background-color: var(--wp--preset--color--neutral-100);
@@ -68,21 +85,17 @@ kbd {
   color: var(--wp--preset--color--primary);
   font-family: var(--wp--preset--font-family--monospace);
   font-size: 0.8em;
-  padding: 0.3rem 0.4rem;
+  padding: 0.2rem 0.35rem;
   position: relative;
 }
 
 *.has-dark-code:not(.wp-block-code) code,
 .has-dark-code kbd {
   background-color: var(--wp--preset--color--primary-light);
-  border-radius: 4px;
-  color: var(--wp--preset--color--primary-lighter);
-  font-family: var(--wp--preset--font-family--monospace);
-  font-size: 0.8em;
-  padding: 0.3rem 0.4rem;
-  position: relative;
+  color: var(--wp--preset--color--neutral);
 }
 
+/* Custom color for the * indicator in forms. */
 span.required {
   color: var(--wp--preset--color--accent);
   font-family: var(--wp--preset--font-family--primary);
@@ -93,18 +106,7 @@ span.required {
 /*
  * Utility classes.
  ----------------------------------------------------------------------------- */
-.has-align-items-start {
-  align-items: flex-start;
-}
-
-.has-align-items-stretch {
-  align-items: stretch;
-}
-
-.has-justify-space-between {
-  justify-content: space-between;
-}
-
+/* Flexbox */
 .has-flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -113,19 +115,26 @@ span.required {
   flex: 1;
 }
 
+/* Whitespace */
 .has-white-space-nowrap {
   white-space: nowrap;
 }
 
-.box-shadow--minimal {
-  box-shadow: var(--wp--custom--box-shadow--minimal);
+/* Box Shadow */
+.box-shadow--small {
+  box-shadow: var(--wp--preset--shadow--small);
 }
-.box-shadow--default {
-  box-shadow: var(--wp--custom--box-shadow--default);
+.box-shadow--medium {
+  box-shadow: var(--wp--preset--shadow--medium);
 }
 
+/* Border */
 .border-radius--default {
   border-radius: var(--wp--custom--border-radius--default);
+  overflow: hidden;
+}
+.border-radius--button {
+  border-radius: var(--wp--custom--border-radius--button);
   overflow: hidden;
 }
 .border-radius--round {
@@ -133,6 +142,7 @@ span.required {
   overflow: hidden;
 }
 
+/* Links */
 .text-decoration--none a {
   text-decoration-thickness: 0 !important;
   text-decoration: none !important;
@@ -148,12 +158,74 @@ span.required {
   text-underline-offset: 0.5ch !important;
 }
 
+a.has-arrow-right::after,
+a.has-arrow-right a::after,
+.has-arrow-right a::after,
+.has-arrow-right a a::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 0.2em;
+}
+
+a.has-arrow-left::before,
+a.has-arrow-left a::before,
+.has-arrow-left a::before,
+.has-arrow-left a a::before {
+  content: "←";
+  display: inline-block;
+  margin-right: 0.2em;
+}
+
+/* Image borders (inspired by rich.blog) */
+.wp-block-image:not(.has-caption):not(.block-editor-block-list__block),
+.wp-block-image .wp-block-image-container,
+.wp-block-image .components-resizable-box__container,
+.wp-lightbox-overlay .wp-block-image,
+.wp-block-video,
+.wp-block-jetpack-image-compare,
+.jetpack-videopress-player__wrapper {
+  position: relative;
+}
+
+.wp-block-image:not(.has-caption):not(.block-editor-block-list__block)::before,
+.wp-block-image .wp-block-image-container::before,
+.wp-block-image .components-resizable-box__container::before,
+.wp-lightbox-overlay .wp-block-image::before,
+.wp-block-video::before,
+.wp-block-jetpack-image-compare::before,
+.jetpack-videopress-player__wrapper::before {
+  border-radius: var(--wp--custom--border-radius--default);
+  border: 1px solid var(--wp--preset--color--haze);
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.has-no-border::before,
+.has-no-border .wp-block-image-container::before,
+.has-no-border .components-resizable-box__container::before {
+  border-color: transparent !important;
+}
+
+/* Don't show the border on fullwidth images. */
+.single .wp-block-image.alignfull::before {
+  display: none;
+}
+
+/* Remove image border on mobile. */
 @media (max-width: 782px) {
   .has-no-mobile-border img {
     border: none !important;
   }
 }
 
+/* Conditionally display content based on browser width. */
 @media (min-width: 781px) {
   .hide-on-desktop {
     display: none !important;
@@ -169,6 +241,7 @@ span.required {
     display: none !important;
   }
 }
+/* Center align content on mobile. */
 @media (max-width: 782px) {
   .mobile-align-center,
   .mobile-align-center .has-text-align-left,
@@ -179,4 +252,30 @@ span.required {
   .mobile-align-center .is-layout-flex {
     display: inline-flex;
   }
+}
+/*
+ * Misc tweaks.
+ ----------------------------------------------------------------------------- */
+/* Jetpack Social */
+.sd-like {
+  margin-top: var(--wp--preset--spacing--large);
+}
+
+.sd-title {
+  display: none !important;
+}
+
+/* Jetpack VideoPress */
+.wp-block-jetpack-videopress {
+  line-height: 0;
+}
+
+/* Lightbox */
+.wp-lightbox-overlay .close-button:focus {
+  outline: none;
+}
+
+.wp-lightbox-overlay .close-button svg {
+  height: 24px;
+  width: 24px;
 }

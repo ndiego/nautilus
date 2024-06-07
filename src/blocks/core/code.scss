@@ -2,8 +2,6 @@
  ----------------------------------------------------------------------------- */
 
 .wp-block-code {
-	background: var(--wp--preset--color--primary) !important;
-
 	&> code {
 		overflow-wrap: normal;
 		overflow-x: scroll;
@@ -18,6 +16,7 @@
 		color: var(--wp--preset--color--neutral-100);
 		font-weight: 500;
 		padding: 8px 16px;
+		margin: calc( -1 * var(--wp--preset--spacing--medium)) calc( -1 * var(--wp--preset--spacing--medium)) var(--wp--preset--spacing--medium);
 	}
 
 	/* Block Style: Wrap

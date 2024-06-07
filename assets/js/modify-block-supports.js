@@ -53,6 +53,39 @@ addFilter(
 );
 
 /**
+ * Adds shadow support to Group blocks.
+ *
+ * @param {Object} settings - The original block settings.
+ * @param {string} name - The name of the block.
+ *
+ * @returns {Object} The modified block settings with added shadow support.
+ */
+function addShadowSupport( settings, name ) {
+
+	// Bail early if the block does not have supports.
+	if ( ! settings?.supports ) {
+		return settings;
+	}
+
+	// Only apply to Column, Heading, and Paragraph blocks.
+  	if ( name === 'core/group' ) {
+		return Object.assign( {}, settings, {
+			supports: Object.assign( settings.supports, {
+				shadow: true,
+			} ),
+		} );
+	}
+
+	return settings;
+}
+
+addFilter(
+	'blocks.registerBlockType',
+	'modify-block-supports/add-shadow-support',
+	addShadowSupport,
+);
+
+/**
  * Modifies the default typography settings for blocks with typography support.
  * 
  * @param {Object} settings - The original block settings.

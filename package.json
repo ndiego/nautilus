@@ -1,0 +1,19 @@
+{
+  "name": "nautilus",
+	"version": "0.1.0",
+	"description": "Just another block theme.",
+	"author": "Nick Diego",
+	"license": "GPL-2.0-or-later",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ndiego/nautilus.git"
+	},
+  "scripts": {
+    "theme-zip": "composer zip",
+    "start-sass": "sass --watch src/blocks:assets/blocks src/style.scss:style.css --no-source-map",
+    "build-sass": "sass src/blocks:assets/blocks --no-source-map --style=compressed"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^28.0.0"
+  }
+}

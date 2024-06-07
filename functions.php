@@ -12,8 +12,6 @@
  * Add theme supports and styles.
  *
  * @since 0.1.0
- *
- * @return void
  */
 function nautilus_setup() {
 
@@ -29,8 +27,6 @@ add_action( 'after_setup_theme', 'nautilus_setup' );
  * Enqueue styles.
  *
  * @since 0.1.0
- *
- * @return void
  */
 function nautilus_styles() {
 
@@ -51,8 +47,6 @@ add_action( 'wp_enqueue_scripts', 'nautilus_styles' );
  * Add/remove block styles and variations.
  * 
  * @since 0.1.0
- *
- * @return void
  */
 function nautilus_editor_script_styles() {
 
@@ -72,14 +66,6 @@ function nautilus_editor_script_styles() {
 		array(),
 		wp_get_theme()->get( 'Version' ),
 		true
-	);
-
-	// Enqueue custom Editor styles.
-	wp_enqueue_style( 
-		'nautilus-editor-styles', 
-		get_template_directory_uri() . '/editor.css', 
-		array(),
-		wp_get_theme()->get( 'Version' )
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'nautilus_editor_script_styles' );
@@ -127,24 +113,21 @@ function nautilus_enqueue_block_stylesheets() {
 add_action( 'after_setup_theme', 'nautilus_enqueue_block_stylesheets' );
 
 /**
- * Registers block patterns and categories.
+ * Registers custom pattern categories.
  *
  * @since 0.1.0
  */
-function nautilus_register_block_pattern_categories() {
+function nautilus_register_pattern_categories() {
 
-	$block_pattern_categories = array(
-		'footer' => array( 'label' => __( 'Footers', 'nautilus' ) ),
-		'header' => array( 'label' => __( 'Headers', 'nautilus' ) ),
-		'page'   => array( 'label' => __( 'Page', 'nautilus' ) ),
-		'query'  => array( 'label' => __( 'Query', 'nautilus' ) ),
+	register_block_pattern_category(
+		'nautilus_page',
+		array(
+			'label'       => _x( 'Pages', 'Block pattern category', 'nautilus' ),
+			'description' => __( 'A collection of full page layouts.', 'nautilus' ),
+		)
 	);
-
-	foreach ( $block_pattern_categories as $name => $properties ) {
-		register_block_pattern_category( $name, $properties );
-	}
 }
-add_action( 'init', 'nautilus_register_block_pattern_categories' );
+add_action( 'init', 'nautilus_register_pattern_categories' );
 
 /**
  * Register block styles.
@@ -159,6 +142,7 @@ function nautilus_register_block_styles() {
         ),
         'core/categories' => array(
             'horizontal' => __( 'Horizontal', 'nautilus' ),
+			'outline'    => __( 'Outline', 'nautilus' ),
         ),
         'core/image'      => array(
             'caption-left'  => __( 'Caption Left', 'nautilus' ),
@@ -176,6 +160,12 @@ function nautilus_register_block_styles() {
         ),
         'core/separator'  => array(
             'waves' => __( 'Waves', 'nautilus' ),
+        ),
+		'core/tag-cloud'  => array(
+            'outline' => __( 'Outline', 'nautilus' ),
+        ),
+		'core/post-terms'  => array(
+            'outline' => __( 'Outline', 'nautilus' ),
         ),
     );
 
@@ -216,19 +206,26 @@ function nautilus_modify_archive_title_prefixes( $title, $original_title, $prefi
 } 
 add_filter( 'get_the_archive_title', 'nautilus_modify_archive_title_prefixes', 10, 3 );
 
-
 /**
- * Replace breaks with new lines in all Code blocks on the front end.
- * This filter fixes an issue in the Code Syntax Highlighting Block.
+ * Filter the output of an image block to wrap the <img> element in a <span>.
+ * This is needed to apply image custom image borders on images with captions.
  *
- * @param string $block_content The block content about to be filtered.
- * @return string The filtered block content.
+ * @since 0.1.0
  */
-function nautilus_code_block_add_line_breaks( $block_content ) {
-	return str_ireplace(
-		[ '<br>', '<br/>', '<br />' ],
-		"\n",
-		$block_content
-	);
+function custom_wrap_image_block( $block_content, $block ) {
+
+	// Check if the block content contains a <figcaption> element
+	if ( strpos( $block_content, 'figcaption' ) !== false ) {
+		
+		// Append the caption class to the block.
+		$p = new WP_HTML_Tag_Processor( $block_content );
+		if ( $p->next_tag() ) {
+			$p->add_class( 'has-caption' );
+		}
+		$block_content = $p->get_updated_html();
+		$block_content = preg_replace( '/(<img[^>]+>)/', '<span class="wp-block-image-container">$1</span>', $block_content );
+	}
+
+    return $block_content;
 }
-add_filter( 'render_block_core/code', 'nautilus_code_block_add_line_breaks', 10, 1 );
+add_filter( 'render_block_core/image', 'custom_wrap_image_block', 10, 2 );

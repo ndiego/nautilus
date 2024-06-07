@@ -1,1 +1,1 @@
-.wp-block-list li{margin-bottom:.4rem}.wp-block-list li ol,.wp-block-list li ul{margin-top:.8rem;margin-bottom:.8rem}li:where(:not([class*=wp-block])){margin-bottom:.4rem}li:where(:not([class*=wp-block])) ol,li:where(:not([class*=wp-block])) ul{margin-top:.8rem;margin-bottom:.8rem}
+.wp-block-list{padding-inline-start:var(--wp--preset--spacing--medium)}.wp-block-list li{margin-bottom:.4rem}.wp-block-list li ol,.wp-block-list li ul{margin-top:.8rem;margin-bottom:.8rem}

@@ -1,15 +1,15 @@
 === Nautilus ===
 Contributors: ndiego
-Requires at least: 6.0
-Tested up to: 6.0
-Requires PHP: 5.6
+Requires at least: 6.5
+Tested up to: 6.6
+Requires PHP: 8.0
 Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A WordPress block theme from 20,000 leagues under the sea.
+Just another block theme.
 
 == Changelog ==
 
@@ -18,7 +18,7 @@ A WordPress block theme from 20,000 leagues under the sea.
 
 == Copyright ==
 
-Nautilus WordPress Theme, 2022 Nick Diego
+Nautilus WordPress Theme, 2024 Nick Diego
 Nautilus is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
