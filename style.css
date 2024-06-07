@@ -128,6 +128,14 @@ span.required {
   box-shadow: var(--wp--preset--shadow--medium);
 }
 
+/* Text Wrap */
+.text-wrap--balance {
+  text-wrap: balance;
+}
+.text-wrap--pretty {
+  text-wrap: pretty;
+}
+
 /* Border */
 .border-radius--default {
   border-radius: var(--wp--custom--border-radius--default);
@@ -263,6 +271,11 @@ a.has-arrow-left a::before,
 
 .sd-title {
   display: none !important;
+}
+
+/* Jetpack Subscriptions */
+.wp-block-jetpack-subscriptions .wp-block-button__link {
+  border-radius: var(--wp--custom--border-radius--button) !important;
 }
 
 /* Jetpack VideoPress */
