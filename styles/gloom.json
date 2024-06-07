@@ -7,7 +7,7 @@
             "duotone": [
 				{
 					"colors": [
-						"#2C2A2A",
+						"#262626",
 						"#FAFAFA"
 					],
 					"name": "Primary and Neutral",
@@ -15,43 +15,11 @@
 				},
 				{
 					"colors": [
-						"#F9FAFB",
-						"#0F172A"
+						"#FAFAFA",
+						"#262626"
 					],
 					"name": "Neutral and Primary",
 					"slug": "neutral-and-primary"
-				},
-				{
-					"colors": [
-						"#0B8082",
-						"#F9FAFB"
-					],
-					"name": "Secondary and Neutral",
-					"slug": "secondary-and-neutral"
-				},
-				{
-					"colors": [
-						"#F9FAFB",
-						"#0B8082"
-					],
-					"name": "Neutral and Secondary",
-					"slug": "neutral-and-secondary"
-				},
-				{
-					"colors": [
-						"#926D01",
-						"#F9FAFB"
-					],
-					"name": "Tertiary and Neutral",
-					"slug": "tertiary-and-neutral"
-				},
-				{
-					"colors": [
-						"#F9FAFB",
-						"#926D01"
-					],
-					"name": "Neutral and Tertiary",
-					"slug": "neutral-and-tertiary"
 				}
 			],
             "palette": [
