@@ -17,12 +17,10 @@ Nautilus is the block theme that powers [nickdiego.com](nickdiego.com). I create
 
 ## Development
 
-There is no build process in this theme, but it does use [`sass`](https://sass-lang.com/). Use the following commands to build the per-block stylesheets and the main `style.css` file.
+There is no JavaScript build process in this theme, but it does use [`sass`](https://sass-lang.com/). Use the following `npm` commands to build the per-block stylesheets and the main `style.css` file.
 
-```bash
-sass --watch src/blocks:assets/blocks --no-source-map --style=compressed
-```
-
-```bash
-sass --watch src/style.scss:style.css --no-source-map
-```
+| Scripts | Description | 
+|-|-|
+| `start-sass` | Watch changes to all `sass` files and generates the uncompressed `css`. |
+| `build-sass` | Builds all per-block stylesheets and compresses them. |
+| `theme-zip` | Uses composer to zip the theme (minus unneeded files) and places it in the `_playground` folder. |
