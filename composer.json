@@ -1,0 +1,42 @@
+{
+    "name": "outermost/nautilus",
+    "description": "Just another block theme.",
+    "authors": [
+        {
+            "name": "Nick Diego",
+            "email": "nickmdiego@gmail.com"
+        }
+    ],
+    "scripts": {
+		"lint": "@php ./vendor/bin/phpcs",
+		"zip": "composer archive --format=zip --dir=./_playground --file=nautilus"
+	},
+    "require": {
+        "php": ">=8.0"
+    }, 
+    "require-dev": {
+		"wp-coding-standards/wpcs": "^3.0",
+		"phpcompatibility/phpcompatibility-wp": "*"
+	},
+    "archive": {
+		"exclude": [
+            "/_playground",
+            "/node_modules",
+            "/src",
+            "/vendor",
+            "/composer.json",
+            "/composer.lock",
+            "/package.json",
+            "/package-lock.json",
+            "/.git",
+            "/.gitignore",
+            "/.gitattributes",
+            "*.md"
+		]
+	},
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
