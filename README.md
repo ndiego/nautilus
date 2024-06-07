@@ -2,13 +2,15 @@
 
 ![Nautilus - A WordPress block theme.](https://github.com/ndiego/nautilus/blob/main/_github/nautilus-github-banner.png)
 
-Nautilus is the block theme that powers [nickdiego.com](nickdiego.com). I created this for my personal use and to experiment with new WordPress functionality. As a result, it's highly experimental, so please use with caution. Explore Nautilus in [WordPress Playground](https://playground.wordpress.net/?gh-ensure-auth=yes&ghexport-repo-url=https%3A%2F%2Fgithub.com%2Fndiego%2Fnautilus&ghexport-content-type=theme&ghexport-theme=nautilus&ghexport-commit-message=Nautilus+update&ghexport-playground-root=/wordpress/wp-content/themes/nautilus&ghexport-pr-action=create&ghexport-allow-include-zip=no&blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fndiego%2Fnautilus%2Fmain%2F_playground%2Fblueprint.json).
+Nautilus is the block theme that powers [nickdiego.com](nickdiego.com). I created this for my personal use and to experiment with new WordPress functionality. As a result, it's highly experimental, so please use with caution. 
+
+Explore Nautilus in [WordPress Playground](https://playground.wordpress.net/?gh-ensure-auth=yes&ghexport-repo-url=https%3A%2F%2Fgithub.com%2Fndiego%2Fnautilus&ghexport-content-type=theme&ghexport-theme=nautilus&ghexport-commit-message=Nautilus+update&ghexport-playground-root=/wordpress/wp-content/themes/nautilus&ghexport-pr-action=create&ghexport-allow-include-zip=no&blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fndiego%2Fnautilus%2Fmain%2F_playground%2Fblueprint.json).
 
 ## Requirements
 
 - WordPress 6.5+
 
-## Plugin Dependencies
+## Plugin dependencies
 
 - [Icon Block](https://wordpress.org/plugins/icon-block/)
 - [Social Sharing Block](https://wordpress.org/plugins/social-sharing-block/)
