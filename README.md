@@ -17,8 +17,9 @@ Explore Nautilus in [WordPress Playground](https://playground.wordpress.net/?gh-
 
 ## Development
 
-There is no JavaScript build process in this theme, but it does use [`sass`](https://sass-lang.com/). Use the following `npm` commands to build the per-block stylesheets and the main `style.css` file.
+There is no JavaScript build process in this theme (yet), but it does use [`sass`](https://sass-lang.com/). Use the following `npm` commands to build the per-block stylesheets and the main `style.css` file.
 
-1. Run `npm run start-sass` to watch changes to all `sass` files and generate the uncompressed `css`.
-2. Run `npm run build-sass` to builds all per-block stylesheets and compresses them.
-3. Run `npm run theme-zip` to zip the theme (minus unneeded files) and place it in the `_playground` folder.
+1. Run `npm run start:sass` to watch changes to all `sass` files and generate the uncompressed `css`.
+2. Run `npm run build:sass:style` to build the uncompressed `style.css` file.
+3. Run `npm run build:sass:blocks` to build all per-block stylesheets and compresses them.
+4. Run `npm run theme-zip` to zip the theme (minus unneeded files) and place it in the `_playground` folder.
