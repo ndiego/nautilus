@@ -189,7 +189,7 @@ add_action( 'init', 'nautilus_register_block_styles' );
  * @since 0.1.0
  */
 function nautilus_edit_comment_form_defaults( $defaults ) {
-	$defaults[ 'title_reply' ] = __( 'Share Your Thoughts', 'nautilus' );
+	$defaults[ 'title_reply' ] = __( 'Share your thoughts', 'nautilus' );
 	return $defaults;
 }
 add_action( 'comment_form_defaults', 'nautilus_edit_comment_form_defaults' );
