@@ -507,6 +507,23 @@
 					"fontFamily":  "var(--wp--preset--font-family--primary)"
 				}
 			},
+			"core/heading": {
+				"elements": {
+					"link": {
+						":hover": {
+							"color": {
+								"text": "var(--wp--preset--color--secondary)"
+							}
+						},
+						"color": {
+							"text": "currentColor"
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				}
+			},
 			"core/image": {
 				"border": {
 					"radius": "var(--wp--custom--border-radius--default)"
