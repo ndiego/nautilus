@@ -298,3 +298,8 @@ a.has-arrow-left a::before,
 .akismet_comment_form_privacy_notice {
   display: none;
 }
+
+/* Add extra padding at the bottom of the Editor when metaboxes are present. */
+div.editor-styles-wrapper {
+  padding-bottom: 20vh;
+}
