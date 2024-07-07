@@ -97,7 +97,7 @@ kbd {
 
 /* Custom color for the * indicator in forms. */
 span.required {
-  color: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--tertiary);
   font-family: var(--wp--preset--font-family--primary);
   font-size: var(--wp--preset--font-size--medium);
   font-weight: 600;
@@ -291,4 +291,10 @@ a.has-arrow-left a::before,
 .wp-lightbox-overlay .close-button svg {
   height: 24px;
   width: 24px;
+}
+
+/* Comment forms */
+.comment-subscription-form,
+.akismet_comment_form_privacy_notice {
+  display: none;
 }
