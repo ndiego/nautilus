@@ -334,12 +334,6 @@
         },
         "elements": {
 			"button": {
-				":hover": {
-					"color": {
-						"background": "var(--wp--preset--color--primary-light)",
-						"text": "var(--wp--preset--color--neutral)"
-					}
-				},
 				"border": {
 					"color": "var(--wp--preset--color--haze)",
 					"radius": "var(--wp--custom--border-radius--button)",
