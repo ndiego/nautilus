@@ -1,9 +1,3 @@
-
-/**
- * WordPress dependencies
- */
-const { addFilter } = wp.hooks;
-
 /**
  * Adds border support to Column, Heading, and Paragraph blocks.
  *
@@ -46,7 +40,7 @@ function addBorderSupport( settings, name ) {
 	return settings;
 }
 
-addFilter(
+wp.hooks.addFilter(
 	'blocks.registerBlockType',
 	'modify-block-supports/add-border-support',
 	addBorderSupport,
@@ -67,7 +61,7 @@ function addShadowSupport( settings, name ) {
 		return settings;
 	}
 
-	// Only apply to Column, Heading, and Paragraph blocks.
+	// Only apply to Group blocks.
   	if ( name === 'core/group' ) {
 		return Object.assign( {}, settings, {
 			supports: Object.assign( settings.supports, {
@@ -79,7 +73,7 @@ function addShadowSupport( settings, name ) {
 	return settings;
 }
 
-addFilter(
+wp.hooks.addFilter(
 	'blocks.registerBlockType',
 	'modify-block-supports/add-shadow-support',
 	addShadowSupport,
@@ -111,7 +105,7 @@ function modifyTypographyDefaults( settings ) {
 	return settings;
 }
 
-addFilter(
+wp.hooks.addFilter(
 	'blocks.registerBlockType',
 	'modify-block-supports/modify-typography-defaults',
 	modifyTypographyDefaults,
