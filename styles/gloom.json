@@ -7,7 +7,7 @@
             "duotone": [
 				{
 					"colors": [
-						"#1e1e1e",
+						"#23282D",
 						"#FAFAFA"
 					],
 					"name": "Primary and Neutral",
@@ -16,7 +16,7 @@
 				{
 					"colors": [
 						"#FAFAFA",
-						"#1e1e1e"
+						"#23282D"
 					],
 					"name": "Neutral and Primary",
 					"slug": "neutral-and-primary"
@@ -24,7 +24,7 @@
 			],
             "palette": [
 				{
-					"color": "#1e1e1e",
+					"color": "#23282D",
 					"name": "Primary",
 					"slug": "primary"
 				},
