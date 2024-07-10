@@ -19,6 +19,12 @@
 		margin: calc( -1 * var(--wp--preset--spacing--medium)) calc( -1 * var(--wp--preset--spacing--medium)) var(--wp--preset--spacing--medium);
 	}
 
+	&.line-numbers {
+		.prism-titlename {
+			margin: calc(-1* var(--wp--preset--spacing--medium)) calc(-2.5* var(--wp--preset--spacing--medium)) var(--wp--preset--spacing--medium);
+		}
+	}
+
 	/* Block Style: Wrap
      *
      * This style is not directly accessible in the UI.
