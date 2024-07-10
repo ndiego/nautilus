@@ -392,7 +392,6 @@
 					"textDecoration": "underline"
 				}
 			}
-        },
-        "css": "span.required { color: var(--wp--preset--color--tertiary) !important; }"
+        }
     }
 }
