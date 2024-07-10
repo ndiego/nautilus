@@ -277,6 +277,17 @@ a.has-arrow-left a::before,
 .wp-block-jetpack-subscriptions .wp-block-button__link {
   border-radius: var(--wp--custom--border-radius--button) !important;
 }
+@media (max-width: 600px) {
+  .wp-block-jetpack-subscriptions .wp-block-jetpack-subscriptions__form-elements {
+    flex-wrap: wrap;
+  }
+  .wp-block-jetpack-subscriptions .wp-block-jetpack-subscriptions__form-elements #subscribe-submit {
+    flex-basis: 100%;
+  }
+  .wp-block-jetpack-subscriptions .wp-block-jetpack-subscriptions__form-elements #subscribe-submit .wp-block-button__link {
+    margin: 20px 0 0 !important;
+  }
+}
 
 /* Jetpack VideoPress */
 .wp-block-jetpack-videopress {
