@@ -16,6 +16,20 @@
 				"page"
 			],
 			"title": "Page (Has Title)"
+		},
+		{
+			"name": "slide",
+			"postTypes": [
+				"page"
+			],
+			"title": "Slide"
+		},
+		{
+			"name": "slide-home",
+			"postTypes": [
+				"page"
+			],
+			"title": "Slide (Home)"
 		}
 	],
 	"settings": {
