@@ -21,6 +21,8 @@ html {
   scroll-behavior: smooth;
 }
 
+/* new css comment */
+
 /* General Styles (Styles not supported in theme.json and/or not block specific)
  ----------------------------------------------------------------------------- */
 a:where(:not(.wp-element-button)) {
